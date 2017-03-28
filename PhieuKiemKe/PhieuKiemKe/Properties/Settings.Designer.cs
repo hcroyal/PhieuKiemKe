@@ -44,5 +44,17 @@ namespace PhieuKiemKe.Properties {
                 return ((string)(this["PhieuKiemKeConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("40")]
+        public int ZoomImage {
+            get {
+                return ((int)(this["ZoomImage"]));
+            }
+            set {
+                this["ZoomImage"] = value;
+            }
+        }
     }
 }
