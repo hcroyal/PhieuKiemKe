@@ -39,6 +39,12 @@
     <Reference Include="DevExpress.Sparkline.v16.2.Core" />
     <Reference Include="DevExpress.XtraEditors.v16.2" />
     <Reference Include="DevExpress.Printing.v16.2.Core" />
+    <Reference Include="ImageGlass.ImageBox">
+      <HintPath>MyForm\ImageGlass.ImageBox.dll</HintPath>
+    </Reference>
+    <Reference Include="LibraryLogin">
+      <HintPath>MyForm\LibraryLogin.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Linq" />
