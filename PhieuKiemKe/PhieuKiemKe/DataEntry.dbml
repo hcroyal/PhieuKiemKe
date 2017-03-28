@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="DatabaseDataEntryBPO" Class="DataEntryDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=10.10.10.248\BPOSERVER;Initial Catalog=DatabaseDataEntryBPO;Persist Security Info=True;User ID=sa" SettingsObjectName="PhieuKiemKe.Properties.Settings" SettingsPropertyName="DatabaseDataEntryBPOConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.tbl_Version" Member="tbl_Versions">
+    <Type Name="tbl_Version">
+      <Column Name="IDProject" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="IDVersion" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="ID_int_auto" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="MoTaChucNangMoi" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Function Name="dbo.UpdateTimeFree" Method="UpdateTimeFree">
+    <Parameter Name="Token" Parameter="token" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="freetime" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.updateToken" Method="updateToken">
+    <Parameter Name="username" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="idproject" Type="System.String" DbType="NVarChar(150)" />
+    <Parameter Name="token" Type="System.String" DbType="NVarChar(255)" />
+    <Return Type="System.Int32" />
+  </Function>
+</Database>

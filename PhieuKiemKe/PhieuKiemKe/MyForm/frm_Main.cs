@@ -9,9 +9,9 @@ using System.Windows.Forms;
 
 namespace PhieuKiemKe
 {
-    public partial class Form1 : DevExpress.XtraEditors.XtraForm
+    public partial class frm_Main : DevExpress.XtraEditors.XtraForm
     {
-        public Form1()
+        public frm_Main()
         {
             InitializeComponent();
         }
