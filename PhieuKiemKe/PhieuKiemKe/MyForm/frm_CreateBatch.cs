@@ -53,12 +53,11 @@ namespace PhieuKiemKe.MyForm
 
         private void btn_CreateBatch_Click(object sender, EventArgs e)
         {
-            backgroundWorker1.RunWorkerAsync();
-        }
+            //backgroundWorker1.RunWorkerAsync();
+            UpLoadSingle();}
 
         private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
         {
-            
             UpLoadSingle();
             
         }

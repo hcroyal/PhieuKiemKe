@@ -117,7 +117,7 @@ namespace PhieuKiemKe
             try
             {
                 iKiemtraLogin = Global.db_BPO.KiemTraLogin(username, password);
-                strVersion = (from w in Global.db_BPO.tbl_Versions where w.IDProject == "JEMS" select w.IDVersion).FirstOrDefault();
+                strVersion = (from w in Global.db_BPO.tbl_Versions where w.IDProject == Global.StrIdProject select w.IDVersion).FirstOrDefault();
                 role = (from w in Global.db_BPO.tbl_Users where w.Username == username select w.IDRole).FirstOrDefault();
                 if (!string.IsNullOrEmpty(role))
                     role = role.ToUpper();

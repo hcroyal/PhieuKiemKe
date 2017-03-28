@@ -2,8 +2,8 @@
   <Connection Mode="AppSettings" ConnectionString="Data Source=10.10.10.248\BPOSERVER;Initial Catalog=PhieuKiemKe;Persist Security Info=True;User ID=sa" SettingsObjectName="PhieuKiemKe.Properties.Settings" SettingsPropertyName="PhieuKiemKeConnectionString" Provider="System.Data.SqlClient" />
   <Table Name="dbo.tbl_Batch" Member="tbl_Batches">
     <Type Name="tbl_Batch">
-      <Column Name="IDBatch" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="fBatchName" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="IDBatch" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="fBatchName" Type="System.String" DbType="NVarChar(100) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="fdatecreated" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="fusercreate" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
       <Column Name="fPathPicture" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
@@ -14,6 +14,7 @@
   </Table>
   <Table Name="dbo.tbl_MissImage_DESO" Member="tbl_MissImage_DESOs">
     <Type Name="tbl_MissImage_DESO">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="IdImage" Type="System.String" DbType="NVarChar(200) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="fBatchName" Type="System.String" DbType="NVarChar(100) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="UserName" Type="System.String" DbType="VarChar(30) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -24,9 +25,9 @@
   <Table Name="dbo.tbl_DESO" Member="tbl_DESOs">
     <Type Name="tbl_DESO">
       <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="IdImage" Type="System.String" DbType="NVarChar(150) NOT NULL" CanBeNull="false" />
-      <Column Name="fBatchName" Type="System.String" DbType="NVarChar(150) NOT NULL" CanBeNull="false" />
-      <Column Name="UserName" Type="System.String" DbType="NVarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="IdImage" Type="System.String" DbType="NVarChar(150) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="fBatchName" Type="System.String" DbType="NVarChar(150) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="UserName" Type="System.String" DbType="NVarChar(150) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="Truong_01" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
       <Column Name="Truong_02" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
       <Column Name="Truong_03" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
@@ -37,7 +38,7 @@
       <Column Name="Truong_08" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
       <Column Name="Truong_09" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
       <Column Name="Truong_10" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="IdPhieu" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IdPhieu" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="Dem" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="Error" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="True" Type="System.Int32" DbType="Int" CanBeNull="true" />
@@ -49,9 +50,9 @@
   <Table Name="dbo.tbl_DESO_Backup" Member="tbl_DESO_Backups">
     <Type Name="tbl_DESO_Backup">
       <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="IdImage" Type="System.String" DbType="NVarChar(150) NOT NULL" CanBeNull="false" />
-      <Column Name="fBatchName" Type="System.String" DbType="NVarChar(150) NOT NULL" CanBeNull="false" />
-      <Column Name="UserName" Type="System.String" DbType="NVarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="IdImage" Type="System.String" DbType="NVarChar(150) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="fBatchName" Type="System.String" DbType="NVarChar(150) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="UserName" Type="System.String" DbType="NVarChar(150) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="Truong_01" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
       <Column Name="Truong_02" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
       <Column Name="Truong_03" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
@@ -62,7 +63,7 @@
       <Column Name="Truong_08" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
       <Column Name="Truong_09" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
       <Column Name="Truong_10" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="IdPhieu" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IdPhieu" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="Dem" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="Error" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="True" Type="System.Int32" DbType="Int" CanBeNull="true" />
@@ -73,6 +74,7 @@
   </Table>
   <Table Name="dbo.tbl_Image" Member="tbl_Images">
     <Type Name="tbl_Image">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="idimage" Type="System.String" DbType="NVarChar(200) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="fbatchname" Type="System.String" DbType="NVarChar(100) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="UserNameDESo" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />

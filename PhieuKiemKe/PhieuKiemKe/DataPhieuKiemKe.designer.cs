@@ -30,9 +30,18 @@ namespace PhieuKiemKe
 		
     #region Extensibility Method Definitions
     partial void OnCreated();
+    partial void Inserttbl_Batch(tbl_Batch instance);
+    partial void Updatetbl_Batch(tbl_Batch instance);
+    partial void Deletetbl_Batch(tbl_Batch instance);
     partial void Inserttbl_MissImage_DESO(tbl_MissImage_DESO instance);
     partial void Updatetbl_MissImage_DESO(tbl_MissImage_DESO instance);
     partial void Deletetbl_MissImage_DESO(tbl_MissImage_DESO instance);
+    partial void Inserttbl_DESO(tbl_DESO instance);
+    partial void Updatetbl_DESO(tbl_DESO instance);
+    partial void Deletetbl_DESO(tbl_DESO instance);
+    partial void Inserttbl_DESO_Backup(tbl_DESO_Backup instance);
+    partial void Updatetbl_DESO_Backup(tbl_DESO_Backup instance);
+    partial void Deletetbl_DESO_Backup(tbl_DESO_Backup instance);
     partial void Inserttbl_Image(tbl_Image instance);
     partial void Updatetbl_Image(tbl_Image instance);
     partial void Deletetbl_Image(tbl_Image instance);
@@ -352,10 +361,12 @@ namespace PhieuKiemKe
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tbl_Batch")]
-	public partial class tbl_Batch
+	public partial class tbl_Batch : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
-		private int _IDBatch;
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private long _IDBatch;
 		
 		private string _fBatchName;
 		
@@ -371,12 +382,35 @@ namespace PhieuKiemKe
 		
 		private string _LoaiBatch;
 		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIDBatchChanging(long value);
+    partial void OnIDBatchChanged();
+    partial void OnfBatchNameChanging(string value);
+    partial void OnfBatchNameChanged();
+    partial void OnfdatecreatedChanging(System.Nullable<System.DateTime> value);
+    partial void OnfdatecreatedChanged();
+    partial void OnfusercreateChanging(string value);
+    partial void OnfusercreateChanged();
+    partial void OnfPathPictureChanging(string value);
+    partial void OnfPathPictureChanged();
+    partial void OnfLocationChanging(string value);
+    partial void OnfLocationChanged();
+    partial void OnfSoLuongAnhChanging(string value);
+    partial void OnfSoLuongAnhChanged();
+    partial void OnLoaiBatchChanging(string value);
+    partial void OnLoaiBatchChanged();
+    #endregion
+		
 		public tbl_Batch()
 		{
+			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IDBatch", AutoSync=AutoSync.Always, DbType="Int NOT NULL IDENTITY", IsDbGenerated=true)]
-		public int IDBatch
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IDBatch", AutoSync=AutoSync.OnInsert, DbType="BigInt NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public long IDBatch
 		{
 			get
 			{
@@ -386,12 +420,16 @@ namespace PhieuKiemKe
 			{
 				if ((this._IDBatch != value))
 				{
+					this.OnIDBatchChanging(value);
+					this.SendPropertyChanging();
 					this._IDBatch = value;
+					this.SendPropertyChanged("IDBatch");
+					this.OnIDBatchChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fBatchName", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fBatchName", DbType="NVarChar(100) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
 		public string fBatchName
 		{
 			get
@@ -402,7 +440,11 @@ namespace PhieuKiemKe
 			{
 				if ((this._fBatchName != value))
 				{
+					this.OnfBatchNameChanging(value);
+					this.SendPropertyChanging();
 					this._fBatchName = value;
+					this.SendPropertyChanged("fBatchName");
+					this.OnfBatchNameChanged();
 				}
 			}
 		}
@@ -418,7 +460,11 @@ namespace PhieuKiemKe
 			{
 				if ((this._fdatecreated != value))
 				{
+					this.OnfdatecreatedChanging(value);
+					this.SendPropertyChanging();
 					this._fdatecreated = value;
+					this.SendPropertyChanged("fdatecreated");
+					this.OnfdatecreatedChanged();
 				}
 			}
 		}
@@ -434,7 +480,11 @@ namespace PhieuKiemKe
 			{
 				if ((this._fusercreate != value))
 				{
+					this.OnfusercreateChanging(value);
+					this.SendPropertyChanging();
 					this._fusercreate = value;
+					this.SendPropertyChanged("fusercreate");
+					this.OnfusercreateChanged();
 				}
 			}
 		}
@@ -450,7 +500,11 @@ namespace PhieuKiemKe
 			{
 				if ((this._fPathPicture != value))
 				{
+					this.OnfPathPictureChanging(value);
+					this.SendPropertyChanging();
 					this._fPathPicture = value;
+					this.SendPropertyChanged("fPathPicture");
+					this.OnfPathPictureChanged();
 				}
 			}
 		}
@@ -466,7 +520,11 @@ namespace PhieuKiemKe
 			{
 				if ((this._fLocation != value))
 				{
+					this.OnfLocationChanging(value);
+					this.SendPropertyChanging();
 					this._fLocation = value;
+					this.SendPropertyChanged("fLocation");
+					this.OnfLocationChanged();
 				}
 			}
 		}
@@ -482,7 +540,11 @@ namespace PhieuKiemKe
 			{
 				if ((this._fSoLuongAnh != value))
 				{
+					this.OnfSoLuongAnhChanging(value);
+					this.SendPropertyChanging();
 					this._fSoLuongAnh = value;
+					this.SendPropertyChanged("fSoLuongAnh");
+					this.OnfSoLuongAnhChanged();
 				}
 			}
 		}
@@ -498,8 +560,32 @@ namespace PhieuKiemKe
 			{
 				if ((this._LoaiBatch != value))
 				{
+					this.OnLoaiBatchChanging(value);
+					this.SendPropertyChanging();
 					this._LoaiBatch = value;
+					this.SendPropertyChanged("LoaiBatch");
+					this.OnLoaiBatchChanged();
 				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
 		}
 	}
@@ -509,6 +595,8 @@ namespace PhieuKiemKe
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private long _Id;
 		
 		private string _IdImage;
 		
@@ -524,6 +612,8 @@ namespace PhieuKiemKe
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
+    partial void OnIdChanging(long value);
+    partial void OnIdChanged();
     partial void OnIdImageChanging(string value);
     partial void OnIdImageChanged();
     partial void OnfBatchNameChanging(string value);
@@ -539,6 +629,26 @@ namespace PhieuKiemKe
 		public tbl_MissImage_DESO()
 		{
 			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.Always, DbType="BigInt NOT NULL IDENTITY", IsDbGenerated=true)]
+		public long Id
+		{
+			get
+			{
+				return this._Id;
+			}
+			set
+			{
+				if ((this._Id != value))
+				{
+					this.OnIdChanging(value);
+					this.SendPropertyChanging();
+					this._Id = value;
+					this.SendPropertyChanged("Id");
+					this.OnIdChanged();
+				}
+			}
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdImage", DbType="NVarChar(200) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
@@ -663,8 +773,10 @@ namespace PhieuKiemKe
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tbl_DESO")]
-	public partial class tbl_DESO
+	public partial class tbl_DESO : INotifyPropertyChanging, INotifyPropertyChanged
 	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
 		private long _Id;
 		
@@ -708,8 +820,57 @@ namespace PhieuKiemKe
 		
 		private string _Date;
 		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIdChanging(long value);
+    partial void OnIdChanged();
+    partial void OnIdImageChanging(string value);
+    partial void OnIdImageChanged();
+    partial void OnfBatchNameChanging(string value);
+    partial void OnfBatchNameChanged();
+    partial void OnUserNameChanging(string value);
+    partial void OnUserNameChanged();
+    partial void OnTruong_01Changing(string value);
+    partial void OnTruong_01Changed();
+    partial void OnTruong_02Changing(string value);
+    partial void OnTruong_02Changed();
+    partial void OnTruong_03Changing(string value);
+    partial void OnTruong_03Changed();
+    partial void OnTruong_04Changing(string value);
+    partial void OnTruong_04Changed();
+    partial void OnTruong_05Changing(string value);
+    partial void OnTruong_05Changed();
+    partial void OnTruong_06Changing(string value);
+    partial void OnTruong_06Changed();
+    partial void OnTruong_07Changing(string value);
+    partial void OnTruong_07Changed();
+    partial void OnTruong_08Changing(string value);
+    partial void OnTruong_08Changed();
+    partial void OnTruong_09Changing(string value);
+    partial void OnTruong_09Changed();
+    partial void OnTruong_10Changing(string value);
+    partial void OnTruong_10Changed();
+    partial void OnIdPhieuChanging(int value);
+    partial void OnIdPhieuChanged();
+    partial void OnDemChanging(System.Nullable<int> value);
+    partial void OnDemChanged();
+    partial void OnErrorChanging(System.Nullable<int> value);
+    partial void OnErrorChanged();
+    partial void OnTrueChanging(System.Nullable<int> value);
+    partial void OnTrueChanged();
+    partial void OnDateInputChanging(System.Nullable<System.DateTime> value);
+    partial void OnDateInputChanged();
+    partial void OnSTTChanging(string value);
+    partial void OnSTTChanged();
+    partial void OnDateChanging(string value);
+    partial void OnDateChanged();
+    #endregion
+		
 		public tbl_DESO()
 		{
+			OnCreated();
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.Always, DbType="BigInt NOT NULL IDENTITY", IsDbGenerated=true)]
@@ -723,12 +884,16 @@ namespace PhieuKiemKe
 			{
 				if ((this._Id != value))
 				{
+					this.OnIdChanging(value);
+					this.SendPropertyChanging();
 					this._Id = value;
+					this.SendPropertyChanged("Id");
+					this.OnIdChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdImage", DbType="NVarChar(150) NOT NULL", CanBeNull=false)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdImage", DbType="NVarChar(150) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
 		public string IdImage
 		{
 			get
@@ -739,12 +904,16 @@ namespace PhieuKiemKe
 			{
 				if ((this._IdImage != value))
 				{
+					this.OnIdImageChanging(value);
+					this.SendPropertyChanging();
 					this._IdImage = value;
+					this.SendPropertyChanged("IdImage");
+					this.OnIdImageChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fBatchName", DbType="NVarChar(150) NOT NULL", CanBeNull=false)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fBatchName", DbType="NVarChar(150) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
 		public string fBatchName
 		{
 			get
@@ -755,12 +924,16 @@ namespace PhieuKiemKe
 			{
 				if ((this._fBatchName != value))
 				{
+					this.OnfBatchNameChanging(value);
+					this.SendPropertyChanging();
 					this._fBatchName = value;
+					this.SendPropertyChanged("fBatchName");
+					this.OnfBatchNameChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserName", DbType="NVarChar(150) NOT NULL", CanBeNull=false)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserName", DbType="NVarChar(150) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
 		public string UserName
 		{
 			get
@@ -771,7 +944,11 @@ namespace PhieuKiemKe
 			{
 				if ((this._UserName != value))
 				{
+					this.OnUserNameChanging(value);
+					this.SendPropertyChanging();
 					this._UserName = value;
+					this.SendPropertyChanged("UserName");
+					this.OnUserNameChanged();
 				}
 			}
 		}
@@ -787,7 +964,11 @@ namespace PhieuKiemKe
 			{
 				if ((this._Truong_01 != value))
 				{
+					this.OnTruong_01Changing(value);
+					this.SendPropertyChanging();
 					this._Truong_01 = value;
+					this.SendPropertyChanged("Truong_01");
+					this.OnTruong_01Changed();
 				}
 			}
 		}
@@ -803,7 +984,11 @@ namespace PhieuKiemKe
 			{
 				if ((this._Truong_02 != value))
 				{
+					this.OnTruong_02Changing(value);
+					this.SendPropertyChanging();
 					this._Truong_02 = value;
+					this.SendPropertyChanged("Truong_02");
+					this.OnTruong_02Changed();
 				}
 			}
 		}
@@ -819,7 +1004,11 @@ namespace PhieuKiemKe
 			{
 				if ((this._Truong_03 != value))
 				{
+					this.OnTruong_03Changing(value);
+					this.SendPropertyChanging();
 					this._Truong_03 = value;
+					this.SendPropertyChanged("Truong_03");
+					this.OnTruong_03Changed();
 				}
 			}
 		}
@@ -835,7 +1024,11 @@ namespace PhieuKiemKe
 			{
 				if ((this._Truong_04 != value))
 				{
+					this.OnTruong_04Changing(value);
+					this.SendPropertyChanging();
 					this._Truong_04 = value;
+					this.SendPropertyChanged("Truong_04");
+					this.OnTruong_04Changed();
 				}
 			}
 		}
@@ -851,7 +1044,11 @@ namespace PhieuKiemKe
 			{
 				if ((this._Truong_05 != value))
 				{
+					this.OnTruong_05Changing(value);
+					this.SendPropertyChanging();
 					this._Truong_05 = value;
+					this.SendPropertyChanged("Truong_05");
+					this.OnTruong_05Changed();
 				}
 			}
 		}
@@ -867,7 +1064,11 @@ namespace PhieuKiemKe
 			{
 				if ((this._Truong_06 != value))
 				{
+					this.OnTruong_06Changing(value);
+					this.SendPropertyChanging();
 					this._Truong_06 = value;
+					this.SendPropertyChanged("Truong_06");
+					this.OnTruong_06Changed();
 				}
 			}
 		}
@@ -883,7 +1084,11 @@ namespace PhieuKiemKe
 			{
 				if ((this._Truong_07 != value))
 				{
+					this.OnTruong_07Changing(value);
+					this.SendPropertyChanging();
 					this._Truong_07 = value;
+					this.SendPropertyChanged("Truong_07");
+					this.OnTruong_07Changed();
 				}
 			}
 		}
@@ -899,7 +1104,11 @@ namespace PhieuKiemKe
 			{
 				if ((this._Truong_08 != value))
 				{
+					this.OnTruong_08Changing(value);
+					this.SendPropertyChanging();
 					this._Truong_08 = value;
+					this.SendPropertyChanged("Truong_08");
+					this.OnTruong_08Changed();
 				}
 			}
 		}
@@ -915,7 +1124,11 @@ namespace PhieuKiemKe
 			{
 				if ((this._Truong_09 != value))
 				{
+					this.OnTruong_09Changing(value);
+					this.SendPropertyChanging();
 					this._Truong_09 = value;
+					this.SendPropertyChanged("Truong_09");
+					this.OnTruong_09Changed();
 				}
 			}
 		}
@@ -931,12 +1144,16 @@ namespace PhieuKiemKe
 			{
 				if ((this._Truong_10 != value))
 				{
+					this.OnTruong_10Changing(value);
+					this.SendPropertyChanging();
 					this._Truong_10 = value;
+					this.SendPropertyChanged("Truong_10");
+					this.OnTruong_10Changed();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdPhieu", DbType="Int NOT NULL")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdPhieu", DbType="Int NOT NULL", IsPrimaryKey=true)]
 		public int IdPhieu
 		{
 			get
@@ -947,7 +1164,11 @@ namespace PhieuKiemKe
 			{
 				if ((this._IdPhieu != value))
 				{
+					this.OnIdPhieuChanging(value);
+					this.SendPropertyChanging();
 					this._IdPhieu = value;
+					this.SendPropertyChanged("IdPhieu");
+					this.OnIdPhieuChanged();
 				}
 			}
 		}
@@ -963,7 +1184,11 @@ namespace PhieuKiemKe
 			{
 				if ((this._Dem != value))
 				{
+					this.OnDemChanging(value);
+					this.SendPropertyChanging();
 					this._Dem = value;
+					this.SendPropertyChanged("Dem");
+					this.OnDemChanged();
 				}
 			}
 		}
@@ -979,7 +1204,11 @@ namespace PhieuKiemKe
 			{
 				if ((this._Error != value))
 				{
+					this.OnErrorChanging(value);
+					this.SendPropertyChanging();
 					this._Error = value;
+					this.SendPropertyChanged("Error");
+					this.OnErrorChanged();
 				}
 			}
 		}
@@ -995,7 +1224,11 @@ namespace PhieuKiemKe
 			{
 				if ((this._True != value))
 				{
+					this.OnTrueChanging(value);
+					this.SendPropertyChanging();
 					this._True = value;
+					this.SendPropertyChanged("True");
+					this.OnTrueChanged();
 				}
 			}
 		}
@@ -1011,7 +1244,11 @@ namespace PhieuKiemKe
 			{
 				if ((this._DateInput != value))
 				{
+					this.OnDateInputChanging(value);
+					this.SendPropertyChanging();
 					this._DateInput = value;
+					this.SendPropertyChanged("DateInput");
+					this.OnDateInputChanged();
 				}
 			}
 		}
@@ -1027,7 +1264,11 @@ namespace PhieuKiemKe
 			{
 				if ((this._STT != value))
 				{
+					this.OnSTTChanging(value);
+					this.SendPropertyChanging();
 					this._STT = value;
+					this.SendPropertyChanged("STT");
+					this.OnSTTChanged();
 				}
 			}
 		}
@@ -1043,15 +1284,41 @@ namespace PhieuKiemKe
 			{
 				if ((this._Date != value))
 				{
+					this.OnDateChanging(value);
+					this.SendPropertyChanging();
 					this._Date = value;
+					this.SendPropertyChanged("Date");
+					this.OnDateChanged();
 				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
 		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tbl_DESO_Backup")]
-	public partial class tbl_DESO_Backup
+	public partial class tbl_DESO_Backup : INotifyPropertyChanging, INotifyPropertyChanged
 	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
 		private long _Id;
 		
@@ -1095,8 +1362,57 @@ namespace PhieuKiemKe
 		
 		private string _Date;
 		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIdChanging(long value);
+    partial void OnIdChanged();
+    partial void OnIdImageChanging(string value);
+    partial void OnIdImageChanged();
+    partial void OnfBatchNameChanging(string value);
+    partial void OnfBatchNameChanged();
+    partial void OnUserNameChanging(string value);
+    partial void OnUserNameChanged();
+    partial void OnTruong_01Changing(string value);
+    partial void OnTruong_01Changed();
+    partial void OnTruong_02Changing(string value);
+    partial void OnTruong_02Changed();
+    partial void OnTruong_03Changing(string value);
+    partial void OnTruong_03Changed();
+    partial void OnTruong_04Changing(string value);
+    partial void OnTruong_04Changed();
+    partial void OnTruong_05Changing(string value);
+    partial void OnTruong_05Changed();
+    partial void OnTruong_06Changing(string value);
+    partial void OnTruong_06Changed();
+    partial void OnTruong_07Changing(string value);
+    partial void OnTruong_07Changed();
+    partial void OnTruong_08Changing(string value);
+    partial void OnTruong_08Changed();
+    partial void OnTruong_09Changing(string value);
+    partial void OnTruong_09Changed();
+    partial void OnTruong_10Changing(string value);
+    partial void OnTruong_10Changed();
+    partial void OnIdPhieuChanging(int value);
+    partial void OnIdPhieuChanged();
+    partial void OnDemChanging(System.Nullable<int> value);
+    partial void OnDemChanged();
+    partial void OnErrorChanging(System.Nullable<int> value);
+    partial void OnErrorChanged();
+    partial void OnTrueChanging(System.Nullable<int> value);
+    partial void OnTrueChanged();
+    partial void OnDateInputChanging(System.Nullable<System.DateTime> value);
+    partial void OnDateInputChanged();
+    partial void OnSTTChanging(string value);
+    partial void OnSTTChanged();
+    partial void OnDateChanging(string value);
+    partial void OnDateChanged();
+    #endregion
+		
 		public tbl_DESO_Backup()
 		{
+			OnCreated();
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.Always, DbType="BigInt NOT NULL IDENTITY", IsDbGenerated=true)]
@@ -1110,12 +1426,16 @@ namespace PhieuKiemKe
 			{
 				if ((this._Id != value))
 				{
+					this.OnIdChanging(value);
+					this.SendPropertyChanging();
 					this._Id = value;
+					this.SendPropertyChanged("Id");
+					this.OnIdChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdImage", DbType="NVarChar(150) NOT NULL", CanBeNull=false)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdImage", DbType="NVarChar(150) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
 		public string IdImage
 		{
 			get
@@ -1126,12 +1446,16 @@ namespace PhieuKiemKe
 			{
 				if ((this._IdImage != value))
 				{
+					this.OnIdImageChanging(value);
+					this.SendPropertyChanging();
 					this._IdImage = value;
+					this.SendPropertyChanged("IdImage");
+					this.OnIdImageChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fBatchName", DbType="NVarChar(150) NOT NULL", CanBeNull=false)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fBatchName", DbType="NVarChar(150) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
 		public string fBatchName
 		{
 			get
@@ -1142,12 +1466,16 @@ namespace PhieuKiemKe
 			{
 				if ((this._fBatchName != value))
 				{
+					this.OnfBatchNameChanging(value);
+					this.SendPropertyChanging();
 					this._fBatchName = value;
+					this.SendPropertyChanged("fBatchName");
+					this.OnfBatchNameChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserName", DbType="NVarChar(150) NOT NULL", CanBeNull=false)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserName", DbType="NVarChar(150) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
 		public string UserName
 		{
 			get
@@ -1158,7 +1486,11 @@ namespace PhieuKiemKe
 			{
 				if ((this._UserName != value))
 				{
+					this.OnUserNameChanging(value);
+					this.SendPropertyChanging();
 					this._UserName = value;
+					this.SendPropertyChanged("UserName");
+					this.OnUserNameChanged();
 				}
 			}
 		}
@@ -1174,7 +1506,11 @@ namespace PhieuKiemKe
 			{
 				if ((this._Truong_01 != value))
 				{
+					this.OnTruong_01Changing(value);
+					this.SendPropertyChanging();
 					this._Truong_01 = value;
+					this.SendPropertyChanged("Truong_01");
+					this.OnTruong_01Changed();
 				}
 			}
 		}
@@ -1190,7 +1526,11 @@ namespace PhieuKiemKe
 			{
 				if ((this._Truong_02 != value))
 				{
+					this.OnTruong_02Changing(value);
+					this.SendPropertyChanging();
 					this._Truong_02 = value;
+					this.SendPropertyChanged("Truong_02");
+					this.OnTruong_02Changed();
 				}
 			}
 		}
@@ -1206,7 +1546,11 @@ namespace PhieuKiemKe
 			{
 				if ((this._Truong_03 != value))
 				{
+					this.OnTruong_03Changing(value);
+					this.SendPropertyChanging();
 					this._Truong_03 = value;
+					this.SendPropertyChanged("Truong_03");
+					this.OnTruong_03Changed();
 				}
 			}
 		}
@@ -1222,7 +1566,11 @@ namespace PhieuKiemKe
 			{
 				if ((this._Truong_04 != value))
 				{
+					this.OnTruong_04Changing(value);
+					this.SendPropertyChanging();
 					this._Truong_04 = value;
+					this.SendPropertyChanged("Truong_04");
+					this.OnTruong_04Changed();
 				}
 			}
 		}
@@ -1238,7 +1586,11 @@ namespace PhieuKiemKe
 			{
 				if ((this._Truong_05 != value))
 				{
+					this.OnTruong_05Changing(value);
+					this.SendPropertyChanging();
 					this._Truong_05 = value;
+					this.SendPropertyChanged("Truong_05");
+					this.OnTruong_05Changed();
 				}
 			}
 		}
@@ -1254,7 +1606,11 @@ namespace PhieuKiemKe
 			{
 				if ((this._Truong_06 != value))
 				{
+					this.OnTruong_06Changing(value);
+					this.SendPropertyChanging();
 					this._Truong_06 = value;
+					this.SendPropertyChanged("Truong_06");
+					this.OnTruong_06Changed();
 				}
 			}
 		}
@@ -1270,7 +1626,11 @@ namespace PhieuKiemKe
 			{
 				if ((this._Truong_07 != value))
 				{
+					this.OnTruong_07Changing(value);
+					this.SendPropertyChanging();
 					this._Truong_07 = value;
+					this.SendPropertyChanged("Truong_07");
+					this.OnTruong_07Changed();
 				}
 			}
 		}
@@ -1286,7 +1646,11 @@ namespace PhieuKiemKe
 			{
 				if ((this._Truong_08 != value))
 				{
+					this.OnTruong_08Changing(value);
+					this.SendPropertyChanging();
 					this._Truong_08 = value;
+					this.SendPropertyChanged("Truong_08");
+					this.OnTruong_08Changed();
 				}
 			}
 		}
@@ -1302,7 +1666,11 @@ namespace PhieuKiemKe
 			{
 				if ((this._Truong_09 != value))
 				{
+					this.OnTruong_09Changing(value);
+					this.SendPropertyChanging();
 					this._Truong_09 = value;
+					this.SendPropertyChanged("Truong_09");
+					this.OnTruong_09Changed();
 				}
 			}
 		}
@@ -1318,12 +1686,16 @@ namespace PhieuKiemKe
 			{
 				if ((this._Truong_10 != value))
 				{
+					this.OnTruong_10Changing(value);
+					this.SendPropertyChanging();
 					this._Truong_10 = value;
+					this.SendPropertyChanged("Truong_10");
+					this.OnTruong_10Changed();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdPhieu", DbType="Int NOT NULL")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdPhieu", DbType="Int NOT NULL", IsPrimaryKey=true)]
 		public int IdPhieu
 		{
 			get
@@ -1334,7 +1706,11 @@ namespace PhieuKiemKe
 			{
 				if ((this._IdPhieu != value))
 				{
+					this.OnIdPhieuChanging(value);
+					this.SendPropertyChanging();
 					this._IdPhieu = value;
+					this.SendPropertyChanged("IdPhieu");
+					this.OnIdPhieuChanged();
 				}
 			}
 		}
@@ -1350,7 +1726,11 @@ namespace PhieuKiemKe
 			{
 				if ((this._Dem != value))
 				{
+					this.OnDemChanging(value);
+					this.SendPropertyChanging();
 					this._Dem = value;
+					this.SendPropertyChanged("Dem");
+					this.OnDemChanged();
 				}
 			}
 		}
@@ -1366,7 +1746,11 @@ namespace PhieuKiemKe
 			{
 				if ((this._Error != value))
 				{
+					this.OnErrorChanging(value);
+					this.SendPropertyChanging();
 					this._Error = value;
+					this.SendPropertyChanged("Error");
+					this.OnErrorChanged();
 				}
 			}
 		}
@@ -1382,7 +1766,11 @@ namespace PhieuKiemKe
 			{
 				if ((this._True != value))
 				{
+					this.OnTrueChanging(value);
+					this.SendPropertyChanging();
 					this._True = value;
+					this.SendPropertyChanged("True");
+					this.OnTrueChanged();
 				}
 			}
 		}
@@ -1398,7 +1786,11 @@ namespace PhieuKiemKe
 			{
 				if ((this._DateInput != value))
 				{
+					this.OnDateInputChanging(value);
+					this.SendPropertyChanging();
 					this._DateInput = value;
+					this.SendPropertyChanged("DateInput");
+					this.OnDateInputChanged();
 				}
 			}
 		}
@@ -1414,7 +1806,11 @@ namespace PhieuKiemKe
 			{
 				if ((this._STT != value))
 				{
+					this.OnSTTChanging(value);
+					this.SendPropertyChanging();
 					this._STT = value;
+					this.SendPropertyChanged("STT");
+					this.OnSTTChanged();
 				}
 			}
 		}
@@ -1430,8 +1826,32 @@ namespace PhieuKiemKe
 			{
 				if ((this._Date != value))
 				{
+					this.OnDateChanging(value);
+					this.SendPropertyChanging();
 					this._Date = value;
+					this.SendPropertyChanged("Date");
+					this.OnDateChanged();
 				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
 		}
 	}
@@ -1441,6 +1861,8 @@ namespace PhieuKiemKe
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private long _Id;
 		
 		private string _idimage;
 		
@@ -1462,6 +1884,8 @@ namespace PhieuKiemKe
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
+    partial void OnIdChanging(long value);
+    partial void OnIdChanged();
     partial void OnidimageChanging(string value);
     partial void OnidimageChanged();
     partial void OnfbatchnameChanging(string value);
@@ -1483,6 +1907,26 @@ namespace PhieuKiemKe
 		public tbl_Image()
 		{
 			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.Always, DbType="BigInt NOT NULL IDENTITY", IsDbGenerated=true)]
+		public long Id
+		{
+			get
+			{
+				return this._Id;
+			}
+			set
+			{
+				if ((this._Id != value))
+				{
+					this.OnIdChanging(value);
+					this.SendPropertyChanging();
+					this._Id = value;
+					this.SendPropertyChanged("Id");
+					this.OnIdChanged();
+				}
+			}
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idimage", DbType="NVarChar(200) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]

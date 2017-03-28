@@ -1,41 +1,41 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 12, 9.375" name="DataPhieuKiemKe">
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 12, 9.5" name="DataPhieuKiemKe">
   <DataContextMoniker Name="/DataPhieuKiemKeDataContext" />
   <nestedChildShapes>
-    <classShape Id="01d68063-973f-4f08-a3a7-1533cfb3c233" absoluteBounds="0.75, 0.75, 2, 2.3478011067708335">
+    <classShape Id="48446ce5-e9e7-4a44-8107-2b37ed3174a9" absoluteBounds="0.75, 0.75, 2, 2.3478011067708335">
       <DataClassMoniker Name="/DataPhieuKiemKeDataContext/tbl_Batch" />
       <nestedChildShapes>
-        <elementListCompartment Id="3bac2aa0-9a14-46de-b130-6ede1bfbf33d" absoluteBounds="0.765, 1.21, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="c87a2292-a6c7-4246-9e2a-7b5f0f105311" absoluteBounds="0.765, 1.21, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="2d8ff55e-9614-497c-ad01-a1a6d19d5a0b" absoluteBounds="3.75, 0.75, 2, 1.7708968098958331">
+    <classShape Id="1eecb97e-8f22-4153-89cb-57f6ec29da06" absoluteBounds="3.75, 0.75, 2, 1.9631982421875">
       <DataClassMoniker Name="/DataPhieuKiemKeDataContext/tbl_MissImage_DESO" />
       <nestedChildShapes>
-        <elementListCompartment Id="ece6bd5b-2b79-4365-a968-0f352e77c856" absoluteBounds="3.765, 1.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="62174c08-429f-4be4-9b9d-455ba06c2dec" absoluteBounds="3.765, 1.21, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="740a967f-7a42-4574-9f4d-1b4d881b95b2" absoluteBounds="3.75, 3.75, 2, 4.8477197265624987">
+    <classShape Id="a7b1735a-f686-491c-819e-1bfadd16ca6b" absoluteBounds="3.75, 3.75, 2, 4.8477197265624987">
       <DataClassMoniker Name="/DataPhieuKiemKeDataContext/tbl_DESO" />
       <nestedChildShapes>
-        <elementListCompartment Id="d038fabc-e61d-4c91-bba5-3af98fde43d9" absoluteBounds="3.765, 4.21, 1.9700000000000002, 4.2877197265625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="39bb1a70-a109-4ea1-96e3-370cf4f123e1" absoluteBounds="3.765, 4.21, 1.9700000000000002, 4.2877197265625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="8ec00aed-3b17-459c-aad1-e50eda9a1c51" absoluteBounds="6.75, 0.75, 2, 4.8477197265625">
+    <classShape Id="8b4c6d77-9b39-4beb-9ca5-cfde6475b771" absoluteBounds="6.75, 0.75, 2, 4.8477197265625">
       <DataClassMoniker Name="/DataPhieuKiemKeDataContext/tbl_DESO_Backup" />
       <nestedChildShapes>
-        <elementListCompartment Id="9af131b0-2d6d-4559-9104-c5bdebef0d77" absoluteBounds="6.765, 1.21, 1.9700000000000002, 4.2877197265625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="2770f5d7-6180-41eb-84f2-2a7253451172" absoluteBounds="6.765, 1.21, 1.9700000000000002, 4.2877197265625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="b4347121-7af3-4f36-ab15-af0b3126d3f6" absoluteBounds="6.75, 6.75, 2, 2.3478011067708344">
+    <classShape Id="f3408d77-4319-4ea8-9bf6-b31b60e99585" absoluteBounds="6.75, 6.75, 2, 2.5401025390624996">
       <DataClassMoniker Name="/DataPhieuKiemKeDataContext/tbl_Image" />
       <nestedChildShapes>
-        <elementListCompartment Id="1e6e6be2-c18f-48e1-bb41-bf89173a4a6b" absoluteBounds="6.765, 7.21, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="980e498f-a2ec-4fa7-a838-9b4cd9716127" absoluteBounds="6.765, 7.21, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="7ed00f0d-4ca6-41f2-8c30-71b9793a7a0f" absoluteBounds="9.75, 0.75, 2, 1.9631982421875003">
+    <classShape Id="bc2d544b-1373-4793-be2d-78a7d46e6656" absoluteBounds="9.75, 0.75, 2, 1.9631982421875003">
       <DataClassMoniker Name="/DataPhieuKiemKeDataContext/tbl_MissCheck_DESO" />
       <nestedChildShapes>
-        <elementListCompartment Id="c97a4f22-cff2-4757-9272-12e8bb431ee8" absoluteBounds="9.765, 1.21, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="b679f1cd-e863-410d-a1df-a74ed5d252d5" absoluteBounds="9.765, 1.21, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
   </nestedChildShapes>
