@@ -45,5 +45,10 @@ namespace PhieuKiemKe
         {
             new frm_ChangeZoom().ShowDialog();
         }
+
+        private void btn_QuanLyBatch_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            new frm_ManagerBatch().ShowDialog();
+        }
     }
 }

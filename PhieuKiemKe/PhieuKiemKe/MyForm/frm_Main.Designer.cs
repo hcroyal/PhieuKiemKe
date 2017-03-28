@@ -28,25 +28,24 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
-            this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
-            this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
-            this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
-            this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
+            this.barManager1 = new DevExpress.XtraBars.BarManager();
             this.bar2 = new DevExpress.XtraBars.Bar();
             this.barSubItem1 = new DevExpress.XtraBars.BarSubItem();
-            this.barSubItem2 = new DevExpress.XtraBars.BarSubItem();
-            this.barSubItem3 = new DevExpress.XtraBars.BarSubItem();
-            this.btn_ZoomImage = new DevExpress.XtraBars.BarButtonItem();
             this.btn_Logout = new DevExpress.XtraBars.BarButtonItem();
             this.btn_Exit = new DevExpress.XtraBars.BarButtonItem();
+            this.barSubItem2 = new DevExpress.XtraBars.BarSubItem();
             this.btn_QuanLyBatch = new DevExpress.XtraBars.BarButtonItem();
             this.btn_QuanLyUser = new DevExpress.XtraBars.BarButtonItem();
             this.btn_Check = new DevExpress.XtraBars.BarButtonItem();
             this.btn_NangSuat = new DevExpress.XtraBars.BarButtonItem();
             this.btn_TienDo = new DevExpress.XtraBars.BarButtonItem();
             this.btn_XuatExcel = new DevExpress.XtraBars.BarButtonItem();
+            this.btn_ZoomImage = new DevExpress.XtraBars.BarButtonItem();
+            this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
+            this.barSubItem3 = new DevExpress.XtraBars.BarSubItem();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.lb_SoHinhLamDuoc = new DevExpress.XtraEditors.LabelControl();
             this.lb_SoHinhConLai = new DevExpress.XtraEditors.LabelControl();
@@ -92,6 +91,102 @@
             this.barManager1.MainMenu = this.bar2;
             this.barManager1.MaxItemId = 13;
             // 
+            // bar2
+            // 
+            this.bar2.BarName = "Main menu";
+            this.bar2.DockCol = 0;
+            this.bar2.DockRow = 0;
+            this.bar2.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
+            this.bar2.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.barSubItem1),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barSubItem2),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btn_ZoomImage)});
+            this.bar2.OptionsBar.DrawDragBorder = false;
+            this.bar2.OptionsBar.MultiLine = true;
+            this.bar2.OptionsBar.UseWholeRow = true;
+            this.bar2.Text = "Main menu";
+            // 
+            // barSubItem1
+            // 
+            this.barSubItem1.Caption = "Menu";
+            this.barSubItem1.Id = 1;
+            this.barSubItem1.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.btn_Logout),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btn_Exit)});
+            this.barSubItem1.Name = "barSubItem1";
+            // 
+            // btn_Logout
+            // 
+            this.btn_Logout.Caption = "&Logout";
+            this.btn_Logout.Id = 5;
+            this.btn_Logout.Name = "btn_Logout";
+            this.btn_Logout.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_Logout_ItemClick);
+            // 
+            // btn_Exit
+            // 
+            this.btn_Exit.Caption = "&Exit";
+            this.btn_Exit.Id = 6;
+            this.btn_Exit.Name = "btn_Exit";
+            this.btn_Exit.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_Exit_ItemClick);
+            // 
+            // barSubItem2
+            // 
+            this.barSubItem2.Caption = "Quản Lý";
+            this.barSubItem2.Id = 2;
+            this.barSubItem2.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.btn_QuanLyBatch),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btn_QuanLyUser),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btn_Check),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btn_NangSuat),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btn_TienDo),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btn_XuatExcel)});
+            this.barSubItem2.Name = "barSubItem2";
+            // 
+            // btn_QuanLyBatch
+            // 
+            this.btn_QuanLyBatch.Caption = "Quản lý &Batch";
+            this.btn_QuanLyBatch.Id = 7;
+            this.btn_QuanLyBatch.Name = "btn_QuanLyBatch";
+            this.btn_QuanLyBatch.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_QuanLyBatch_ItemClick);
+            // 
+            // btn_QuanLyUser
+            // 
+            this.btn_QuanLyUser.Caption = "Quản lý &User";
+            this.btn_QuanLyUser.Id = 8;
+            this.btn_QuanLyUser.Name = "btn_QuanLyUser";
+            this.btn_QuanLyUser.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_QuanLyUser_ItemClick);
+            // 
+            // btn_Check
+            // 
+            this.btn_Check.Caption = "&Check";
+            this.btn_Check.Id = 9;
+            this.btn_Check.Name = "btn_Check";
+            // 
+            // btn_NangSuat
+            // 
+            this.btn_NangSuat.Caption = "&Năng suất";
+            this.btn_NangSuat.Id = 10;
+            this.btn_NangSuat.Name = "btn_NangSuat";
+            // 
+            // btn_TienDo
+            // 
+            this.btn_TienDo.Caption = "&Tiến độ";
+            this.btn_TienDo.Id = 11;
+            this.btn_TienDo.Name = "btn_TienDo";
+            // 
+            // btn_XuatExcel
+            // 
+            this.btn_XuatExcel.Caption = "Xuất &Excel";
+            this.btn_XuatExcel.Id = 12;
+            this.btn_XuatExcel.Name = "btn_XuatExcel";
+            // 
+            // btn_ZoomImage
+            // 
+            this.btn_ZoomImage.Caption = "ZoomImage";
+            this.btn_ZoomImage.Id = 4;
+            this.btn_ZoomImage.Name = "btn_ZoomImage";
+            this.btn_ZoomImage.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_ZoomImage_ItemClick);
+            // 
             // barDockControlTop
             // 
             this.barDockControlTop.CausesValidation = false;
@@ -124,106 +219,11 @@
             this.barDockControlRight.Manager = this.barManager1;
             this.barDockControlRight.Size = new System.Drawing.Size(0, 519);
             // 
-            // bar2
-            // 
-            this.bar2.BarName = "Main menu";
-            this.bar2.DockCol = 0;
-            this.bar2.DockRow = 0;
-            this.bar2.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
-            this.bar2.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.barSubItem1),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barSubItem2),
-            new DevExpress.XtraBars.LinkPersistInfo(this.btn_ZoomImage)});
-            this.bar2.OptionsBar.DrawDragBorder = false;
-            this.bar2.OptionsBar.MultiLine = true;
-            this.bar2.OptionsBar.UseWholeRow = true;
-            this.bar2.Text = "Main menu";
-            // 
-            // barSubItem1
-            // 
-            this.barSubItem1.Caption = "Menu";
-            this.barSubItem1.Id = 1;
-            this.barSubItem1.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.btn_Logout),
-            new DevExpress.XtraBars.LinkPersistInfo(this.btn_Exit)});
-            this.barSubItem1.Name = "barSubItem1";
-            // 
-            // barSubItem2
-            // 
-            this.barSubItem2.Caption = "Quản Lý";
-            this.barSubItem2.Id = 2;
-            this.barSubItem2.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.btn_QuanLyBatch),
-            new DevExpress.XtraBars.LinkPersistInfo(this.btn_QuanLyUser),
-            new DevExpress.XtraBars.LinkPersistInfo(this.btn_Check),
-            new DevExpress.XtraBars.LinkPersistInfo(this.btn_NangSuat),
-            new DevExpress.XtraBars.LinkPersistInfo(this.btn_TienDo),
-            new DevExpress.XtraBars.LinkPersistInfo(this.btn_XuatExcel)});
-            this.barSubItem2.Name = "barSubItem2";
-            // 
             // barSubItem3
             // 
             this.barSubItem3.Caption = "barSubItem3";
             this.barSubItem3.Id = 3;
             this.barSubItem3.Name = "barSubItem3";
-            // 
-            // btn_ZoomImage
-            // 
-            this.btn_ZoomImage.Caption = "ZoomImage";
-            this.btn_ZoomImage.Id = 4;
-            this.btn_ZoomImage.Name = "btn_ZoomImage";
-            this.btn_ZoomImage.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_ZoomImage_ItemClick);
-            // 
-            // btn_Logout
-            // 
-            this.btn_Logout.Caption = "&Logout";
-            this.btn_Logout.Id = 5;
-            this.btn_Logout.Name = "btn_Logout";
-            this.btn_Logout.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_Logout_ItemClick);
-            // 
-            // btn_Exit
-            // 
-            this.btn_Exit.Caption = "&Exit";
-            this.btn_Exit.Id = 6;
-            this.btn_Exit.Name = "btn_Exit";
-            this.btn_Exit.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_Exit_ItemClick);
-            // 
-            // btn_QuanLyBatch
-            // 
-            this.btn_QuanLyBatch.Caption = "Quản lý &Batch";
-            this.btn_QuanLyBatch.Id = 7;
-            this.btn_QuanLyBatch.Name = "btn_QuanLyBatch";
-            // 
-            // btn_QuanLyUser
-            // 
-            this.btn_QuanLyUser.Caption = "Quản lý &User";
-            this.btn_QuanLyUser.Id = 8;
-            this.btn_QuanLyUser.Name = "btn_QuanLyUser";
-            this.btn_QuanLyUser.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_QuanLyUser_ItemClick);
-            // 
-            // btn_Check
-            // 
-            this.btn_Check.Caption = "&Check";
-            this.btn_Check.Id = 9;
-            this.btn_Check.Name = "btn_Check";
-            // 
-            // btn_NangSuat
-            // 
-            this.btn_NangSuat.Caption = "&Năng suất";
-            this.btn_NangSuat.Id = 10;
-            this.btn_NangSuat.Name = "btn_NangSuat";
-            // 
-            // btn_TienDo
-            // 
-            this.btn_TienDo.Caption = "&Tiến độ";
-            this.btn_TienDo.Id = 11;
-            this.btn_TienDo.Name = "btn_TienDo";
-            // 
-            // btn_XuatExcel
-            // 
-            this.btn_XuatExcel.Caption = "Xuất &Excel";
-            this.btn_XuatExcel.Id = 12;
-            this.btn_XuatExcel.Name = "btn_XuatExcel";
             // 
             // panelControl1
             // 

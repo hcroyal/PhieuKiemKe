@@ -216,6 +216,5 @@ namespace PhieuKiemKe.MyForm
         private void radioGroup1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
-        }
-    }
+        }}
 }
