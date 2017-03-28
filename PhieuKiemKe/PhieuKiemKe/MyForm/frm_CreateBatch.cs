@@ -28,14 +28,6 @@ namespace PhieuKiemKe.MyForm
             txt_DateCreate.Text = DateTime.Now.ToShortDateString() + "  -  " + DateTime.Now.ToShortTimeString();
         }
 
-        private void btn_Browser_Click(object sender, EventArgs e)
-        {
-            if (folderBrowserDialog1.ShowDialog() == DialogResult.OK)
-            {
-                txt_PathFolder.Text = folderBrowserDialog1.SelectedPath;
-            }
-        }
-
         private void btn_BrowserImage_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(txt_BatchName.Text))
@@ -66,14 +58,9 @@ namespace PhieuKiemKe.MyForm
 
         private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
         {
-            if (_multi)
-            {
-                UpLoadMulti();
-            }
-            else
-            {
-                UpLoadSingle();
-            }
+            
+            UpLoadSingle();
+            
         }
       
         private void UpLoadSingle()
@@ -96,7 +83,7 @@ namespace PhieuKiemKe.MyForm
                         fPathPicture = txt_ImagePath.Text,
                         fLocation = txt_Location.Text,
                         fSoLuongAnh = soluonghinh.ToString(),
-                        LoaiBatch = rg_LoaiBatch.Properties.Items.Select()
+                        LoaiBatch = rg_LoaiBatch.Properties.Items[rg_LoaiBatch.SelectedIndex].Description
 
                     };
                     Global.db.tbl_Batches.InsertOnSubmit(fBatch);
@@ -131,38 +118,20 @@ namespace PhieuKiemKe.MyForm
             {
                 FileInfo fi = new FileInfo(i);
 
-                if (ck_ChiaUser.Checked)
+                tbl_Image tempImage = new tbl_Image
                 {
-                    tbl_Image tempImage = new tbl_Image
-                    {
-                        fbatchname = txt_BatchName.Text,
-                        idimage = Path.GetFileName(fi.ToString()),
-                        UserNameDESo = "Chia user",
-                        ReadImageDESo = 2,
-                        CheckedDESo = 0,
-                        TienDoDESO = "Hình chưa nhập",
-                        ReadImageDESO_Good = 0,
-                        ReadImageDESO_NotGood = 0
-                    };
-                    Global.db.tbl_Images.InsertOnSubmit(tempImage);
-                    Global.db.SubmitChanges();
-                }
-                else
-                {
-                    tbl_Image tempImage = new tbl_Image
-                    {
-                        fbatchname = txt_BatchName.Text,
-                        idimage = Path.GetFileName(fi.ToString()),
-                        ReadImageDESo = 0,
-                        CheckedDESo = 0,
-                        TienDoDESO = "Hình chưa nhập",
-                        ReadImageDESO_Good = 1,
-                        ReadImageDESO_NotGood = 1
-                    };
-                    Global.db.tbl_Images.InsertOnSubmit(tempImage);
-                    Global.db.SubmitChanges();
-                }
-                
+                    fbatchname = txt_BatchName.Text,
+                    idimage = Path.GetFileName(fi.ToString()),
+                    ReadImageDESo = 0,
+                    CheckedDESo = 0,
+                    TienDoDESO = "Hình chưa nhập",
+                    ReadImageDESO_Good = 1,
+                    ReadImageDESO_NotGood = 1
+                };
+                Global.db.tbl_Images.InsertOnSubmit(tempImage);
+                Global.db.SubmitChanges();
+
+
                 string des = temp + @"\" + Path.GetFileName(fi.ToString());
                 fi.CopyTo(des);
                 progressBarControl1.PerformStep();
@@ -175,64 +144,64 @@ namespace PhieuKiemKe.MyForm
             lb_SoLuongHinh.Text = "";
         }
 
-        private void UpLoadMulti()
-        {
-            List<string> lStrBath = new List<string>();
-            lStrBath.AddRange(Directory.GetDirectories(txt_PathFolder.Text));
-            progressBarControl1.EditValue = 0;
-            progressBarControl1.Properties.Step = 1;
-            progressBarControl1.Properties.PercentView = true;
-            progressBarControl1.Properties.Maximum = lStrBath.Count;
-            progressBarControl1.Properties.Minimum = 0;
-            foreach (string item in lStrBath)
-            {
-                var fBatch = new tbl_Batch
-                {
-                    fBatchName = new DirectoryInfo(item).Name,
-                    fusercreate = txt_UserCreate.Text,
-                    fdatecreated = DateTime.Now,
-                    fPathPicture = item,
-                    fLocation = txt_Location.Text,
-                    fSoLuongAnh = Directory.GetFiles(item).Length.ToString()
-                };
-                Global.db.tbl_Batches.InsertOnSubmit(fBatch);
-                Global.db.SubmitChanges();
+        //private void UpLoadMulti()
+        //{
+        //    List<string> lStrBath = new List<string>();
+        //    lStrBath.AddRange(Directory.GetDirectories(txt_PathFolder.Text));
+        //    progressBarControl1.EditValue = 0;
+        //    progressBarControl1.Properties.Step = 1;
+        //    progressBarControl1.Properties.PercentView = true;
+        //    progressBarControl1.Properties.Maximum = lStrBath.Count;
+        //    progressBarControl1.Properties.Minimum = 0;
+        //    foreach (string item in lStrBath)
+        //    {
+        //        var fBatch = new tbl_Batch
+        //        {
+        //            fBatchName = new DirectoryInfo(item).Name,
+        //            fusercreate = txt_UserCreate.Text,
+        //            fdatecreated = DateTime.Now,
+        //            fPathPicture = item,
+        //            fLocation = txt_Location.Text,
+        //            fSoLuongAnh = Directory.GetFiles(item).Length.ToString()
+        //        };
+        //        Global.db.tbl_Batches.InsertOnSubmit(fBatch);
+        //        Global.db.SubmitChanges();
 
-                string searchFolder = txt_PathFolder.Text + "\\" + new DirectoryInfo(item).Name;
-                var filters = new String[] { "jpg", "jpeg", "png", "gif", "tiff", "bmp" };
-                string[] tmp = GetFilesFrom(searchFolder, filters, false);
-                string temp = Global.StrPath + "\\" + new DirectoryInfo(item).Name;
-                Directory.CreateDirectory(temp);
-                string imageJPG = "";
-                foreach (string i in tmp)
-                {
-                    FileInfo fi = new FileInfo(i);
-                    tbl_Image tempImage = new tbl_Image
-                    {
-                        fbatchname = new DirectoryInfo(item).Name,
-                        idimage = Path.GetFileName(fi.ToString()),
-                        ReadImageDESo = 0,
-                        CheckedDESo = 0,
-                        TienDoDESO = "Hình chưa nhập",
-                        ReadImageDESO_Good = 0,
-                        ReadImageDESO_NotGood = 0
-                    };
-                    Global.db.tbl_Images.InsertOnSubmit(tempImage);
-                    Global.db.SubmitChanges();
-                    string des = temp + @"\" + Path.GetFileName(fi.ToString());
-                    fi.CopyTo(des);
-                    progressBarControl1.PerformStep();
-                    progressBarControl1.Update();
-                }
-                progressBarControl1.PerformStep();
-                progressBarControl1.Update();
-            }
-            MessageBox.Show("Tạo batch mới thành công!");
-            progressBarControl1.EditValue = 0;
-            txt_BatchName.Text = "";
-            txt_ImagePath.Text = "";
-            lb_SoLuongHinh.Text = "";
-        }
+        //        string searchFolder = txt_PathFolder.Text + "\\" + new DirectoryInfo(item).Name;
+        //        var filters = new String[] { "jpg", "jpeg", "png", "gif", "tiff", "bmp" };
+        //        string[] tmp = GetFilesFrom(searchFolder, filters, false);
+        //        string temp = Global.StrPath + "\\" + new DirectoryInfo(item).Name;
+        //        Directory.CreateDirectory(temp);
+        //        string imageJPG = "";
+        //        foreach (string i in tmp)
+        //        {
+        //            FileInfo fi = new FileInfo(i);
+        //            tbl_Image tempImage = new tbl_Image
+        //            {
+        //                fbatchname = new DirectoryInfo(item).Name,
+        //                idimage = Path.GetFileName(fi.ToString()),
+        //                ReadImageDESo = 0,
+        //                CheckedDESo = 0,
+        //                TienDoDESO = "Hình chưa nhập",
+        //                ReadImageDESO_Good = 0,
+        //                ReadImageDESO_NotGood = 0
+        //            };
+        //            Global.db.tbl_Images.InsertOnSubmit(tempImage);
+        //            Global.db.SubmitChanges();
+        //            string des = temp + @"\" + Path.GetFileName(fi.ToString());
+        //            fi.CopyTo(des);
+        //            progressBarControl1.PerformStep();
+        //            progressBarControl1.Update();
+        //        }
+        //        progressBarControl1.PerformStep();
+        //        progressBarControl1.Update();
+        //    }
+        //    MessageBox.Show("Tạo batch mới thành công!");
+        //    progressBarControl1.EditValue = 0;
+        //    txt_BatchName.Text = "";
+        //    txt_ImagePath.Text = "";
+        //    lb_SoLuongHinh.Text = "";
+        //}
         public static string[] GetFilesFrom(string searchFolder, string[] filters, bool isRecursive)
         {
             List<string> filesFound = new List<string>();
