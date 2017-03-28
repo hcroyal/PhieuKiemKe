@@ -69,6 +69,8 @@
             this.btn_Submit_Logout = new DevExpress.XtraEditors.SimpleButton();
             this.btn_Start_Submit = new DevExpress.XtraEditors.SimpleButton();
             this.uc_PictureBox1 = new PhieuKiemKe.MyUserControl.uc_PictureBox();
+            this.uc_AE1 = new PhieuKiemKe.MyUserControl.uc_AE();
+            this.uC_AT1 = new PhieuKiemKe.MyUserControl.UC_AT();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
@@ -76,6 +78,8 @@
             this.panelControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tabControl_Main)).BeginInit();
             this.tabControl_Main.SuspendLayout();
+            this.tp_AE_Main.SuspendLayout();
+            this.tp_AT_Main.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
             this.panelControl3.SuspendLayout();
             this.SuspendLayout();
@@ -366,9 +370,9 @@
             this.panelControl2.Controls.Add(this.tabControl_Main);
             this.panelControl2.Controls.Add(this.panelControl3);
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panelControl2.Location = new System.Drawing.Point(711, 51);
+            this.panelControl2.Location = new System.Drawing.Point(607, 51);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(351, 490);
+            this.panelControl2.Size = new System.Drawing.Size(455, 490);
             this.panelControl2.TabIndex = 5;
             // 
             // tabControl_Main
@@ -377,7 +381,7 @@
             this.tabControl_Main.Location = new System.Drawing.Point(2, 2);
             this.tabControl_Main.Name = "tabControl_Main";
             this.tabControl_Main.SelectedTabPage = this.tp_AE_Main;
-            this.tabControl_Main.Size = new System.Drawing.Size(347, 460);
+            this.tabControl_Main.Size = new System.Drawing.Size(451, 460);
             this.tabControl_Main.TabIndex = 1;
             this.tabControl_Main.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.tp_AE_Main,
@@ -385,14 +389,16 @@
             // 
             // tp_AE_Main
             // 
+            this.tp_AE_Main.Controls.Add(this.uc_AE1);
             this.tp_AE_Main.Name = "tp_AE_Main";
-            this.tp_AE_Main.Size = new System.Drawing.Size(341, 432);
+            this.tp_AE_Main.Size = new System.Drawing.Size(445, 432);
             this.tp_AE_Main.Text = "AE";
             // 
             // tp_AT_Main
             // 
+            this.tp_AT_Main.Controls.Add(this.uC_AT1);
             this.tp_AT_Main.Name = "tp_AT_Main";
-            this.tp_AT_Main.Size = new System.Drawing.Size(341, 432);
+            this.tp_AT_Main.Size = new System.Drawing.Size(445, 432);
             this.tp_AT_Main.Text = "AT";
             // 
             // panelControl3
@@ -403,7 +409,7 @@
             this.panelControl3.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panelControl3.Location = new System.Drawing.Point(2, 462);
             this.panelControl3.Name = "panelControl3";
-            this.panelControl3.Size = new System.Drawing.Size(347, 26);
+            this.panelControl3.Size = new System.Drawing.Size(451, 26);
             this.panelControl3.TabIndex = 0;
             // 
             // btn_Pause
@@ -438,8 +444,28 @@
             this.uc_PictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uc_PictureBox1.Location = new System.Drawing.Point(0, 51);
             this.uc_PictureBox1.Name = "uc_PictureBox1";
-            this.uc_PictureBox1.Size = new System.Drawing.Size(711, 490);
+            this.uc_PictureBox1.Size = new System.Drawing.Size(607, 490);
             this.uc_PictureBox1.TabIndex = 10;
+            // 
+            // uc_AE1
+            // 
+            this.uc_AE1.AutoScroll = true;
+            this.uc_AE1.AutoSize = true;
+            this.uc_AE1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uc_AE1.Location = new System.Drawing.Point(0, 0);
+            this.uc_AE1.Name = "uc_AE1";
+            this.uc_AE1.Size = new System.Drawing.Size(445, 432);
+            this.uc_AE1.TabIndex = 0;
+            // 
+            // uC_AT1
+            // 
+            this.uC_AT1.AutoScroll = true;
+            this.uC_AT1.AutoSize = true;
+            this.uC_AT1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uC_AT1.Location = new System.Drawing.Point(0, 0);
+            this.uC_AT1.Name = "uC_AT1";
+            this.uC_AT1.Size = new System.Drawing.Size(445, 432);
+            this.uC_AT1.TabIndex = 0;
             // 
             // frm_Main
             // 
@@ -467,6 +493,10 @@
             this.panelControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.tabControl_Main)).EndInit();
             this.tabControl_Main.ResumeLayout(false);
+            this.tp_AE_Main.ResumeLayout(false);
+            this.tp_AE_Main.PerformLayout();
+            this.tp_AT_Main.ResumeLayout(false);
+            this.tp_AT_Main.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).EndInit();
             this.panelControl3.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -516,6 +546,8 @@
         private DevExpress.XtraTab.XtraTabControl tabControl_Main;
         private DevExpress.XtraTab.XtraTabPage tp_AE_Main;
         private DevExpress.XtraTab.XtraTabPage tp_AT_Main;
+        private MyUserControl.uc_AE uc_AE1;
+        private MyUserControl.UC_AT uC_AT1;
     }
 }
 
