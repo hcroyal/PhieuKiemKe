@@ -13,6 +13,8 @@ namespace PhieuKiemKe
 {
     public partial class frm_Main : DevExpress.XtraEditors.XtraForm
     {
+        private bool _Flag = false;
+        private bool _Flag1 = false;
         public frm_Main()
         {
             InitializeComponent();
@@ -74,11 +76,11 @@ namespace PhieuKiemKe
                         return "Error";
                     }
                 }
-                //if (tabControl_Main.SelectedTabPage == tp_Asahi_Main)
-                //    uc_ASAHI1.txt_Truong02.Focus();
+                if (tabControl_Main.SelectedTabPage == tp_AE_Main)
+                    uC_AT1.txt_TruongSo02.Focus();
                 //else if (tabControl_Main.SelectedTabPage == tp_EIZEN_Main)
                 //    uc_EZIEN1.txt_Truong02.Focus();
-                
+
             }
             return "OK";
         }
@@ -87,33 +89,59 @@ namespace PhieuKiemKe
         {
             try
             {
-                Global.LoaiPhieu =
-                    (from w in Global.db.tbl_Batches where w.fBatchName == Global.StrBatch select w.LoaiBatch)
-                    .FirstOrDefault();
+                Global.LoaiPhieu =(from w in Global.db.tbl_Batches where w.fBatchName == Global.StrBatch select w.LoaiBatch).FirstOrDefault();
                 lb_IdImage.Text = "";
                 lb_fBatchName.Text = Global.StrBatch;
                 lb_UserName.Text = Global.StrUsername;
-                lb_TongSoHinh.Text =
-                    (from w in Global.db.tbl_Images where w.fbatchname == Global.StrBatch select w.idimage).Count()
-                    .ToString();
-                lb_SoHinhConLai.Text = (from w in Global.db.tbl_Images
-                                        where
-                                        w.ReadImageDESo < 2 && w.fbatchname == Global.StrBatch &&
+                lb_TongSoHinh.Text =(from w in Global.db.tbl_Images where w.fbatchname == Global.StrBatch select w.idimage).Count().ToString();
+                lb_SoHinhConLai.Text = (from w in Global.db.tbl_Images where w.ReadImageDESo < 2 && w.fbatchname == Global.StrBatch &&
                                         (w.UserNameDESo != Global.StrUsername || w.UserNameDESo == null || w.UserNameDESo == "")
                                         select w.idimage).Count().ToString();
                 lb_SoHinhLamDuoc.Text = (from w in Global.db.tbl_MissImage_DESOs
                                          where w.UserName == Global.StrUsername && w.fBatchName == Global.StrBatch
                                          select w.IdImage).Count().ToString();
 
-                //tp_AEON_Main.PageVisible = false;
-                //tp_Asahi_Main.PageVisible = false;
+                tp_AE_Main.PageVisible = false;
+                tp_AT_Main.PageVisible = false;
 
                 btn_quanmly.Enabled = false;
                 if (Global.StrRole == "DESO")
                 {
                     if (Global.LoaiPhieu == "AE")
+                    {
                         tp_AE_Main.PageVisible = true;
-                    else if (Global.LoaiPhieu == "EIZEN")
+                        uc_AE1.uc_AE_Rows1.txt_TruongSo09.GotFocus += Txt_TruongSo09_GotFocus;
+                        uc_AE1.uc_AE_Rows1.txt_TruongSo09.Leave += Txt_TruongSo09_Leave;
+                        uc_AE1.uc_AE_Rows2.txt_TruongSo09.GotFocus += Txt_TruongSo09_GotFocus;
+                        uc_AE1.uc_AE_Rows2.txt_TruongSo09.Leave += Txt_TruongSo09_Leave;
+                        uc_AE1.uc_AE_Rows3.txt_TruongSo09.GotFocus += Txt_TruongSo09_GotFocus;
+                        uc_AE1.uc_AE_Rows3.txt_TruongSo09.Leave += Txt_TruongSo09_Leave;
+                        uc_AE1.uc_AE_Rows4.txt_TruongSo09.GotFocus += Txt_TruongSo09_GotFocus;
+                        uc_AE1.uc_AE_Rows4.txt_TruongSo09.Leave += Txt_TruongSo09_Leave;
+                        uc_AE1.uc_AE_Rows5.txt_TruongSo09.GotFocus += Txt_TruongSo09_GotFocus;
+                        uc_AE1.uc_AE_Rows5.txt_TruongSo09.Leave += Txt_TruongSo09_Leave;
+                        uc_AE1.uc_AE_Rows6.txt_TruongSo09.GotFocus += Txt_TruongSo09_GotFocus;
+                        uc_AE1.uc_AE_Rows6.txt_TruongSo09.Leave += Txt_TruongSo09_Leave;
+                        uc_AE1.uc_AE_Rows7.txt_TruongSo09.GotFocus += Txt_TruongSo09_GotFocus;
+                        uc_AE1.uc_AE_Rows7.txt_TruongSo09.Leave += Txt_TruongSo09_Leave;
+                        uc_AE1.uc_AE_Rows8.txt_TruongSo09.GotFocus += Txt_TruongSo09_GotFocus;
+                        uc_AE1.uc_AE_Rows8.txt_TruongSo09.Leave += Txt_TruongSo09_Leave;
+                        uc_AE1.uc_AE_Rows9.txt_TruongSo09.GotFocus += Txt_TruongSo09_GotFocus;
+                        uc_AE1.uc_AE_Rows9.txt_TruongSo09.Leave += Txt_TruongSo09_Leave;
+                        uc_AE1.uc_AE_Rows10.txt_TruongSo09.GotFocus += Txt_TruongSo09_GotFocus;
+                        uc_AE1.uc_AE_Rows10.txt_TruongSo09.Leave += Txt_TruongSo09_Leave;
+
+                        uc_AE1.txt_TruongSo02.GotFocus += Txt_TruongSo02_GotFocus;
+                        uc_AE1.txt_TruongSo03.GotFocus += Txt_TruongSo02_GotFocus;
+                        uc_AE1.txt_TruongSo04.GotFocus += Txt_TruongSo02_GotFocus;
+                        uc_AE1.txt_TruongSo05.GotFocus += Txt_TruongSo02_GotFocus;
+
+                        uc_AE1.txt_TruongSo02.Leave += Txt_TruongSo02_Leave;
+                        uc_AE1.txt_TruongSo03.Leave += Txt_TruongSo02_Leave;
+                        uc_AE1.txt_TruongSo04.Leave += Txt_TruongSo02_Leave;
+                        uc_AE1.txt_TruongSo05.Leave += Txt_TruongSo02_Leave;
+                    }
+                    else if (Global.LoaiPhieu == "AT")
                         tp_AT_Main.PageVisible = true;
                 }
                 else
@@ -129,6 +157,25 @@ namespace PhieuKiemKe
                 MessageBox.Show("Lỗi Load Main: " + i.Message);
             }
         }
+
+        private void Txt_TruongSo02_GotFocus(object sender, EventArgs e)
+        {
+            _Flag1 = true;
+        }
+        private void Txt_TruongSo02_Leave(object sender, EventArgs e)
+        {
+            _Flag1 = false;
+        }
+        private void Txt_TruongSo09_Leave(object sender, EventArgs e)
+        {
+            _Flag = false;
+        }
+
+        private void Txt_TruongSo09_GotFocus(object sender, EventArgs e)
+        {
+            _Flag = true;
+        }
+
         private void btn_Start_Submit_Click(object sender, EventArgs e)
         {
             try
@@ -136,8 +183,8 @@ namespace PhieuKiemKe
                 Global.db_BPO.UpdateTimeLastRequest(Global.Strtoken);
                 //Kiểm tra token
                 var token = (from w in Global.db_BPO.tbl_TokenLogins
-                             where w.UserName == Global.StrUsername && w.IDProject == Global.StrIdProject
-                             select w.Token).FirstOrDefault();
+                    where w.UserName == Global.StrUsername && w.IDProject == Global.StrIdProject
+                    select w.Token).FirstOrDefault();
 
                 if (token != Global.Strtoken)
                 {
@@ -163,48 +210,50 @@ namespace PhieuKiemKe
                         MessageBox.Show("Không thể load hình!");
                         btn_Logout_ItemClick(null, null);
                     }
-                    //uc_AEON1.ResetData();
+                    uc_AE1.ResetData();
                     //uc_ASAHI1.ResetData();
                     btn_Start_Submit.Text = "Submit";
                     btn_Submit_Logout.Visible = true;
                 }
                 else
                 {
-                    //if (Global.StrRole == "DESO")
-                    //{
-                    //    if (tabControl_Main.SelectedTabPage == tp_Asahi_Main)
-                    //    {
-                    //        if (uc_ASAHI1.IsEmpty())
-                    //        {
-                    //            if (MessageBox.Show("Bạn đang để trống 1 hoặc nhiều trường. Bạn có muốn submit không? \r\nYes = Submit và chuyển qua hình khác<Nhấn Enter>\r\nNo = nhập lại trường trống cho hình này.<nhấn phím N>", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == System.Windows.Forms.DialogResult.No)
-                    //                return;
-                    //        }
-                    //        uc_ASAHI1.SaveData_ASAHI(lb_IdImage.Text);
-                    //    }
-                    //    else if (tabControl_Main.SelectedTabPage == tp_EIZEN_Main)
-                    //    {
-                    //        if (uc_EZIEN1.IsEmpty())
-                    //        {
-                    //            if (MessageBox.Show("Bạn đang để trống 1 hoặc nhiều trường. Bạn có muốn submit không? \r\nYes = Submit và chuyển qua hình khác<Nhấn Enter>\r\nNo = nhập lại trường trống cho hình này.<nhấn phím N>", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == System.Windows.Forms.DialogResult.No)
-                    //                return;
-                    //        }
-                    //        uc_EZIEN1.SaveData_EIZEN(lb_IdImage.Text);
-                    //    }
+                    if (Global.StrRole == "DESO")
+                    {
+                        if (tabControl_Main.SelectedTabPage == tp_AE_Main)
+                        {
+                            if (uc_AE1.IsEmpty())
+                            {
+                                if (MessageBox.Show("Bạn đang để trống nhiều trường. Bạn có muốn submit không? \r\nYes = Submit và chuyển qua hình khác<Nhấn Enter>\r\nNo = nhập lại trường trống cho hình này.<nhấn phím N>","Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) ==DialogResult.No)
+                                    return;
+                            }
+                            uc_AE1.SaveData_AE(lb_IdImage.Text);
+                        }
+                        //else if (tabControl_Main.SelectedTabPage == tp_EIZEN_Main)
+                        //{
+                        //    if (uc_EZIEN1.IsEmpty())
+                        //    {
+                        //        if (MessageBox.Show("Bạn đang để trống 1 hoặc nhiều trường. Bạn có muốn submit không? \r\nYes = Submit và chuyển qua hình khác<Nhấn Enter>\r\nNo = nhập lại trường trống cho hình này.<nhấn phím N>", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == System.Windows.Forms.DialogResult.No)
+                        //            return;
+                        //    }
+                        //    uc_EZIEN1.SaveData_EIZEN(lb_IdImage.Text);
+                        //}
 
-                    //    uc_AEON1.ResetData();
-                    //    uc_ASAHI1.ResetData();//}
-                    string temp = GetImage();
-                    if (temp == "NULL")
-                    {
-                        MessageBox.Show("Hết Hình!");
-                        btn_Logout_ItemClick(null, null);
+                        uc_AE1.ResetData();
+                        //    uc_ASAHI1.ResetData();//}
+                        string temp = GetImage();
+                        if (temp == "NULL")
+                        {
+                            MessageBox.Show("Hết Hình!");
+                            btn_Logout_ItemClick(null, null);
+                        }
+                        else if (temp == "Error")
+                        {
+                            MessageBox.Show("Không thể load hình!");
+                            btn_Logout_ItemClick(null, null);
+                        }
                     }
-                    else if (temp == "Error")
-                    {
-                        MessageBox.Show("Không thể load hình!");
-                        btn_Logout_ItemClick(null, null);}
+                    setValue();
                 }
-                setValue();
             }
             catch (Exception i)
             {
@@ -229,15 +278,15 @@ namespace PhieuKiemKe
 
                 if (Global.StrRole == "DESO")
                 {
-                    //if (tabControl_Main.SelectedTabPage == tp_Asahi_Main)
-                    //{
-                    //    if (uc_ASAHI1.IsEmpty())
-                    //    {
-                    //        if (MessageBox.Show("Bạn đang để trống 1 hoặc nhiều trường. Bạn có muốn submit không? \r\nYes = Submit và chuyển qua hình khác<Nhấn Enter>\r\nNo = nhập lại trường trống cho hình này.<nhấn phím N>", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == System.Windows.Forms.DialogResult.No)
-                    //            return;
-                    //    }
-                    //    uc_ASAHI1.SaveData_ASAHI(lb_IdImage.Text);
-                    //}
+                    if (tabControl_Main.SelectedTabPage == tp_AE_Main)
+                    {
+                        if (uc_AE1.IsEmpty())
+                        {
+                            if (MessageBox.Show("Bạn đang để trống nhiều trường. Bạn có muốn submit không? \r\nYes = Submit và chuyển qua hình khác<Nhấn Enter>\r\nNo = nhập lại trường trống cho hình này.<nhấn phím N>", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.No)
+                                return;
+                        }
+                        uc_AE1.SaveData_AE(lb_IdImage.Text);
+                    }
                     //else if (tabControl_Main.SelectedTabPage == tp_EIZEN_Main)
                     //{
                     //    if (uc_EZIEN1.IsEmpty())
@@ -247,7 +296,7 @@ namespace PhieuKiemKe
                     //    }
                     //    uc_EZIEN1.SaveData_EIZEN(lb_IdImage.Text);
                     //}
-                    
+
                 }
                 btn_Logout_ItemClick(null, null);
             }
@@ -269,6 +318,26 @@ namespace PhieuKiemKe
             {
                 new frm_FreeTime().ShowDialog();
                 Global.db_BPO.UpdateTimeFree(Global.Strtoken, Global.FreeTime);
+            }
+            if (e.KeyCode == Keys.Down && _Flag)
+            {
+                SendKeys.Send("{Tab}");
+            }
+            if (e.KeyCode == Keys.Down && _Flag1)
+            {
+                uc_AE1.uc_AE_Rows1.txt_TruongSo09.Focus();}
+
+            if (e.KeyCode == Keys.Up && _Flag)
+            {
+                SendKeys.Send("+{Tab}");
+            }
+            if (e.KeyCode == Keys.Right)
+            {
+                SendKeys.Send("{Tab}");
+            }
+            if (e.KeyCode == Keys.Left)
+            {
+                SendKeys.Send("+{Tab}");
             }
         }
 

@@ -28,59 +28,71 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textEdit3 = new DevExpress.XtraEditors.TextEdit();
-            this.textEdit2 = new DevExpress.XtraEditors.TextEdit();
-            this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
+            this.txt_TruongSo05 = new DevExpress.XtraEditors.TextEdit();
+            this.txt_TruongSo04 = new DevExpress.XtraEditors.TextEdit();
+            this.txt_TruongSo03 = new DevExpress.XtraEditors.TextEdit();
             this.txt_TruongSo02 = new DevExpress.XtraEditors.TextEdit();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.uc_AE_Rows1 = new PhieuKiemKe.MyUserControl.uc_AE_Rows();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
-            this.uc_AE_Rows2 = new PhieuKiemKe.MyUserControl.uc_AE_Rows();
-            this.uc_AE_Rows3 = new PhieuKiemKe.MyUserControl.uc_AE_Rows();
-            this.uc_AE_Rows4 = new PhieuKiemKe.MyUserControl.uc_AE_Rows();
-            this.uc_AE_Rows5 = new PhieuKiemKe.MyUserControl.uc_AE_Rows();
-            this.uc_AE_Rows6 = new PhieuKiemKe.MyUserControl.uc_AE_Rows();
-            this.uc_AE_Rows7 = new PhieuKiemKe.MyUserControl.uc_AE_Rows();
+            this.uc_AE_Rows10 = new PhieuKiemKe.MyUserControl.uc_AE_Rows();
             this.uc_AE_Rows8 = new PhieuKiemKe.MyUserControl.uc_AE_Rows();
             this.uc_AE_Rows9 = new PhieuKiemKe.MyUserControl.uc_AE_Rows();
-            this.uc_AE_Rows10 = new PhieuKiemKe.MyUserControl.uc_AE_Rows();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
+            this.uc_AE_Rows4 = new PhieuKiemKe.MyUserControl.uc_AE_Rows();
+            this.uc_AE_Rows7 = new PhieuKiemKe.MyUserControl.uc_AE_Rows();
+            this.uc_AE_Rows6 = new PhieuKiemKe.MyUserControl.uc_AE_Rows();
+            this.uc_AE_Rows3 = new PhieuKiemKe.MyUserControl.uc_AE_Rows();
+            this.uc_AE_Rows5 = new PhieuKiemKe.MyUserControl.uc_AE_Rows();
+            this.uc_AE_Rows2 = new PhieuKiemKe.MyUserControl.uc_AE_Rows();
+            this.uc_AE_Rows1 = new PhieuKiemKe.MyUserControl.uc_AE_Rows();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_TruongSo05.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_TruongSo04.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_TruongSo03.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_TruongSo02.Properties)).BeginInit();
             this.SuspendLayout();
             // 
-            // textEdit3
+            // txt_TruongSo05
             // 
-            this.textEdit3.Location = new System.Drawing.Point(280, 5);
-            this.textEdit3.Name = "textEdit3";
-            this.textEdit3.Size = new System.Drawing.Size(162, 20);
-            this.textEdit3.TabIndex = 3;
+            this.txt_TruongSo05.Location = new System.Drawing.Point(280, 5);
+            this.txt_TruongSo05.Name = "txt_TruongSo05";
+            this.txt_TruongSo05.Properties.Mask.EditMask = "[0-9?]+";
+            this.txt_TruongSo05.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
+            this.txt_TruongSo05.Size = new System.Drawing.Size(162, 20);
+            this.txt_TruongSo05.TabIndex = 3;
+            this.txt_TruongSo05.EditValueChanged += new System.EventHandler(this.txt_TruongSo05_EditValueChanged);
             // 
-            // textEdit2
+            // txt_TruongSo04
             // 
-            this.textEdit2.Location = new System.Drawing.Point(158, 5);
-            this.textEdit2.Name = "textEdit2";
-            this.textEdit2.Size = new System.Drawing.Size(100, 20);
-            this.textEdit2.TabIndex = 2;
+            this.txt_TruongSo04.Location = new System.Drawing.Point(158, 5);
+            this.txt_TruongSo04.Name = "txt_TruongSo04";
+            this.txt_TruongSo04.Properties.Mask.EditMask = "[0-9?]+";
+            this.txt_TruongSo04.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
+            this.txt_TruongSo04.Size = new System.Drawing.Size(100, 20);
+            this.txt_TruongSo04.TabIndex = 2;
+            this.txt_TruongSo04.EditValueChanged += new System.EventHandler(this.txt_TruongSo04_EditValueChanged);
             // 
-            // textEdit1
+            // txt_TruongSo03
             // 
-            this.textEdit1.Location = new System.Drawing.Point(96, 5);
-            this.textEdit1.Name = "textEdit1";
-            this.textEdit1.Size = new System.Drawing.Size(40, 20);
-            this.textEdit1.TabIndex = 1;
+            this.txt_TruongSo03.Location = new System.Drawing.Point(96, 5);
+            this.txt_TruongSo03.Name = "txt_TruongSo03";
+            this.txt_TruongSo03.Properties.Mask.EditMask = "[0-9?]+";
+            this.txt_TruongSo03.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
+            this.txt_TruongSo03.Size = new System.Drawing.Size(40, 20);
+            this.txt_TruongSo03.TabIndex = 1;
+            this.txt_TruongSo03.EditValueChanged += new System.EventHandler(this.txt_TruongSo03_EditValueChanged);
             // 
             // txt_TruongSo02
             // 
             this.txt_TruongSo02.Location = new System.Drawing.Point(17, 5);
             this.txt_TruongSo02.Name = "txt_TruongSo02";
+            this.txt_TruongSo02.Properties.Mask.EditMask = "[0-9?]+";
+            this.txt_TruongSo02.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
             this.txt_TruongSo02.Size = new System.Drawing.Size(60, 20);
             this.txt_TruongSo02.TabIndex = 0;
+            this.txt_TruongSo02.EditValueChanged += new System.EventHandler(this.txt_TruongSo02_EditValueChanged);
             // 
             // labelControl4
             // 
@@ -114,14 +126,6 @@
             this.labelControl1.TabIndex = 9;
             this.labelControl1.Text = "2.";
             // 
-            // uc_AE_Rows1
-            // 
-            this.uc_AE_Rows1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.uc_AE_Rows1.Location = new System.Drawing.Point(17, 49);
-            this.uc_AE_Rows1.Name = "uc_AE_Rows1";
-            this.uc_AE_Rows1.Size = new System.Drawing.Size(207, 24);
-            this.uc_AE_Rows1.TabIndex = 4;
-            // 
             // labelControl5
             // 
             this.labelControl5.Location = new System.Drawing.Point(26, 32);
@@ -138,53 +142,13 @@
             this.labelControl6.TabIndex = 9;
             this.labelControl6.Text = "9. Số lượng";
             // 
-            // uc_AE_Rows2
+            // uc_AE_Rows10
             // 
-            this.uc_AE_Rows2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.uc_AE_Rows2.Location = new System.Drawing.Point(17, 72);
-            this.uc_AE_Rows2.Name = "uc_AE_Rows2";
-            this.uc_AE_Rows2.Size = new System.Drawing.Size(207, 24);
-            this.uc_AE_Rows2.TabIndex = 5;
-            // 
-            // uc_AE_Rows3
-            // 
-            this.uc_AE_Rows3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.uc_AE_Rows3.Location = new System.Drawing.Point(17, 95);
-            this.uc_AE_Rows3.Name = "uc_AE_Rows3";
-            this.uc_AE_Rows3.Size = new System.Drawing.Size(207, 24);
-            this.uc_AE_Rows3.TabIndex = 6;
-            // 
-            // uc_AE_Rows4
-            // 
-            this.uc_AE_Rows4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.uc_AE_Rows4.Location = new System.Drawing.Point(17, 118);
-            this.uc_AE_Rows4.Name = "uc_AE_Rows4";
-            this.uc_AE_Rows4.Size = new System.Drawing.Size(207, 24);
-            this.uc_AE_Rows4.TabIndex = 7;
-            // 
-            // uc_AE_Rows5
-            // 
-            this.uc_AE_Rows5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.uc_AE_Rows5.Location = new System.Drawing.Point(17, 141);
-            this.uc_AE_Rows5.Name = "uc_AE_Rows5";
-            this.uc_AE_Rows5.Size = new System.Drawing.Size(207, 24);
-            this.uc_AE_Rows5.TabIndex = 8;
-            // 
-            // uc_AE_Rows6
-            // 
-            this.uc_AE_Rows6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.uc_AE_Rows6.Location = new System.Drawing.Point(17, 164);
-            this.uc_AE_Rows6.Name = "uc_AE_Rows6";
-            this.uc_AE_Rows6.Size = new System.Drawing.Size(207, 24);
-            this.uc_AE_Rows6.TabIndex = 9;
-            // 
-            // uc_AE_Rows7
-            // 
-            this.uc_AE_Rows7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.uc_AE_Rows7.Location = new System.Drawing.Point(17, 187);
-            this.uc_AE_Rows7.Name = "uc_AE_Rows7";
-            this.uc_AE_Rows7.Size = new System.Drawing.Size(207, 24);
-            this.uc_AE_Rows7.TabIndex = 10;
+            this.uc_AE_Rows10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.uc_AE_Rows10.Location = new System.Drawing.Point(17, 256);
+            this.uc_AE_Rows10.Name = "uc_AE_Rows10";
+            this.uc_AE_Rows10.Size = new System.Drawing.Size(207, 24);
+            this.uc_AE_Rows10.TabIndex = 13;
             // 
             // uc_AE_Rows8
             // 
@@ -202,13 +166,61 @@
             this.uc_AE_Rows9.Size = new System.Drawing.Size(207, 24);
             this.uc_AE_Rows9.TabIndex = 12;
             // 
-            // uc_AE_Rows10
+            // uc_AE_Rows4
             // 
-            this.uc_AE_Rows10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.uc_AE_Rows10.Location = new System.Drawing.Point(17, 256);
-            this.uc_AE_Rows10.Name = "uc_AE_Rows10";
-            this.uc_AE_Rows10.Size = new System.Drawing.Size(207, 24);
-            this.uc_AE_Rows10.TabIndex = 13;
+            this.uc_AE_Rows4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.uc_AE_Rows4.Location = new System.Drawing.Point(17, 118);
+            this.uc_AE_Rows4.Name = "uc_AE_Rows4";
+            this.uc_AE_Rows4.Size = new System.Drawing.Size(207, 24);
+            this.uc_AE_Rows4.TabIndex = 7;
+            // 
+            // uc_AE_Rows7
+            // 
+            this.uc_AE_Rows7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.uc_AE_Rows7.Location = new System.Drawing.Point(17, 187);
+            this.uc_AE_Rows7.Name = "uc_AE_Rows7";
+            this.uc_AE_Rows7.Size = new System.Drawing.Size(207, 24);
+            this.uc_AE_Rows7.TabIndex = 10;
+            // 
+            // uc_AE_Rows6
+            // 
+            this.uc_AE_Rows6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.uc_AE_Rows6.Location = new System.Drawing.Point(17, 164);
+            this.uc_AE_Rows6.Name = "uc_AE_Rows6";
+            this.uc_AE_Rows6.Size = new System.Drawing.Size(207, 24);
+            this.uc_AE_Rows6.TabIndex = 9;
+            // 
+            // uc_AE_Rows3
+            // 
+            this.uc_AE_Rows3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.uc_AE_Rows3.Location = new System.Drawing.Point(17, 95);
+            this.uc_AE_Rows3.Name = "uc_AE_Rows3";
+            this.uc_AE_Rows3.Size = new System.Drawing.Size(207, 24);
+            this.uc_AE_Rows3.TabIndex = 6;
+            // 
+            // uc_AE_Rows5
+            // 
+            this.uc_AE_Rows5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.uc_AE_Rows5.Location = new System.Drawing.Point(17, 141);
+            this.uc_AE_Rows5.Name = "uc_AE_Rows5";
+            this.uc_AE_Rows5.Size = new System.Drawing.Size(207, 24);
+            this.uc_AE_Rows5.TabIndex = 8;
+            // 
+            // uc_AE_Rows2
+            // 
+            this.uc_AE_Rows2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.uc_AE_Rows2.Location = new System.Drawing.Point(17, 72);
+            this.uc_AE_Rows2.Name = "uc_AE_Rows2";
+            this.uc_AE_Rows2.Size = new System.Drawing.Size(207, 24);
+            this.uc_AE_Rows2.TabIndex = 5;
+            // 
+            // uc_AE_Rows1
+            // 
+            this.uc_AE_Rows1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.uc_AE_Rows1.Location = new System.Drawing.Point(17, 49);
+            this.uc_AE_Rows1.Name = "uc_AE_Rows1";
+            this.uc_AE_Rows1.Size = new System.Drawing.Size(207, 24);
+            this.uc_AE_Rows1.TabIndex = 4;
             // 
             // uc_AE
             // 
@@ -224,9 +236,9 @@
             this.Controls.Add(this.uc_AE_Rows5);
             this.Controls.Add(this.uc_AE_Rows2);
             this.Controls.Add(this.uc_AE_Rows1);
-            this.Controls.Add(this.textEdit3);
-            this.Controls.Add(this.textEdit2);
-            this.Controls.Add(this.textEdit1);
+            this.Controls.Add(this.txt_TruongSo05);
+            this.Controls.Add(this.txt_TruongSo04);
+            this.Controls.Add(this.txt_TruongSo03);
             this.Controls.Add(this.txt_TruongSo02);
             this.Controls.Add(this.labelControl4);
             this.Controls.Add(this.labelControl3);
@@ -236,9 +248,10 @@
             this.Controls.Add(this.labelControl1);
             this.Name = "uc_AE";
             this.Size = new System.Drawing.Size(446, 288);
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
+            this.Load += new System.EventHandler(this.uc_AE_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.txt_TruongSo05.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_TruongSo04.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_TruongSo03.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_TruongSo02.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -247,25 +260,25 @@
 
         #endregion
 
-        public DevExpress.XtraEditors.TextEdit textEdit3;
-        public DevExpress.XtraEditors.TextEdit textEdit2;
-        public DevExpress.XtraEditors.TextEdit textEdit1;
+        public DevExpress.XtraEditors.TextEdit txt_TruongSo05;
+        public DevExpress.XtraEditors.TextEdit txt_TruongSo04;
+        public DevExpress.XtraEditors.TextEdit txt_TruongSo03;
         public DevExpress.XtraEditors.TextEdit txt_TruongSo02;
         public DevExpress.XtraEditors.LabelControl labelControl4;
         public DevExpress.XtraEditors.LabelControl labelControl3;
         public DevExpress.XtraEditors.LabelControl labelControl2;
         public DevExpress.XtraEditors.LabelControl labelControl1;
-        private uc_AE_Rows uc_AE_Rows1;
         public DevExpress.XtraEditors.LabelControl labelControl5;
         public DevExpress.XtraEditors.LabelControl labelControl6;
-        private uc_AE_Rows uc_AE_Rows2;
-        private uc_AE_Rows uc_AE_Rows3;
-        private uc_AE_Rows uc_AE_Rows4;
-        private uc_AE_Rows uc_AE_Rows5;
-        private uc_AE_Rows uc_AE_Rows6;
-        private uc_AE_Rows uc_AE_Rows7;
-        private uc_AE_Rows uc_AE_Rows8;
-        private uc_AE_Rows uc_AE_Rows9;
-        private uc_AE_Rows uc_AE_Rows10;
+        public uc_AE_Rows uc_AE_Rows1;
+        public uc_AE_Rows uc_AE_Rows2;
+        public uc_AE_Rows uc_AE_Rows3;
+        public uc_AE_Rows uc_AE_Rows4;
+        public uc_AE_Rows uc_AE_Rows5;
+        public uc_AE_Rows uc_AE_Rows6;
+        public uc_AE_Rows uc_AE_Rows7;
+        public uc_AE_Rows uc_AE_Rows8;
+        public uc_AE_Rows uc_AE_Rows9;
+        public uc_AE_Rows uc_AE_Rows10;
     }
 }

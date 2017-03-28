@@ -365,6 +365,13 @@ namespace PhieuKiemKe
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), fbatchname, username);
 			return ((ISingleResult<LayHinhMoi_DeSoResult>)(result.ReturnValue));
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Insert_AE")]
+		public int Insert_AE([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdImage", DbType="NVarChar(255)")] string idImage, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(255)")] string fBatchName, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="UserName", DbType="NVarChar(255)")] string userName, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_02", DbType="NVarChar(255)")] string truong_02, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_03", DbType="NVarChar(255)")] string truong_03, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_04", DbType="NVarChar(255)")] string truong_04, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_05", DbType="NVarChar(255)")] string truong_05, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_09", DbType="NVarChar(255)")] string truong_09, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(255)")] string idphieu)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idImage, fBatchName, userName, truong_02, truong_03, truong_04, truong_05, truong_09, idphieu);
+			return ((int)(result.ReturnValue));
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tbl_Batch")]
