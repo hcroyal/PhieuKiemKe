@@ -10,5 +10,8 @@
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
       <Value Profile="(Default)">Data Source=10.10.10.248\BPOSERVER;Initial Catalog=DatabaseDataEntryBPO;Persist Security Info=True;User ID=sa;Password=BPO@DN#2013</Value>
     </Setting>
+    <Setting Name="ZoomImage" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">40</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

@@ -37,6 +37,7 @@
     <Reference Include="DevExpress.Data.v16.2" />
     <Reference Include="DevExpress.Utils.v16.2" />
     <Reference Include="DevExpress.Sparkline.v16.2.Core" />
+    <Reference Include="DevExpress.XtraBars.v16.2, Version=16.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraEditors.v16.2" />
     <Reference Include="DevExpress.Printing.v16.2.Core" />
     <Reference Include="DevExpress.XtraGrid.v16.2, Version=16.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
@@ -67,6 +68,12 @@
       <DependentUpon>DataEntry.dbml</DependentUpon>
     </Compile>
     <Compile Include="Global.cs" />
+    <Compile Include="MyForm\frm_ChangeZoom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MyForm\frm_ChangeZoom.designer.cs">
+      <DependentUpon>frm_ChangeZoom.cs</DependentUpon>
+    </Compile>
     <Compile Include="MyForm\frm_CreateBatch.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -97,12 +104,21 @@
     <Compile Include="MyForm\frm_User.designer.cs">
       <DependentUpon>frm_User.cs</DependentUpon>
     </Compile>
+    <Compile Include="MyUserControl\uc_PictureBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyUserControl\uc_PictureBox.designer.cs">
+      <DependentUpon>uc_PictureBox.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <None Include="app.config" />
     <None Include="DataEntry.dbml.layout">
       <DependentUpon>DataEntry.dbml</DependentUpon>
     </None>
+    <EmbeddedResource Include="MyForm\frm_ChangeZoom.resx">
+      <DependentUpon>frm_ChangeZoom.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MyForm\frm_CreateBatch.resx">
       <DependentUpon>frm_CreateBatch.cs</DependentUpon>
     </EmbeddedResource>
@@ -114,6 +130,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MyForm\frm_ManagerBatch.resx">
       <DependentUpon>frm_ManagerBatch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyUserControl\uc_PictureBox.resx">
+      <DependentUpon>uc_PictureBox.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="MyForm\frm_User.resx">
@@ -147,9 +166,7 @@
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="MyUserControl\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
