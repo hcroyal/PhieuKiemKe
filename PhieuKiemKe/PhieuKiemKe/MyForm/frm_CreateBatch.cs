@@ -75,38 +75,7 @@ namespace PhieuKiemKe.MyForm
                 UpLoadSingle();
             }
         }
-
-        private void txt_BatchName_EditValueChanged(object sender, EventArgs e)
-        {
-            if (!string.IsNullOrEmpty(txt_BatchName.Text))
-            {
-                _multi = false;
-                txt_PathFolder.Enabled = false;
-                btn_Browser.Enabled = false;
-            }
-            else
-            {
-                txt_PathFolder.Enabled = true;
-                btn_Browser.Enabled = true;
-            }
-        }
-
-        private void txt_PathFolder_EditValueChanged(object sender, EventArgs e)
-        {
-            if (!string.IsNullOrEmpty(txt_PathFolder.Text))
-            {
-                _multi = true;
-                txt_BatchName.Enabled = false;
-                txt_ImagePath.Enabled = false;
-                btn_BrowserImage.Enabled = false;
-            }
-            else
-            {
-                txt_BatchName.Enabled = true;
-                txt_ImagePath.Enabled = true;
-                btn_BrowserImage.Enabled = true;
-            }
-        }
+      
         private void UpLoadSingle()
         {
             progressBarControl1.EditValue = 0;
@@ -119,39 +88,23 @@ namespace PhieuKiemKe.MyForm
             {
                 if (string.IsNullOrEmpty(batch))
                 {
-                    if (ck_ChiaUser.Checked)
+                    var fBatch = new tbl_Batch
                     {
-                        var fBatch = new tbl_Batch
-                        {
-                            fBatchName = txt_BatchName.Text,
-                            fusercreate = txt_UserCreate.Text,
-                            fdatecreated = DateTime.Now,
-                            fPathPicture = txt_ImagePath.Text,
-                            fLocation = txt_Location.Text,
-                            fSoLuongAnh = soluonghinh.ToString(),
-                            ChiaUser = true
-                            
-                        };
-                        Global.db.tbl_Batches.InsertOnSubmit(fBatch);
-                        Global.db.SubmitChanges();
+                        fBatchName = txt_BatchName.Text,
+                        fusercreate = txt_UserCreate.Text,
+                        fdatecreated = DateTime.Now,
+                        fPathPicture = txt_ImagePath.Text,
+                        fLocation = txt_Location.Text,
+                        fSoLuongAnh = soluonghinh.ToString(),
+                        LoaiBatch = rg_LoaiBatch.Properties.Items.Select()
 
-                    }
-                    else
-                    {
-                        var fBatch = new tbl_Batch
-                        {
-                            fBatchName = txt_BatchName.Text,
-                            fusercreate = txt_UserCreate.Text,
-                            fdatecreated = DateTime.Now,
-                            fPathPicture = txt_ImagePath.Text,
-                            fLocation = txt_Location.Text,
-                            fSoLuongAnh = soluonghinh.ToString(),
-                            ChiaUser = false
-                        };
-                        Global.db.tbl_Batches.InsertOnSubmit(fBatch);
-                        Global.db.SubmitChanges();
-                    }
-                   
+                    };
+                    Global.db.tbl_Batches.InsertOnSubmit(fBatch);
+                    Global.db.SubmitChanges();
+
+
+
+
                 }
                 else
                 {
@@ -289,6 +242,11 @@ namespace PhieuKiemKe.MyForm
                 filesFound.AddRange(Directory.GetFiles(searchFolder, $"*.{filter}", searchOption));
             }
             return filesFound.ToArray();
+        }
+
+        private void radioGroup1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

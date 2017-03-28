@@ -66,6 +66,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataEntry.dbml</DependentUpon>
     </Compile>
+    <Compile Include="DataPhieuKiemKe.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataPhieuKiemKe.dbml</DependentUpon>
+    </Compile>
     <Compile Include="Global.cs" />
     <Compile Include="MyForm\frm_CreateBatch.cs">
       <SubType>Form</SubType>
@@ -133,6 +138,14 @@
       <Generator>MSLinqToSQLGenerator</Generator>
       <LastGenOutput>DataEntry.designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+    </None>
+    <None Include="DataPhieuKiemKe.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>DataPhieuKiemKe.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataPhieuKiemKe.dbml.layout">
+      <DependentUpon>DataPhieuKiemKe.dbml</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

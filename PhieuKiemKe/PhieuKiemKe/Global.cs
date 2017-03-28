@@ -8,7 +8,7 @@ namespace PhieuKiemKe
     internal class Global
     {
         public static DataEntryDataContext db_BPO = new DataEntryDataContext();
-        //public static DataJEMSDataContext db = new DataJEMSDataContext();
+        public static DataPhieuKiemKeDataContext db = new DataPhieuKiemKeDataContext();
         public static string StrMachine = "";
         public static string StrUserWindow = "";
         public static string StrIpAddress = "";
@@ -21,7 +21,7 @@ namespace PhieuKiemKe
         public static string StrPath = @"\\10.10.10.248\PhieuKiemKe$";
         public static string Webservice = "http://10.10.10.248:8888/PhieuKiemKe/";
         public static string LoaiPhieu = "";
-        public static string StrIdProject = "JEMS";
+        public static string StrIdProject = "PhieuKiemKe";
         public static int FreeTime = 0;
     }
 }
