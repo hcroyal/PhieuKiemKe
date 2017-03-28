@@ -119,7 +119,7 @@ namespace PhieuKiemKe.MyForm
                 txt_FullName.Text = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "FullName") != null ? gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "FullName").ToString() : "";
 
             }
-            catch (Exception i)
+            catch
             {
 
             }

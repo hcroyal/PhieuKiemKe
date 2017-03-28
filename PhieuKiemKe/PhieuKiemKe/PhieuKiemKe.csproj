@@ -109,6 +109,30 @@
     <Compile Include="MyForm\frm_User.designer.cs">
       <DependentUpon>frm_User.cs</DependentUpon>
     </Compile>
+    <Compile Include="MyUserControl\uc_AE.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyUserControl\uc_AE.Designer.cs">
+      <DependentUpon>uc_AE.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyUserControl\uc_AE_Rows.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyUserControl\uc_AE_Rows.Designer.cs">
+      <DependentUpon>uc_AE_Rows.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyUserControl\uc_AT.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyUserControl\uc_AT.Designer.cs">
+      <DependentUpon>uc_AT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyUserControl\uc_AT_Rows.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyUserControl\uc_AT_Rows.Designer.cs">
+      <DependentUpon>uc_AT_Rows.cs</DependentUpon>
+    </Compile>
     <Compile Include="MyUserControl\uc_PictureBox.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -135,6 +159,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MyForm\frm_ManagerBatch.resx">
       <DependentUpon>frm_ManagerBatch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyUserControl\uc_AE.resx">
+      <DependentUpon>uc_AE.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyUserControl\uc_AE_Rows.resx">
+      <DependentUpon>uc_AE_Rows.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyUserControl\uc_AT.resx">
+      <DependentUpon>uc_AT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyUserControl\uc_AT_Rows.resx">
+      <DependentUpon>uc_AT_Rows.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MyUserControl\uc_PictureBox.resx">
       <DependentUpon>uc_PictureBox.cs</DependentUpon>

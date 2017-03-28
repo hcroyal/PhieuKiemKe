@@ -13,9 +13,8 @@ namespace PhieuKiemKe.MyForm
 {
     public partial class frm_CreateBatch : DevExpress.XtraEditors.XtraForm
     {
-        private string _csvpath = "";
+
         private string[] _lFileNames;
-        private bool _multi;
         private int soluonghinh;
         public frm_CreateBatch()
         {
