@@ -111,10 +111,10 @@ namespace PhieuKiemKe
                 btn_quanmly.Enabled = false;
                 if (Global.StrRole == "DESO")
                 {
-                    //if (Global.LoaiPhieu == "ASAHI")
-                    //    tp_Asahi_Main.PageVisible = true;
-                    //else if (Global.LoaiPhieu == "EIZEN")
-                    //    tp_EIZEN_Main.PageVisible = true;
+                    if (Global.LoaiPhieu == "AE")
+                        tp_AE_Main.PageVisible = true;
+                    else if (Global.LoaiPhieu == "EIZEN")
+                        tp_AT_Main.PageVisible = true;
                 }
                 else
                 {
