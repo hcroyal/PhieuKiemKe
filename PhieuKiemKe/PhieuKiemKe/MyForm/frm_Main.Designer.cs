@@ -30,13 +30,13 @@
         {
             this.SuspendLayout();
             // 
-            // Form1
+            // frm_Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(632, 278);
             this.Name = "frm_Main";
-            this.Text = "Form1";
+            this.Text = "Phiếu kiểm kê";
             this.ResumeLayout(false);
 
         }
