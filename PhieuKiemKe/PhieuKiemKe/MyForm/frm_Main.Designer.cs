@@ -63,14 +63,14 @@
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.tabControl_Main = new DevExpress.XtraTab.XtraTabControl();
             this.tp_AE_Main = new DevExpress.XtraTab.XtraTabPage();
+            this.uc_AE1 = new PhieuKiemKe.MyUserControl.uc_AE();
             this.tp_AT_Main = new DevExpress.XtraTab.XtraTabPage();
+            this.uC_AT1 = new PhieuKiemKe.MyUserControl.UC_AT();
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
             this.btn_Pause = new DevExpress.XtraEditors.SimpleButton();
             this.btn_Submit_Logout = new DevExpress.XtraEditors.SimpleButton();
             this.btn_Start_Submit = new DevExpress.XtraEditors.SimpleButton();
             this.uc_PictureBox1 = new PhieuKiemKe.MyUserControl.uc_PictureBox();
-            this.uc_AE1 = new PhieuKiemKe.MyUserControl.uc_AE();
-            this.uC_AT1 = new PhieuKiemKe.MyUserControl.UC_AT();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
@@ -394,12 +394,32 @@
             this.tp_AE_Main.Size = new System.Drawing.Size(445, 432);
             this.tp_AE_Main.Text = "AE";
             // 
+            // uc_AE1
+            // 
+            this.uc_AE1.AutoScroll = true;
+            this.uc_AE1.AutoSize = true;
+            this.uc_AE1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uc_AE1.Location = new System.Drawing.Point(0, 0);
+            this.uc_AE1.Name = "uc_AE1";
+            this.uc_AE1.Size = new System.Drawing.Size(445, 432);
+            this.uc_AE1.TabIndex = 0;
+            // 
             // tp_AT_Main
             // 
             this.tp_AT_Main.Controls.Add(this.uC_AT1);
             this.tp_AT_Main.Name = "tp_AT_Main";
             this.tp_AT_Main.Size = new System.Drawing.Size(445, 432);
             this.tp_AT_Main.Text = "AT";
+            // 
+            // uC_AT1
+            // 
+            this.uC_AT1.AutoScroll = true;
+            this.uC_AT1.AutoSize = true;
+            this.uC_AT1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uC_AT1.Location = new System.Drawing.Point(0, 0);
+            this.uC_AT1.Name = "uC_AT1";
+            this.uC_AT1.Size = new System.Drawing.Size(445, 432);
+            this.uC_AT1.TabIndex = 0;
             // 
             // panelControl3
             // 
@@ -447,26 +467,6 @@
             this.uc_PictureBox1.Size = new System.Drawing.Size(607, 490);
             this.uc_PictureBox1.TabIndex = 10;
             // 
-            // uc_AE1
-            // 
-            this.uc_AE1.AutoScroll = true;
-            this.uc_AE1.AutoSize = true;
-            this.uc_AE1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uc_AE1.Location = new System.Drawing.Point(0, 0);
-            this.uc_AE1.Name = "uc_AE1";
-            this.uc_AE1.Size = new System.Drawing.Size(445, 432);
-            this.uc_AE1.TabIndex = 0;
-            // 
-            // uC_AT1
-            // 
-            this.uC_AT1.AutoScroll = true;
-            this.uC_AT1.AutoSize = true;
-            this.uC_AT1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uC_AT1.Location = new System.Drawing.Point(0, 0);
-            this.uC_AT1.Name = "uC_AT1";
-            this.uC_AT1.Size = new System.Drawing.Size(445, 432);
-            this.uC_AT1.TabIndex = 0;
-            // 
             // frm_Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -482,6 +482,7 @@
             this.KeyPreview = true;
             this.Name = "frm_Main";
             this.Text = "Phiếu kiểm kê";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frm_Main_FormClosing);
             this.Load += new System.EventHandler(this.frm_Main_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frm_Main_KeyDown);

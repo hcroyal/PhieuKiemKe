@@ -38,8 +38,11 @@
             // 
             this.txt_TruongSo09.Location = new System.Drawing.Point(31, 1);
             this.txt_TruongSo09.Name = "txt_TruongSo09";
+            this.txt_TruongSo09.Properties.Mask.EditMask = "[0-9?T]+";
+            this.txt_TruongSo09.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
             this.txt_TruongSo09.Size = new System.Drawing.Size(173, 20);
             this.txt_TruongSo09.TabIndex = 0;
+            this.txt_TruongSo09.EditValueChanged += new System.EventHandler(this.txt_TruongSo09_EditValueChanged);
             // 
             // txt_STT
             // 
@@ -58,6 +61,7 @@
             this.Controls.Add(this.txt_TruongSo09);
             this.Name = "uc_AE_Rows";
             this.Size = new System.Drawing.Size(207, 24);
+            this.Load += new System.EventHandler(this.uc_AE_Rows_Load);
             ((System.ComponentModel.ISupportInitialize)(this.txt_TruongSo09.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_STT.Properties)).EndInit();
             this.ResumeLayout(false);
@@ -65,8 +69,7 @@
         }
 
         #endregion
-
-        private DevExpress.XtraEditors.TextEdit txt_TruongSo09;
+        public DevExpress.XtraEditors.TextEdit txt_TruongSo09;
         public DevExpress.XtraEditors.TextEdit txt_STT;
     }
 }
