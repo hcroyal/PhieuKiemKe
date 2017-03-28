@@ -35,11 +35,63 @@ namespace PhieuKiemKe.MyUserControl
             uc_AT_Rows8.txt_TruongSo08.KeyUp += Txt_TruongSo08_KeyUp6;
             uc_AT_Rows9.txt_TruongSo08.KeyUp += Txt_TruongSo08_KeyUp7;
             uc_AT_Rows10.txt_TruongSo08.KeyUp += Txt_TruongSo08_KeyUp8;
-            
-            
+
+            uc_AT_Rows1.txt_TruongSo09.KeyDown += Txt_TruongSo09_KeyDown;
+            uc_AT_Rows2.txt_TruongSo09.KeyDown += Txt_TruongSo09_KeyDown1;
+            uc_AT_Rows3.txt_TruongSo09.KeyDown += Txt_TruongSo09_KeyDown1;
+            uc_AT_Rows4.txt_TruongSo09.KeyDown += Txt_TruongSo09_KeyDown1;
+            uc_AT_Rows5.txt_TruongSo09.KeyDown += Txt_TruongSo09_KeyDown1;
+            uc_AT_Rows6.txt_TruongSo09.KeyDown += Txt_TruongSo09_KeyDown1;
+            uc_AT_Rows7.txt_TruongSo09.KeyDown += Txt_TruongSo09_KeyDown1;
+            uc_AT_Rows8.txt_TruongSo09.KeyDown += Txt_TruongSo09_KeyDown1;
+            uc_AT_Rows9.txt_TruongSo09.KeyDown += Txt_TruongSo09_KeyDown1;
+            uc_AT_Rows10.txt_TruongSo09.KeyDown += Txt_TruongSo09_KeyDown2;
+
+
+
         }
 
-     
+        private void Txt_TruongSo09_KeyDown2(object sender, KeyEventArgs e)
+        {
+            
+            if (e.KeyCode == Keys.Up)
+            {
+                SendKeys.Send("+{Tab}");
+                SendKeys.Send("+{Tab}");
+                SendKeys.Send("+{Tab}");
+                SendKeys.Send("+{Tab}");
+            }
+        }
+
+        private void Txt_TruongSo09_KeyDown1(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Down)
+            {
+                SendKeys.Send("{Tab}");
+                SendKeys.Send("{Tab}");
+                SendKeys.Send("{Tab}");
+                SendKeys.Send("{Tab}");
+            }
+            else if (e.KeyCode == Keys.Up)
+            {
+                SendKeys.Send("+{Tab}");
+                SendKeys.Send("+{Tab}");
+                SendKeys.Send("+{Tab}");
+                SendKeys.Send("+{Tab}");
+            }
+
+        }
+        private void Txt_TruongSo09_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Down)
+            {
+                SendKeys.Send("{Tab}");
+                SendKeys.Send("{Tab}");
+                SendKeys.Send("{Tab}");
+                SendKeys.Send("{Tab}");
+            }
+
+        }
 
         private void Txt_TruongSo08_KeyUp8(object sender, KeyEventArgs e)
         {
