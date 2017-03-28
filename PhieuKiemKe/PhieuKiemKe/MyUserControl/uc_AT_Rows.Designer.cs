@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             this.txt_STT = new DevExpress.XtraEditors.TextEdit();
-            this.txt_TruongSo07 = new DevExpress.XtraEditors.TextEdit();
             this.txt_TruongSo10 = new DevExpress.XtraEditors.TextEdit();
             this.txt_TruongSo08 = new DevExpress.XtraEditors.TextEdit();
-            this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
+            this.txt_TruongSo09 = new DevExpress.XtraEditors.TextEdit();
+            this.txt_TruongSo07 = new DevExpress.XtraEditors.ComboBoxEdit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_STT.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_TruongSo07.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_TruongSo10.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_TruongSo08.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_TruongSo09.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_TruongSo07.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // txt_STT
@@ -47,13 +47,6 @@
             this.txt_STT.Size = new System.Drawing.Size(30, 20);
             this.txt_STT.TabIndex = 0;
             this.txt_STT.TabStop = false;
-            // 
-            // txt_TruongSo07
-            // 
-            this.txt_TruongSo07.Location = new System.Drawing.Point(30, 1);
-            this.txt_TruongSo07.Name = "txt_TruongSo07";
-            this.txt_TruongSo07.Size = new System.Drawing.Size(200, 20);
-            this.txt_TruongSo07.TabIndex = 1;
             // 
             // txt_TruongSo10
             // 
@@ -69,30 +62,42 @@
             this.txt_TruongSo08.Size = new System.Drawing.Size(100, 20);
             this.txt_TruongSo08.TabIndex = 3;
             // 
-            // textEdit1
+            // txt_TruongSo09
             // 
-            this.textEdit1.Location = new System.Drawing.Point(357, 1);
-            this.textEdit1.Name = "textEdit1";
-            this.textEdit1.Size = new System.Drawing.Size(78, 20);
-            this.textEdit1.TabIndex = 4;
+            this.txt_TruongSo09.Location = new System.Drawing.Point(357, 1);
+            this.txt_TruongSo09.Name = "txt_TruongSo09";
+            this.txt_TruongSo09.Size = new System.Drawing.Size(78, 20);
+            this.txt_TruongSo09.TabIndex = 4;
+            // 
+            // txt_TruongSo07
+            // 
+            this.txt_TruongSo07.Location = new System.Drawing.Point(30, 1);
+            this.txt_TruongSo07.Name = "txt_TruongSo07";
+            this.txt_TruongSo07.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
+            this.txt_TruongSo07.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.txt_TruongSo07.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txt_TruongSo07.Size = new System.Drawing.Size(200, 20);
+            this.txt_TruongSo07.TabIndex = 1;
             // 
             // uc_AT_Rows
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Controls.Add(this.textEdit1);
+            this.Controls.Add(this.txt_TruongSo07);
+            this.Controls.Add(this.txt_TruongSo09);
             this.Controls.Add(this.txt_TruongSo08);
             this.Controls.Add(this.txt_TruongSo10);
-            this.Controls.Add(this.txt_TruongSo07);
             this.Controls.Add(this.txt_STT);
             this.Name = "uc_AT_Rows";
             this.Size = new System.Drawing.Size(436, 21);
+            this.Load += new System.EventHandler(this.uc_AT_Rows_Load);
             ((System.ComponentModel.ISupportInitialize)(this.txt_STT.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_TruongSo07.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_TruongSo10.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_TruongSo08.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_TruongSo09.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_TruongSo07.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -100,9 +105,9 @@
         #endregion
 
         public DevExpress.XtraEditors.TextEdit txt_STT;
-        public DevExpress.XtraEditors.TextEdit txt_TruongSo07;
         public DevExpress.XtraEditors.TextEdit txt_TruongSo10;
         public DevExpress.XtraEditors.TextEdit txt_TruongSo08;
-        public DevExpress.XtraEditors.TextEdit textEdit1;
+        public DevExpress.XtraEditors.TextEdit txt_TruongSo09;
+        public DevExpress.XtraEditors.ComboBoxEdit txt_TruongSo07;
     }
 }

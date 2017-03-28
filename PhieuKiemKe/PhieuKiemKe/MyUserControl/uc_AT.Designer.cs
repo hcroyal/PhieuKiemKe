@@ -32,11 +32,11 @@
             this.txt_TruongSo02 = new DevExpress.XtraEditors.TextEdit();
             this.uc_AT_Rows1 = new PhieuKiemKe.MyUserControl.uc_AT_Rows();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
-            this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
+            this.txt_TruongSo03 = new DevExpress.XtraEditors.TextEdit();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
-            this.textEdit2 = new DevExpress.XtraEditors.TextEdit();
+            this.txt_TruongSo04 = new DevExpress.XtraEditors.TextEdit();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
-            this.textEdit3 = new DevExpress.XtraEditors.TextEdit();
+            this.txt_TruongSo05 = new DevExpress.XtraEditors.TextEdit();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
@@ -52,9 +52,9 @@
             this.uc_AT_Rows9 = new PhieuKiemKe.MyUserControl.uc_AT_Rows();
             this.uc_AT_Rows10 = new PhieuKiemKe.MyUserControl.uc_AT_Rows();
             ((System.ComponentModel.ISupportInitialize)(this.txt_TruongSo02.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_TruongSo03.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_TruongSo04.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_TruongSo05.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // labelControl1
@@ -88,12 +88,12 @@
             this.labelControl2.TabIndex = 0;
             this.labelControl2.Text = "3.";
             // 
-            // textEdit1
+            // txt_TruongSo03
             // 
-            this.textEdit1.Location = new System.Drawing.Point(95, 3);
-            this.textEdit1.Name = "textEdit1";
-            this.textEdit1.Size = new System.Drawing.Size(40, 20);
-            this.textEdit1.TabIndex = 1;
+            this.txt_TruongSo03.Location = new System.Drawing.Point(95, 3);
+            this.txt_TruongSo03.Name = "txt_TruongSo03";
+            this.txt_TruongSo03.Size = new System.Drawing.Size(40, 20);
+            this.txt_TruongSo03.TabIndex = 1;
             // 
             // labelControl3
             // 
@@ -103,12 +103,12 @@
             this.labelControl3.TabIndex = 0;
             this.labelControl3.Text = "4.";
             // 
-            // textEdit2
+            // txt_TruongSo04
             // 
-            this.textEdit2.Location = new System.Drawing.Point(157, 3);
-            this.textEdit2.Name = "textEdit2";
-            this.textEdit2.Size = new System.Drawing.Size(100, 20);
-            this.textEdit2.TabIndex = 2;
+            this.txt_TruongSo04.Location = new System.Drawing.Point(157, 3);
+            this.txt_TruongSo04.Name = "txt_TruongSo04";
+            this.txt_TruongSo04.Size = new System.Drawing.Size(100, 20);
+            this.txt_TruongSo04.TabIndex = 2;
             // 
             // labelControl4
             // 
@@ -118,12 +118,12 @@
             this.labelControl4.TabIndex = 0;
             this.labelControl4.Text = "5.";
             // 
-            // textEdit3
+            // txt_TruongSo05
             // 
-            this.textEdit3.Location = new System.Drawing.Point(279, 3);
-            this.textEdit3.Name = "textEdit3";
-            this.textEdit3.Size = new System.Drawing.Size(162, 20);
-            this.textEdit3.TabIndex = 3;
+            this.txt_TruongSo05.Location = new System.Drawing.Point(279, 3);
+            this.txt_TruongSo05.Name = "txt_TruongSo05";
+            this.txt_TruongSo05.Size = new System.Drawing.Size(162, 20);
+            this.txt_TruongSo05.TabIndex = 3;
             // 
             // labelControl5
             // 
@@ -241,9 +241,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.textEdit3);
-            this.Controls.Add(this.textEdit2);
-            this.Controls.Add(this.textEdit1);
+            this.Controls.Add(this.txt_TruongSo05);
+            this.Controls.Add(this.txt_TruongSo04);
+            this.Controls.Add(this.txt_TruongSo03);
             this.Controls.Add(this.uc_AT_Rows10);
             this.Controls.Add(this.uc_AT_Rows9);
             this.Controls.Add(this.uc_AT_Rows8);
@@ -266,10 +266,11 @@
             this.Controls.Add(this.labelControl1);
             this.Name = "UC_AT";
             this.Size = new System.Drawing.Size(446, 288);
+            this.Load += new System.EventHandler(this.UC_AT_Load);
             ((System.ComponentModel.ISupportInitialize)(this.txt_TruongSo02.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_TruongSo03.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_TruongSo04.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_TruongSo05.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -278,11 +279,11 @@
         #endregion
 
         public DevExpress.XtraEditors.LabelControl labelControl2;
-        public DevExpress.XtraEditors.TextEdit textEdit1;
+        public DevExpress.XtraEditors.TextEdit txt_TruongSo03;
         public DevExpress.XtraEditors.LabelControl labelControl3;
-        public DevExpress.XtraEditors.TextEdit textEdit2;
+        public DevExpress.XtraEditors.TextEdit txt_TruongSo04;
         public DevExpress.XtraEditors.LabelControl labelControl4;
-        public DevExpress.XtraEditors.TextEdit textEdit3;
+        public DevExpress.XtraEditors.TextEdit txt_TruongSo05;
         public DevExpress.XtraEditors.LabelControl labelControl5;
         public DevExpress.XtraEditors.LabelControl labelControl6;
         public DevExpress.XtraEditors.LabelControl labelControl7;
