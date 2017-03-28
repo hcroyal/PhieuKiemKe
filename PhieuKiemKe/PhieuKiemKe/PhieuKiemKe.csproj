@@ -39,6 +39,10 @@
     <Reference Include="DevExpress.Sparkline.v16.2.Core" />
     <Reference Include="DevExpress.XtraEditors.v16.2" />
     <Reference Include="DevExpress.Printing.v16.2.Core" />
+    <Reference Include="DevExpress.XtraGrid.v16.2, Version=16.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\DuAnJEMS\DuAnJEMS_QuanLyDuAn\JEMS\JEMS\bin\Debug\DevExpress.XtraGrid.v16.2.dll</HintPath>
+    </Reference>
     <Reference Include="ImageGlass.ImageBox">
       <HintPath>MyForm\ImageGlass.ImageBox.dll</HintPath>
     </Reference>
@@ -64,11 +68,23 @@
       <DependentUpon>DataEntry.dbml</DependentUpon>
     </Compile>
     <Compile Include="Global.cs" />
+    <Compile Include="MyForm\frm_FreeTime.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MyForm\frm_FreeTime.designer.cs">
+      <DependentUpon>frm_FreeTime.cs</DependentUpon>
+    </Compile>
     <Compile Include="MyForm\frm_Main.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MyForm\frm_Main.Designer.cs">
       <DependentUpon>frm_Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyForm\frm_User.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MyForm\frm_User.designer.cs">
+      <DependentUpon>frm_User.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -76,9 +92,16 @@
     <None Include="DataEntry.dbml.layout">
       <DependentUpon>DataEntry.dbml</DependentUpon>
     </None>
+    <EmbeddedResource Include="MyForm\frm_FreeTime.resx">
+      <DependentUpon>frm_FreeTime.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MyForm\frm_Main.resx">
       <DependentUpon>frm_Main.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MyForm\frm_User.resx">
+      <DependentUpon>frm_User.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
