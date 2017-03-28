@@ -121,23 +121,23 @@ namespace PhieuKiemKe
                 role = (from w in Global.db_BPO.tbl_Users where w.Username == username select w.IDRole).FirstOrDefault();
                 if (!string.IsNullOrEmpty(role))
                     role = role.ToUpper();
-                //if (iKiemtraLogin == 1 && role == "ADMIN")
-                //{
+                if (iKiemtraLogin == 1 && role == "ADMIN")
+                {
 
-                //    cbb.DataSource = Global.db.GetBatch();
-                //    cbb.DisplayMember = "fBatchName";
-                //}
+                    cbb.DataSource = Global.db.GetBatch();
+                    cbb.DisplayMember = "fBatchName";
+                }
 
-                //else if (iKiemtraLogin == 1 && role == "DESO")
-                //{
-                //    cbb.DataSource = Global.db.GetBatNotFinishDeSo(username);
-                //    cbb.DisplayMember = "fBatchName";
-                //}
-                //else if (iKiemtraLogin == 1 && role == "CHECKERDESO")
-                //{
-                //    cbb.DataSource = Global.db.GetBatNotFinishCheckerDeSo(username);
-                //    cbb.DisplayMember = "fBatchName";
-                //}
+                else if (iKiemtraLogin == 1 && role == "DESO")
+                {
+                    cbb.DataSource = Global.db.GetBatNotFinishDeSo(username);
+                    cbb.DisplayMember = "fBatchName";
+                }
+                else if (iKiemtraLogin == 1 && role == "CHECKERDESO")
+                {
+                    cbb.DataSource = Global.db.GetBatNotFinishCheckerDeSo(username);
+                    cbb.DisplayMember = "fBatchName";
+                }
             }
             catch (Exception e)
             {

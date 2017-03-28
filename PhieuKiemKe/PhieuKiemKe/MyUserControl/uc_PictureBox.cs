@@ -71,7 +71,7 @@ namespace PhieuKiemKe.MyUserControl
             imageBox1.AllowZoom = false;
         }
 
-        private void btn_Xoaytrai_Click(object sender, EventArgs e)
+        public void btn_Xoaytrai_Click(object sender, EventArgs e)
         {
             if (imageBox1.Image != null)
             {
@@ -81,7 +81,7 @@ namespace PhieuKiemKe.MyUserControl
             }
         }
 
-        private void btn_xoayphai_Click(object sender, EventArgs e)
+        public void btn_xoayphai_Click(object sender, EventArgs e)
         {
             if (imageBox1.Image != null)
             {

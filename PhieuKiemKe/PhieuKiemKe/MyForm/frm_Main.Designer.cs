@@ -28,12 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.barManager1 = new DevExpress.XtraBars.BarManager();
+            this.components = new System.ComponentModel.Container();
+            this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar2 = new DevExpress.XtraBars.Bar();
             this.barSubItem1 = new DevExpress.XtraBars.BarSubItem();
             this.btn_Logout = new DevExpress.XtraBars.BarButtonItem();
             this.btn_Exit = new DevExpress.XtraBars.BarButtonItem();
-            this.barSubItem2 = new DevExpress.XtraBars.BarSubItem();
+            this.btn_quanmly = new DevExpress.XtraBars.BarSubItem();
             this.btn_QuanLyBatch = new DevExpress.XtraBars.BarButtonItem();
             this.btn_QuanLyUser = new DevExpress.XtraBars.BarButtonItem();
             this.btn_Check = new DevExpress.XtraBars.BarButtonItem();
@@ -60,10 +61,23 @@
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
+            this.tabControl_Main = new DevExpress.XtraTab.XtraTabControl();
+            this.tp_AE_Main = new DevExpress.XtraTab.XtraTabPage();
+            this.tp_AT_Main = new DevExpress.XtraTab.XtraTabPage();
+            this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
+            this.btn_Pause = new DevExpress.XtraEditors.SimpleButton();
+            this.btn_Submit_Logout = new DevExpress.XtraEditors.SimpleButton();
+            this.btn_Start_Submit = new DevExpress.XtraEditors.SimpleButton();
+            this.uc_PictureBox1 = new PhieuKiemKe.MyUserControl.uc_PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
+            this.panelControl2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tabControl_Main)).BeginInit();
+            this.tabControl_Main.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
+            this.panelControl3.SuspendLayout();
             this.SuspendLayout();
             // 
             // barManager1
@@ -77,7 +91,7 @@
             this.barManager1.Form = this;
             this.barManager1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.barSubItem1,
-            this.barSubItem2,
+            this.btn_quanmly,
             this.barSubItem3,
             this.btn_ZoomImage,
             this.btn_Logout,
@@ -99,7 +113,7 @@
             this.bar2.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
             this.bar2.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(this.barSubItem1),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barSubItem2),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btn_quanmly),
             new DevExpress.XtraBars.LinkPersistInfo(this.btn_ZoomImage)});
             this.bar2.OptionsBar.DrawDragBorder = false;
             this.bar2.OptionsBar.MultiLine = true;
@@ -129,18 +143,18 @@
             this.btn_Exit.Name = "btn_Exit";
             this.btn_Exit.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_Exit_ItemClick);
             // 
-            // barSubItem2
+            // btn_quanmly
             // 
-            this.barSubItem2.Caption = "Quản Lý";
-            this.barSubItem2.Id = 2;
-            this.barSubItem2.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            this.btn_quanmly.Caption = "Quản Lý";
+            this.btn_quanmly.Id = 2;
+            this.btn_quanmly.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(this.btn_QuanLyBatch),
             new DevExpress.XtraBars.LinkPersistInfo(this.btn_QuanLyUser),
             new DevExpress.XtraBars.LinkPersistInfo(this.btn_Check),
             new DevExpress.XtraBars.LinkPersistInfo(this.btn_NangSuat),
             new DevExpress.XtraBars.LinkPersistInfo(this.btn_TienDo),
             new DevExpress.XtraBars.LinkPersistInfo(this.btn_XuatExcel)});
-            this.barSubItem2.Name = "barSubItem2";
+            this.btn_quanmly.Name = "btn_quanmly";
             // 
             // btn_QuanLyBatch
             // 
@@ -349,17 +363,90 @@
             // 
             // panelControl2
             // 
+            this.panelControl2.Controls.Add(this.tabControl_Main);
+            this.panelControl2.Controls.Add(this.panelControl3);
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Right;
             this.panelControl2.Location = new System.Drawing.Point(711, 51);
             this.panelControl2.Name = "panelControl2";
             this.panelControl2.Size = new System.Drawing.Size(351, 490);
             this.panelControl2.TabIndex = 5;
             // 
+            // tabControl_Main
+            // 
+            this.tabControl_Main.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControl_Main.Location = new System.Drawing.Point(2, 2);
+            this.tabControl_Main.Name = "tabControl_Main";
+            this.tabControl_Main.SelectedTabPage = this.tp_AE_Main;
+            this.tabControl_Main.Size = new System.Drawing.Size(347, 460);
+            this.tabControl_Main.TabIndex = 1;
+            this.tabControl_Main.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
+            this.tp_AE_Main,
+            this.tp_AT_Main});
+            // 
+            // tp_AE_Main
+            // 
+            this.tp_AE_Main.Name = "tp_AE_Main";
+            this.tp_AE_Main.Size = new System.Drawing.Size(341, 432);
+            this.tp_AE_Main.Text = "AE";
+            // 
+            // tp_AT_Main
+            // 
+            this.tp_AT_Main.Name = "tp_AT_Main";
+            this.tp_AT_Main.Size = new System.Drawing.Size(341, 432);
+            this.tp_AT_Main.Text = "AT";
+            // 
+            // panelControl3
+            // 
+            this.panelControl3.Controls.Add(this.btn_Pause);
+            this.panelControl3.Controls.Add(this.btn_Submit_Logout);
+            this.panelControl3.Controls.Add(this.btn_Start_Submit);
+            this.panelControl3.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panelControl3.Location = new System.Drawing.Point(2, 462);
+            this.panelControl3.Name = "panelControl3";
+            this.panelControl3.Size = new System.Drawing.Size(347, 26);
+            this.panelControl3.TabIndex = 0;
+            // 
+            // btn_Pause
+            // 
+            this.btn_Pause.Location = new System.Drawing.Point(249, 2);
+            this.btn_Pause.Name = "btn_Pause";
+            this.btn_Pause.Size = new System.Drawing.Size(95, 23);
+            this.btn_Pause.TabIndex = 14;
+            this.btn_Pause.Text = "Tạm dừng (ESC)";
+            this.btn_Pause.Click += new System.EventHandler(this.btn_Pause_Click);
+            // 
+            // btn_Submit_Logout
+            // 
+            this.btn_Submit_Logout.Location = new System.Drawing.Point(133, 3);
+            this.btn_Submit_Logout.Name = "btn_Submit_Logout";
+            this.btn_Submit_Logout.Size = new System.Drawing.Size(90, 21);
+            this.btn_Submit_Logout.TabIndex = 12;
+            this.btn_Submit_Logout.Text = "Submit + Logout";
+            this.btn_Submit_Logout.Click += new System.EventHandler(this.btn_Submit_Logout_Click);
+            // 
+            // btn_Start_Submit
+            // 
+            this.btn_Start_Submit.Location = new System.Drawing.Point(3, 3);
+            this.btn_Start_Submit.Name = "btn_Start_Submit";
+            this.btn_Start_Submit.Size = new System.Drawing.Size(90, 21);
+            this.btn_Start_Submit.TabIndex = 13;
+            this.btn_Start_Submit.Text = "Start";
+            this.btn_Start_Submit.Click += new System.EventHandler(this.btn_Start_Submit_Click);
+            // 
+            // uc_PictureBox1
+            // 
+            this.uc_PictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uc_PictureBox1.Location = new System.Drawing.Point(0, 51);
+            this.uc_PictureBox1.Name = "uc_PictureBox1";
+            this.uc_PictureBox1.Size = new System.Drawing.Size(711, 490);
+            this.uc_PictureBox1.TabIndex = 10;
+            // 
             // frm_Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1062, 541);
+            this.Controls.Add(this.uc_PictureBox1);
             this.Controls.Add(this.panelControl2);
             this.Controls.Add(this.panelControl1);
             this.Controls.Add(this.barDockControlLeft);
@@ -370,11 +457,18 @@
             this.Name = "frm_Main";
             this.Text = "Phiếu kiểm kê";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frm_Main_FormClosing);
+            this.Load += new System.EventHandler(this.frm_Main_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frm_Main_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
+            this.panelControl2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.tabControl_Main)).EndInit();
+            this.tabControl_Main.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).EndInit();
+            this.panelControl3.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -391,7 +485,7 @@
         private DevExpress.XtraBars.BarSubItem barSubItem1;
         private DevExpress.XtraBars.BarButtonItem btn_Logout;
         private DevExpress.XtraBars.BarButtonItem btn_Exit;
-        private DevExpress.XtraBars.BarSubItem barSubItem2;
+        private DevExpress.XtraBars.BarSubItem btn_quanmly;
         private DevExpress.XtraBars.BarButtonItem btn_QuanLyBatch;
         private DevExpress.XtraBars.BarButtonItem btn_QuanLyUser;
         private DevExpress.XtraBars.BarButtonItem btn_Check;
@@ -414,6 +508,14 @@
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.LabelControl labelControl1;
+        private MyUserControl.uc_PictureBox uc_PictureBox1;
+        private DevExpress.XtraEditors.PanelControl panelControl3;
+        private DevExpress.XtraEditors.SimpleButton btn_Pause;
+        private DevExpress.XtraEditors.SimpleButton btn_Submit_Logout;
+        private DevExpress.XtraEditors.SimpleButton btn_Start_Submit;
+        private DevExpress.XtraTab.XtraTabControl tabControl_Main;
+        private DevExpress.XtraTab.XtraTabPage tp_AE_Main;
+        private DevExpress.XtraTab.XtraTabPage tp_AT_Main;
     }
 }
 

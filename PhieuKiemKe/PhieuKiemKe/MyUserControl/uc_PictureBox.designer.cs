@@ -30,9 +30,9 @@
         {
             this.imageBox1 = new ImageGlass.ImageBox();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
-            this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.btn_xoayphai = new DevExpress.XtraEditors.SimpleButton();
             this.btn_Xoaytrai = new DevExpress.XtraEditors.SimpleButton();
+            this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
@@ -64,15 +64,6 @@
             this.panelControl1.Size = new System.Drawing.Size(778, 26);
             this.panelControl1.TabIndex = 4;
             // 
-            // panelControl2
-            // 
-            this.panelControl2.Controls.Add(this.imageBox1);
-            this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl2.Location = new System.Drawing.Point(0, 0);
-            this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(778, 455);
-            this.panelControl2.TabIndex = 5;
-            // 
             // btn_xoayphai
             // 
             this.btn_xoayphai.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -93,6 +84,15 @@
             this.btn_Xoaytrai.Text = "Xoay trái";
             this.btn_Xoaytrai.Click += new System.EventHandler(this.btn_Xoaytrai_Click);
             // 
+            // panelControl2
+            // 
+            this.panelControl2.Controls.Add(this.imageBox1);
+            this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelControl2.Location = new System.Drawing.Point(0, 0);
+            this.panelControl2.Name = "panelControl2";
+            this.panelControl2.Size = new System.Drawing.Size(778, 455);
+            this.panelControl2.TabIndex = 5;
+            // 
             // uc_PictureBox
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -112,9 +112,9 @@
         #endregion
 
         public ImageGlass.ImageBox imageBox1;
-        private DevExpress.XtraEditors.PanelControl panelControl1;
-        private DevExpress.XtraEditors.SimpleButton btn_xoayphai;
-        private DevExpress.XtraEditors.SimpleButton btn_Xoaytrai;
-        private DevExpress.XtraEditors.PanelControl panelControl2;
+        public DevExpress.XtraEditors.PanelControl panelControl1;
+        public DevExpress.XtraEditors.SimpleButton btn_xoayphai;
+        public DevExpress.XtraEditors.SimpleButton btn_Xoaytrai;
+        public DevExpress.XtraEditors.PanelControl panelControl2;
     }
 }

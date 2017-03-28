@@ -51,7 +51,7 @@ namespace PhieuKiemKe
     #endregion
 		
 		public DataPhieuKiemKeDataContext() : 
-				base(global::PhieuKiemKe.Properties.Settings.Default.PhieuKiemKeConnectionString, mappingSource)
+				base(global::PhieuKiemKe.Properties.Settings.Default.PhieuKiemKeConnectionString1, mappingSource)
 		{
 			OnCreated();
 		}
@@ -357,6 +357,13 @@ namespace PhieuKiemKe
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), fbatchname);
 			return ((ISingleResult<UserMissImagecheckResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.LayHinhMoi_DeSo")]
+		public ISingleResult<LayHinhMoi_DeSoResult> LayHinhMoi_DeSo([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(255)")] string fbatchname, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(255)")] string username)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), fbatchname, username);
+			return ((ISingleResult<LayHinhMoi_DeSoResult>)(result.ReturnValue));
 		}
 	}
 	
@@ -3193,6 +3200,32 @@ namespace PhieuKiemKe
 				if ((this._username != value))
 				{
 					this._username = value;
+				}
+			}
+		}
+	}
+	
+	public partial class LayHinhMoi_DeSoResult
+	{
+		
+		private string _Column1;
+		
+		public LayHinhMoi_DeSoResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="", Storage="_Column1", DbType="NVarChar(255)")]
+		public string Column1
+		{
+			get
+			{
+				return this._Column1;
+			}
+			set
+			{
+				if ((this._Column1 != value))
+				{
+					this._Column1 = value;
 				}
 			}
 		}
