@@ -347,15 +347,15 @@ namespace PhieuKiemKe.MyUserControl
         }
         private void setSTT()
         {
-            uc_AT_Rows1.txt_STT.Text = "1";
-            uc_AT_Rows2.txt_STT.Text = "2";
-            uc_AT_Rows3.txt_STT.Text = "3";
-            uc_AT_Rows4.txt_STT.Text = "4";
-            uc_AT_Rows5.txt_STT.Text = "5";
-            uc_AT_Rows6.txt_STT.Text = "6";
-            uc_AT_Rows7.txt_STT.Text = "7";
-            uc_AT_Rows8.txt_STT.Text = "8";
-            uc_AT_Rows9.txt_STT.Text = "9";
+            uc_AT_Rows1.txt_STT.Text = "01";
+            uc_AT_Rows2.txt_STT.Text = "02";
+            uc_AT_Rows3.txt_STT.Text = "03";
+            uc_AT_Rows4.txt_STT.Text = "04";
+            uc_AT_Rows5.txt_STT.Text = "05";
+            uc_AT_Rows6.txt_STT.Text = "06";
+            uc_AT_Rows7.txt_STT.Text = "07";
+            uc_AT_Rows8.txt_STT.Text = "08";
+            uc_AT_Rows9.txt_STT.Text = "09";
             uc_AT_Rows10.txt_STT.Text = "10";
         }
         public void resetData()
