@@ -14,18 +14,28 @@ namespace PhieuKiemKe.MyUserControl
     public partial class uc_AT_Rows : UserControl
     {
         public event AllTextChange Changed;
+        private List<Category> category = new List<Category>();
+
+        public class Category
+        {
+            public string Value { get; set; }
+            public string ChuThich { get; set; }
+        }
+        private void setData()
+        {
+            category.Add(new uc_AT_Rows.Category() { Value = "SAKUJYO", ChuThich = "Khi dữ liệu giữa phiếu bị gạch bỏ, hoặc trống nguyên dòng" });
+            category.Add(new uc_AT_Rows.Category() { Value = "YOHAKU", ChuThich = "Kết thúc dữ liệu trong phiếu" });
+            category.Add(new uc_AT_Rows.Category() { Value = "KAKISONJI", ChuThich = "Khi cả phiếu gạch chéo, bỏ" });
+            category.Add(new uc_AT_Rows.Category() { Value = "MISIYO", ChuThich = "Khi cả phiếu trống, không có dữ liệu (phiếu trắng)" });
+        }
 
         public uc_AT_Rows()
         {
             InitializeComponent();
-            txt_TruongSo07.Properties.Items.Add("SAKUJYO    | Khi dữ liệu giữa phiếu bị gạch bỏ, hoặc trống nguyên dòng");
-            txt_TruongSo07.Properties.Items.Add("YOHAKU     | Kết thúc dữ liệu trong phiếu");
-            txt_TruongSo07.Properties.Items.Add("KAKISONJI | Khi cả phiếu gạch chéo, bỏ");
-            txt_TruongSo07.Properties.Items.Add("MISIYO       | Khi cả phiếu trống, không có dữ liệu (phiếu trắng)");
-            txt_TruongSo07.Properties.Items.Add("SAKUJYO");
-            txt_TruongSo07.Properties.Items.Add("YOHAKU");
-            txt_TruongSo07.Properties.Items.Add("KAKISONJI");
-            txt_TruongSo07.Properties.Items.Add("MISIYO");
+            setData();
+            txt_TruongSo07.Properties.DataSource = category;
+            txt_TruongSo07.Properties.DisplayMember = "Value";
+            txt_TruongSo07.Properties.ValueMember = "Value";
         }
         private void uc_AT_Rows_Load(object sender, EventArgs e)
         {
@@ -42,8 +52,7 @@ namespace PhieuKiemKe.MyUserControl
 
         private void Txt_TruongSo07_GotFocus(object sender, EventArgs e)
         {
-            txt_TruongSo07.SelectAll();
-            txt_TruongSo07.ShowPopup();
+            txt_TruongSo07.SelectAll();//txt_TruongSo07.ShowPopup();
         }
 
         public void resetData()
@@ -56,10 +65,10 @@ namespace PhieuKiemKe.MyUserControl
 
         public bool isEmpty()
         {
-            return string.IsNullOrEmpty(txt_TruongSo07.Text) &&
-                   string.IsNullOrEmpty(txt_TruongSo08.Text) &&
-                   string.IsNullOrEmpty(txt_TruongSo09.Text) &&
-                   string.IsNullOrEmpty(txt_TruongSo10.Text);
+            return String.IsNullOrEmpty(txt_TruongSo07.Text) &&
+                   String.IsNullOrEmpty(txt_TruongSo08.Text) &&
+                   String.IsNullOrEmpty(txt_TruongSo09.Text) &&
+                   String.IsNullOrEmpty(txt_TruongSo10.Text);
         }
 
         public void SaveData(string idimage, string truongso02, string truongso03, string truongso04, string truongso05, string idphieu)
@@ -71,22 +80,6 @@ namespace PhieuKiemKe.MyUserControl
 
         private void txt_TruongSo07_TextChanged(object sender, EventArgs e)
         {
-            if (txt_TruongSo07.Text == "SAKUJYO    | KHI DỮ LIỆU GIỮA PHIẾU BỊ GẠCH BỎ, HOẶC TRỐNG NGUYÊN DÒNG")
-            {
-                txt_TruongSo07.Text = "SAKUJYO";
-            }
-            else if (txt_TruongSo07.Text == "YOHAKU     | KẾT THÚC DỮ LIỆU TRONG PHIẾU")
-            {
-                txt_TruongSo07.Text = "YOHAKU";
-            }
-            else if (txt_TruongSo07.Text == "KAKISONJI | KHI CẢ PHIẾU GẠCH CHÉO, BỎ")
-            {
-                txt_TruongSo07.Text = "KAKISONJI";
-            }
-            else if (txt_TruongSo07.Text == "MISIYO       | KHI CẢ PHIẾU TRỐNG, KHÔNG CÓ DỮ LIỆU (PHIẾU TRẮNG)")
-            {
-                txt_TruongSo07.Text = "MISIYO";
-            }
             if (txt_TruongSo07.Text.IndexOf('?') >= 0)
                 txt_TruongSo07.Text = @"?";
             if (txt_TruongSo07.Text != "" && txt_TruongSo07.Text != @"?" && txt_TruongSo07.Text.Length > 30)
@@ -190,5 +183,7 @@ namespace PhieuKiemKe.MyUserControl
                 txt.ForeColor = Color.Black;
             }
         }
+
+        
     }
 }

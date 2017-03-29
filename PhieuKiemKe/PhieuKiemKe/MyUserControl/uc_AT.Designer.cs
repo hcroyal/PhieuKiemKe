@@ -139,11 +139,11 @@
             // 
             // labelControl6
             // 
-            this.labelControl6.Location = new System.Drawing.Point(117, 34);
+            this.labelControl6.Location = new System.Drawing.Point(116, 34);
             this.labelControl6.Name = "labelControl6";
-            this.labelControl6.Size = new System.Drawing.Size(29, 13);
+            this.labelControl6.Size = new System.Drawing.Size(42, 13);
             this.labelControl6.TabIndex = 0;
-            this.labelControl6.Text = "Mã SP";
+            this.labelControl6.Text = "7. Mã SP";
             // 
             // labelControl7
             // 

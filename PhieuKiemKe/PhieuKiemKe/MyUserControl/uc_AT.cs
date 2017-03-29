@@ -16,16 +16,16 @@ namespace PhieuKiemKe.MyUserControl
         public UC_AT()
         {
             InitializeComponent();
-            uc_AT_Rows1.txt_TruongSo07.Properties.SelectedIndexChanged += Properties_SelectedIndexChanged;
-            uc_AT_Rows2.txt_TruongSo07.Properties.SelectedIndexChanged += Properties_SelectedIndexChanged1;
-            uc_AT_Rows3.txt_TruongSo07.Properties.SelectedIndexChanged += Properties_SelectedIndexChanged2;
-            uc_AT_Rows4.txt_TruongSo07.Properties.SelectedIndexChanged += Properties_SelectedIndexChanged3;
-            uc_AT_Rows5.txt_TruongSo07.Properties.SelectedIndexChanged += Properties_SelectedIndexChanged4;
-            uc_AT_Rows6.txt_TruongSo07.Properties.SelectedIndexChanged += Properties_SelectedIndexChanged5;
-            uc_AT_Rows7.txt_TruongSo07.Properties.SelectedIndexChanged += Properties_SelectedIndexChanged6;
-            uc_AT_Rows8.txt_TruongSo07.Properties.SelectedIndexChanged += Properties_SelectedIndexChanged7;
-            uc_AT_Rows9.txt_TruongSo07.Properties.SelectedIndexChanged += Properties_SelectedIndexChanged8;
-            uc_AT_Rows10.txt_TruongSo07.Properties.SelectedIndexChanged += Properties_SelectedIndexChanged9;
+            uc_AT_Rows1.txt_TruongSo07.Properties.EditValueChanged += Properties_ItemIndexChanged;
+            uc_AT_Rows2.txt_TruongSo07.Properties.EditValueChanged += Properties_ItemIndexChanged1;
+            uc_AT_Rows3.txt_TruongSo07.Properties.EditValueChanged += Properties_ItemIndexChanged2;
+            uc_AT_Rows4.txt_TruongSo07.Properties.EditValueChanged += Properties_ItemIndexChanged3;
+            uc_AT_Rows5.txt_TruongSo07.Properties.EditValueChanged += Properties_ItemIndexChanged4;
+            uc_AT_Rows6.txt_TruongSo07.Properties.EditValueChanged += Properties_ItemIndexChanged5;
+            uc_AT_Rows7.txt_TruongSo07.Properties.EditValueChanged += Properties_ItemIndexChanged6;
+            uc_AT_Rows8.txt_TruongSo07.Properties.EditValueChanged += Properties_ItemIndexChanged7;
+            uc_AT_Rows9.txt_TruongSo07.Properties.EditValueChanged += Properties_ItemIndexChanged8;
+            uc_AT_Rows10.txt_TruongSo07.Properties.EditValueChanged += Properties_ItemIndexChanged9;
 
             uc_AT_Rows2.txt_TruongSo08.KeyUp += Txt_TruongSo08_KeyUp;
             uc_AT_Rows3.txt_TruongSo08.KeyUp += Txt_TruongSo08_KeyUp1;
@@ -47,12 +47,11 @@ namespace PhieuKiemKe.MyUserControl
             uc_AT_Rows8.txt_TruongSo09.KeyDown += Txt_TruongSo09_KeyDown1;
             uc_AT_Rows9.txt_TruongSo09.KeyDown += Txt_TruongSo09_KeyDown1;
             uc_AT_Rows10.txt_TruongSo09.KeyDown += Txt_TruongSo09_KeyDown2;
-
-
-
         }
-
+        
        
+       
+
 
         private void Txt_TruongSo09_KeyDown2(object sender, KeyEventArgs e)
         {
@@ -204,207 +203,166 @@ namespace PhieuKiemKe.MyUserControl
             }
             
         }
-        private void Properties_SelectedIndexChanged9(object sender, EventArgs e)
+        private void Properties_ItemIndexChanged9(object sender, EventArgs e)
         {
             VoHieuHoaCacTruongConLai(uc_AT_Rows10);
         }
-        private void Properties_SelectedIndexChanged8(object sender, EventArgs e)
+        private void Properties_ItemIndexChanged8(object sender, EventArgs e)
         {
-            if (uc_AT_Rows8.txt_TruongSo07.SelectedIndex != 5 &&
-                uc_AT_Rows8.txt_TruongSo07.SelectedIndex != 6 &&
-                uc_AT_Rows8.txt_TruongSo07.SelectedIndex != 7)
+            if (uc_AT_Rows8.txt_TruongSo07.Text != "YOHAKU")
             {
-                if (uc_AT_Rows9.txt_TruongSo07.SelectedIndex == 5 ||
-                    uc_AT_Rows9.txt_TruongSo07.SelectedIndex == 6 ||
-                    uc_AT_Rows9.txt_TruongSo07.SelectedIndex == 7 ||
-                    uc_AT_Rows9.txt_TruongSo07.SelectedIndex == -1)
+                if (uc_AT_Rows9.txt_TruongSo07.Text == "YOHAKU")
                 {
-                    uc_AT_Rows10.txt_TruongSo07.SelectedIndex = uc_AT_Rows9.txt_TruongSo07.SelectedIndex;
+                    uc_AT_Rows10.txt_TruongSo07.Text = "YOHAKU";
                 }
             }
             VoHieuHoaCacTruongConLai(uc_AT_Rows9);
         }
 
-        private void Properties_SelectedIndexChanged7(object sender, EventArgs e)
+        private void Properties_ItemIndexChanged7(object sender, EventArgs e)
         {
 
-            if (uc_AT_Rows7.txt_TruongSo07.SelectedIndex != 5 &&
-                uc_AT_Rows7.txt_TruongSo07.SelectedIndex != 6 &&
-                uc_AT_Rows7.txt_TruongSo07.SelectedIndex != 7)
+            if (uc_AT_Rows7.txt_TruongSo07.Text != "YOHAKU")
             {
-                if (uc_AT_Rows8.txt_TruongSo07.SelectedIndex == 5 ||
-                    uc_AT_Rows8.txt_TruongSo07.SelectedIndex == 6 ||
-                    uc_AT_Rows8.txt_TruongSo07.SelectedIndex == 7 ||
-                    uc_AT_Rows8.txt_TruongSo07.SelectedIndex == -1)
+                if (uc_AT_Rows8.txt_TruongSo07.Text == "YOHAKU")
                 {
-                    
-                    uc_AT_Rows9.txt_TruongSo07.SelectedIndex = uc_AT_Rows8.txt_TruongSo07.SelectedIndex;
-                    uc_AT_Rows10.txt_TruongSo07.SelectedIndex = uc_AT_Rows8.txt_TruongSo07.SelectedIndex;
+                    uc_AT_Rows9.txt_TruongSo07.Text = "YOHAKU";
+                    uc_AT_Rows10.txt_TruongSo07.Text = "YOHAKU";
                 }
             }
             VoHieuHoaCacTruongConLai(uc_AT_Rows8);
         }
 
-        private void Properties_SelectedIndexChanged6(object sender, EventArgs e)
+        private void Properties_ItemIndexChanged6(object sender, EventArgs e)
         {
-            if (uc_AT_Rows6.txt_TruongSo07.SelectedIndex != 5 &&
-                uc_AT_Rows6.txt_TruongSo07.SelectedIndex != 6 &&
-                uc_AT_Rows6.txt_TruongSo07.SelectedIndex != 7)
+            if (uc_AT_Rows6.txt_TruongSo07.Text != "YOHAKU")
             {
-                if (uc_AT_Rows7.txt_TruongSo07.SelectedIndex == 5 ||
-                    uc_AT_Rows7.txt_TruongSo07.SelectedIndex == 6 ||
-                    uc_AT_Rows7.txt_TruongSo07.SelectedIndex == 7 ||
-                    uc_AT_Rows7.txt_TruongSo07.SelectedIndex == -1)
+                if (uc_AT_Rows7.txt_TruongSo07.Text == "YOHAKU")
                 {
-                    
-                    uc_AT_Rows8.txt_TruongSo07.SelectedIndex = uc_AT_Rows7.txt_TruongSo07.SelectedIndex;
-                    uc_AT_Rows9.txt_TruongSo07.SelectedIndex = uc_AT_Rows7.txt_TruongSo07.SelectedIndex;
-                    uc_AT_Rows10.txt_TruongSo07.SelectedIndex = uc_AT_Rows7.txt_TruongSo07.SelectedIndex;
+                    uc_AT_Rows8.txt_TruongSo07.Text = "YOHAKU";
+                    uc_AT_Rows9.txt_TruongSo07.Text = "YOHAKU";
+                    uc_AT_Rows10.txt_TruongSo07.Text = "YOHAKU";
                 }
             }
             VoHieuHoaCacTruongConLai(uc_AT_Rows7);
         }
 
-        private void Properties_SelectedIndexChanged5(object sender, EventArgs e)
+        private void Properties_ItemIndexChanged5(object sender, EventArgs e)
         {
-            if (uc_AT_Rows5.txt_TruongSo07.SelectedIndex != 5 &&
-                uc_AT_Rows5.txt_TruongSo07.SelectedIndex != 6 &&
-                uc_AT_Rows5.txt_TruongSo07.SelectedIndex != 7)
+            if (uc_AT_Rows5.txt_TruongSo07.Text != "YOHAKU")
             {
-                if (uc_AT_Rows6.txt_TruongSo07.SelectedIndex == 5 ||
-                    uc_AT_Rows6.txt_TruongSo07.SelectedIndex == 6 ||
-                    uc_AT_Rows6.txt_TruongSo07.SelectedIndex == 7 ||
-                    uc_AT_Rows6.txt_TruongSo07.SelectedIndex == -1)
+                if (uc_AT_Rows6.txt_TruongSo07.Text == "YOHAKU")
                 {
-                    
-                    uc_AT_Rows7.txt_TruongSo07.SelectedIndex = uc_AT_Rows6.txt_TruongSo07.SelectedIndex;
-                    uc_AT_Rows8.txt_TruongSo07.SelectedIndex = uc_AT_Rows6.txt_TruongSo07.SelectedIndex;
-                    uc_AT_Rows9.txt_TruongSo07.SelectedIndex = uc_AT_Rows6.txt_TruongSo07.SelectedIndex;
-                    uc_AT_Rows10.txt_TruongSo07.SelectedIndex = uc_AT_Rows6.txt_TruongSo07.SelectedIndex;
+                    uc_AT_Rows7.txt_TruongSo07.Text = "YOHAKU";
+                    uc_AT_Rows8.txt_TruongSo07.Text = "YOHAKU";
+                    uc_AT_Rows9.txt_TruongSo07.Text = "YOHAKU";
+                    uc_AT_Rows10.txt_TruongSo07.Text = "YOHAKU";
                 }
             }
             VoHieuHoaCacTruongConLai(uc_AT_Rows6);
         }
 
-        private void Properties_SelectedIndexChanged4(object sender, EventArgs e)
+        private void Properties_ItemIndexChanged4(object sender, EventArgs e)
         {
-            if (uc_AT_Rows4.txt_TruongSo07.SelectedIndex != 5 && 
-                uc_AT_Rows4.txt_TruongSo07.SelectedIndex != 6 &&
-                uc_AT_Rows4.txt_TruongSo07.SelectedIndex != 7)
+            if (uc_AT_Rows4.txt_TruongSo07.Text != "YOHAKU")
             {
-                if (uc_AT_Rows5.txt_TruongSo07.SelectedIndex == 5 ||
-                    uc_AT_Rows5.txt_TruongSo07.SelectedIndex == 6 ||
-                    uc_AT_Rows5.txt_TruongSo07.SelectedIndex == 7 ||
-                    uc_AT_Rows5.txt_TruongSo07.SelectedIndex == -1)
+                if (uc_AT_Rows5.txt_TruongSo07.Text == "YOHAKU")
                 {
-
-                    uc_AT_Rows6.txt_TruongSo07.SelectedIndex = uc_AT_Rows5.txt_TruongSo07.SelectedIndex;
-                    uc_AT_Rows7.txt_TruongSo07.SelectedIndex = uc_AT_Rows5.txt_TruongSo07.SelectedIndex;
-                    uc_AT_Rows8.txt_TruongSo07.SelectedIndex = uc_AT_Rows5.txt_TruongSo07.SelectedIndex;
-                    uc_AT_Rows9.txt_TruongSo07.SelectedIndex = uc_AT_Rows5.txt_TruongSo07.SelectedIndex;
-                    uc_AT_Rows10.txt_TruongSo07.SelectedIndex = uc_AT_Rows5.txt_TruongSo07.SelectedIndex;
+                    uc_AT_Rows6.txt_TruongSo07.Text = "YOHAKU";
+                    uc_AT_Rows7.txt_TruongSo07.Text = "YOHAKU";
+                    uc_AT_Rows8.txt_TruongSo07.Text = "YOHAKU";
+                    uc_AT_Rows9.txt_TruongSo07.Text = "YOHAKU";
+                    uc_AT_Rows10.txt_TruongSo07.Text = "YOHAKU";
                 }
             }
             VoHieuHoaCacTruongConLai(uc_AT_Rows5);
         }
 
-        private void Properties_SelectedIndexChanged3(object sender, EventArgs e)
+        private void Properties_ItemIndexChanged3(object sender, EventArgs e)
         {
-            if (uc_AT_Rows3.txt_TruongSo07.SelectedIndex != 5 && 
-                uc_AT_Rows3.txt_TruongSo07.SelectedIndex != 6 &&
-                uc_AT_Rows3.txt_TruongSo07.SelectedIndex != 7)
+            if (uc_AT_Rows3.txt_TruongSo07.Text != "YOHAKU")
             {
-                if (uc_AT_Rows4.txt_TruongSo07.SelectedIndex == 5 ||
-                   uc_AT_Rows4.txt_TruongSo07.SelectedIndex == 6 ||
-                   uc_AT_Rows4.txt_TruongSo07.SelectedIndex == 7 ||
-                   uc_AT_Rows4.txt_TruongSo07.SelectedIndex == -1)
+                if (uc_AT_Rows4.txt_TruongSo07.Text == "YOHAKU")
                 {
-
-                    uc_AT_Rows5.txt_TruongSo07.SelectedIndex = uc_AT_Rows4.txt_TruongSo07.SelectedIndex;
-                    uc_AT_Rows6.txt_TruongSo07.SelectedIndex = uc_AT_Rows4.txt_TruongSo07.SelectedIndex;
-                    uc_AT_Rows7.txt_TruongSo07.SelectedIndex = uc_AT_Rows4.txt_TruongSo07.SelectedIndex;
-                    uc_AT_Rows8.txt_TruongSo07.SelectedIndex = uc_AT_Rows4.txt_TruongSo07.SelectedIndex;
-                    uc_AT_Rows9.txt_TruongSo07.SelectedIndex = uc_AT_Rows4.txt_TruongSo07.SelectedIndex;
-                    uc_AT_Rows10.txt_TruongSo07.SelectedIndex = uc_AT_Rows4.txt_TruongSo07.SelectedIndex;
+                    uc_AT_Rows5.txt_TruongSo07.Text = "YOHAKU";
+                    uc_AT_Rows6.txt_TruongSo07.Text = "YOHAKU";
+                    uc_AT_Rows7.txt_TruongSo07.Text = "YOHAKU";
+                    uc_AT_Rows8.txt_TruongSo07.Text = "YOHAKU";
+                    uc_AT_Rows9.txt_TruongSo07.Text = "YOHAKU";
+                    uc_AT_Rows10.txt_TruongSo07.Text = "YOHAKU";
                 }
             }
+            
             VoHieuHoaCacTruongConLai(uc_AT_Rows4);
 
         }
 
-        private void Properties_SelectedIndexChanged2(object sender, EventArgs e)
+        private void Properties_ItemIndexChanged2(object sender, EventArgs e)
         {
-            if (uc_AT_Rows2.txt_TruongSo07.SelectedIndex != 5 && 
-                uc_AT_Rows2.txt_TruongSo07.SelectedIndex != 6 &&
-                uc_AT_Rows2.txt_TruongSo07.SelectedIndex != 7)
+            if (uc_AT_Rows2.txt_TruongSo07.Text != "YOHAKU")
             {
-                if (uc_AT_Rows3.txt_TruongSo07.SelectedIndex == 5 ||
-                uc_AT_Rows3.txt_TruongSo07.SelectedIndex == 6 ||
-                uc_AT_Rows3.txt_TruongSo07.SelectedIndex == 7 ||
-                uc_AT_Rows3.txt_TruongSo07.SelectedIndex == -1)
+                if (uc_AT_Rows3.txt_TruongSo07.Text == "YOHAKU")
                 {
-                    uc_AT_Rows4.txt_TruongSo07.SelectedIndex = uc_AT_Rows3.txt_TruongSo07.SelectedIndex;
-                    uc_AT_Rows5.txt_TruongSo07.SelectedIndex = uc_AT_Rows3.txt_TruongSo07.SelectedIndex;
-                    uc_AT_Rows6.txt_TruongSo07.SelectedIndex = uc_AT_Rows3.txt_TruongSo07.SelectedIndex;
-                    uc_AT_Rows7.txt_TruongSo07.SelectedIndex = uc_AT_Rows3.txt_TruongSo07.SelectedIndex;
-                    uc_AT_Rows8.txt_TruongSo07.SelectedIndex = uc_AT_Rows3.txt_TruongSo07.SelectedIndex;
-                    uc_AT_Rows9.txt_TruongSo07.SelectedIndex = uc_AT_Rows3.txt_TruongSo07.SelectedIndex;
-                    uc_AT_Rows10.txt_TruongSo07.SelectedIndex = uc_AT_Rows3.txt_TruongSo07.SelectedIndex;
+                    uc_AT_Rows4.txt_TruongSo07.Text = "YOHAKU";
+                    uc_AT_Rows5.txt_TruongSo07.Text = "YOHAKU";
+                    uc_AT_Rows6.txt_TruongSo07.Text = "YOHAKU";
+                    uc_AT_Rows7.txt_TruongSo07.Text = "YOHAKU";
+                    uc_AT_Rows8.txt_TruongSo07.Text = "YOHAKU";
+                    uc_AT_Rows9.txt_TruongSo07.Text = "YOHAKU";
+                    uc_AT_Rows10.txt_TruongSo07.Text = "YOHAKU";
                 }
             }
+           
             VoHieuHoaCacTruongConLai(uc_AT_Rows3);
 
         }
 
-        private void Properties_SelectedIndexChanged1(object sender, EventArgs e)
+        private void Properties_ItemIndexChanged1(object sender, EventArgs e)
         {
-            if (uc_AT_Rows1.txt_TruongSo07.SelectedIndex != 5 && 
-                uc_AT_Rows1.txt_TruongSo07.SelectedIndex != 6 &&
-                uc_AT_Rows1.txt_TruongSo07.SelectedIndex != 7)
+            if (uc_AT_Rows1.txt_TruongSo07.Text != "YOHAKU")
             {
-                if (uc_AT_Rows2.txt_TruongSo07.SelectedIndex == 5 ||
-                   uc_AT_Rows2.txt_TruongSo07.SelectedIndex == 6 ||
-                   uc_AT_Rows2.txt_TruongSo07.SelectedIndex == 7 ||
-                   uc_AT_Rows2.txt_TruongSo07.SelectedIndex == -1)
+                if (uc_AT_Rows2.txt_TruongSo07.Text == "YOHAKU")
                 {
 
-                    uc_AT_Rows3.txt_TruongSo07.SelectedIndex = uc_AT_Rows2.txt_TruongSo07.SelectedIndex;
-                    uc_AT_Rows4.txt_TruongSo07.SelectedIndex = uc_AT_Rows2.txt_TruongSo07.SelectedIndex;
-                    uc_AT_Rows5.txt_TruongSo07.SelectedIndex = uc_AT_Rows2.txt_TruongSo07.SelectedIndex;
-                    uc_AT_Rows6.txt_TruongSo07.SelectedIndex = uc_AT_Rows2.txt_TruongSo07.SelectedIndex;
-                    uc_AT_Rows7.txt_TruongSo07.SelectedIndex = uc_AT_Rows2.txt_TruongSo07.SelectedIndex;
-                    uc_AT_Rows8.txt_TruongSo07.SelectedIndex = uc_AT_Rows2.txt_TruongSo07.SelectedIndex;
-                    uc_AT_Rows9.txt_TruongSo07.SelectedIndex = uc_AT_Rows2.txt_TruongSo07.SelectedIndex;
-                    uc_AT_Rows10.txt_TruongSo07.SelectedIndex = uc_AT_Rows2.txt_TruongSo07.SelectedIndex;
+                    uc_AT_Rows3.txt_TruongSo07.Text = "YOHAKU";
+                    uc_AT_Rows4.txt_TruongSo07.Text = "YOHAKU";
+                    uc_AT_Rows5.txt_TruongSo07.Text = "YOHAKU";
+                    uc_AT_Rows6.txt_TruongSo07.Text = "YOHAKU";
+                    uc_AT_Rows7.txt_TruongSo07.Text = "YOHAKU";
+                    uc_AT_Rows8.txt_TruongSo07.Text = "YOHAKU";
+                    uc_AT_Rows9.txt_TruongSo07.Text = "YOHAKU";
+                    uc_AT_Rows10.txt_TruongSo07.Text = "YOHAKU";
                 }
             }
+           
+            
             VoHieuHoaCacTruongConLai(uc_AT_Rows2);
 
         }
 
-        private void Properties_SelectedIndexChanged(object sender, EventArgs e)
+        private void Properties_ItemIndexChanged(object sender, EventArgs e)
         {
-            if (uc_AT_Rows1.txt_TruongSo07.SelectedIndex == 5 ||
-                uc_AT_Rows1.txt_TruongSo07.SelectedIndex == 6 ||
-                uc_AT_Rows1.txt_TruongSo07.SelectedIndex == 7 ||
-                uc_AT_Rows1.txt_TruongSo07.SelectedIndex == -1)
+            if (uc_AT_Rows1.txt_TruongSo07.Text == "YOHAKU" ||
+                uc_AT_Rows1.txt_TruongSo07.Text == "KAKISONJI" ||
+                uc_AT_Rows1.txt_TruongSo07.Text == "MISIYO")
             {
-                uc_AT_Rows2.txt_TruongSo07.SelectedIndex = uc_AT_Rows1.txt_TruongSo07.SelectedIndex;
-                uc_AT_Rows3.txt_TruongSo07.SelectedIndex = uc_AT_Rows1.txt_TruongSo07.SelectedIndex;
-                uc_AT_Rows4.txt_TruongSo07.SelectedIndex = uc_AT_Rows1.txt_TruongSo07.SelectedIndex;
-                uc_AT_Rows5.txt_TruongSo07.SelectedIndex = uc_AT_Rows1.txt_TruongSo07.SelectedIndex;
-                uc_AT_Rows6.txt_TruongSo07.SelectedIndex = uc_AT_Rows1.txt_TruongSo07.SelectedIndex;
-                uc_AT_Rows7.txt_TruongSo07.SelectedIndex = uc_AT_Rows1.txt_TruongSo07.SelectedIndex;
-                uc_AT_Rows8.txt_TruongSo07.SelectedIndex = uc_AT_Rows1.txt_TruongSo07.SelectedIndex;
-                uc_AT_Rows9.txt_TruongSo07.SelectedIndex = uc_AT_Rows1.txt_TruongSo07.SelectedIndex;
-                uc_AT_Rows10.txt_TruongSo07.SelectedIndex = uc_AT_Rows1.txt_TruongSo07.SelectedIndex;
+                uc_AT_Rows2.txt_TruongSo07.Text = uc_AT_Rows1.txt_TruongSo07.Text;
+                uc_AT_Rows3.txt_TruongSo07.Text = uc_AT_Rows1.txt_TruongSo07.Text;
+                uc_AT_Rows4.txt_TruongSo07.Text = uc_AT_Rows1.txt_TruongSo07.Text;
+                uc_AT_Rows5.txt_TruongSo07.Text = uc_AT_Rows1.txt_TruongSo07.Text;
+                uc_AT_Rows6.txt_TruongSo07.Text = uc_AT_Rows1.txt_TruongSo07.Text;
+                uc_AT_Rows7.txt_TruongSo07.Text = uc_AT_Rows1.txt_TruongSo07.Text;
+                uc_AT_Rows8.txt_TruongSo07.Text = uc_AT_Rows1.txt_TruongSo07.Text;
+                uc_AT_Rows9.txt_TruongSo07.Text = uc_AT_Rows1.txt_TruongSo07.Text;
+                uc_AT_Rows10.txt_TruongSo07.Text = uc_AT_Rows1.txt_TruongSo07.Text;
             }
-
+            
             VoHieuHoaCacTruongConLai(uc_AT_Rows1);
         }
 
         private void UC_AT_Load(object sender, EventArgs e)
         {
+            
             resetData();
             setSTT();
         }
@@ -467,14 +425,10 @@ namespace PhieuKiemKe.MyUserControl
 
         public void VoHieuHoaCacTruongConLai(uc_AT_Rows uc)
         {
-            if (uc.txt_TruongSo07.SelectedIndex == 0 ||
-                uc.txt_TruongSo07.SelectedIndex == 1 ||
-                uc.txt_TruongSo07.SelectedIndex == 2 ||
-                uc.txt_TruongSo07.SelectedIndex == 3 ||
-                uc.txt_TruongSo07.SelectedIndex == 4 ||
-                uc.txt_TruongSo07.SelectedIndex == 5 ||
-                uc.txt_TruongSo07.SelectedIndex == 6 ||
-                uc.txt_TruongSo07.SelectedIndex == 7 )
+            if (uc.txt_TruongSo07.Text == "SAKUJYO" ||
+                uc.txt_TruongSo07.Text == "YOHAKU" ||
+                uc.txt_TruongSo07.Text == "KAKISONJI" ||
+                uc.txt_TruongSo07.Text == "MISIYO")
             {
                 uc.txt_TruongSo08.Text = "";
                 uc.txt_TruongSo09.Text = "";

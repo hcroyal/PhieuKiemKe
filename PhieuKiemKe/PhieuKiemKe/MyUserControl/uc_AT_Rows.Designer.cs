@@ -1,11 +1,20 @@
-﻿namespace PhieuKiemKe.MyUserControl
+﻿using System;
+using System.ComponentModel;
+using System.Drawing;
+using System.Windows.Forms;
+using DevExpress.Utils;
+using DevExpress.XtraEditors;
+using DevExpress.XtraEditors.Controls;
+using DevExpress.XtraEditors.Mask;
+
+namespace PhieuKiemKe.MyUserControl
 {
     partial class uc_AT_Rows
     {
         /// <summary> 
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        private IContainer components = null;
 
         /// <summary> 
         /// Clean up any resources being used.
@@ -32,7 +41,7 @@
             this.txt_TruongSo10 = new DevExpress.XtraEditors.TextEdit();
             this.txt_TruongSo08 = new DevExpress.XtraEditors.TextEdit();
             this.txt_TruongSo09 = new DevExpress.XtraEditors.TextEdit();
-            this.txt_TruongSo07 = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.txt_TruongSo07 = new DevExpress.XtraEditors.LookUpEdit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_STT.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_TruongSo10.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_TruongSo08.Properties)).BeginInit();
@@ -83,10 +92,12 @@
             this.txt_TruongSo07.Location = new System.Drawing.Point(30, 1);
             this.txt_TruongSo07.Name = "txt_TruongSo07";
             this.txt_TruongSo07.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
+            this.txt_TruongSo07.Properties.BestFitMode = DevExpress.XtraEditors.Controls.BestFitMode.BestFitResizePopup;
             this.txt_TruongSo07.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.txt_TruongSo07.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txt_TruongSo07.Properties.DropDownRows = 8;
+            this.txt_TruongSo07.Properties.NullText = "";
+            this.txt_TruongSo07.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
             this.txt_TruongSo07.Size = new System.Drawing.Size(200, 20);
             this.txt_TruongSo07.TabIndex = 1;
             this.txt_TruongSo07.TextChanged += new System.EventHandler(this.txt_TruongSo07_TextChanged);
@@ -116,10 +127,10 @@
 
         #endregion
 
-        public DevExpress.XtraEditors.TextEdit txt_STT;
-        public DevExpress.XtraEditors.TextEdit txt_TruongSo10;
-        public DevExpress.XtraEditors.TextEdit txt_TruongSo08;
-        public DevExpress.XtraEditors.TextEdit txt_TruongSo09;
-        public DevExpress.XtraEditors.ComboBoxEdit txt_TruongSo07;
+        public TextEdit txt_STT;
+        public TextEdit txt_TruongSo10;
+        public TextEdit txt_TruongSo08;
+        public TextEdit txt_TruongSo09;
+        public LookUpEdit txt_TruongSo07;
     }
 }
