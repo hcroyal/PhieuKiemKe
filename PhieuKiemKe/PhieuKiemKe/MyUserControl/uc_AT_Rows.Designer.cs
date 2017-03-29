@@ -54,6 +54,7 @@
             this.txt_TruongSo10.Name = "txt_TruongSo10";
             this.txt_TruongSo10.Size = new System.Drawing.Size(30, 20);
             this.txt_TruongSo10.TabIndex = 2;
+            this.txt_TruongSo10.EditValueChanged += new System.EventHandler(this.txt_TruongSo10_EditValueChanged);
             // 
             // txt_TruongSo08
             // 
@@ -61,6 +62,7 @@
             this.txt_TruongSo08.Name = "txt_TruongSo08";
             this.txt_TruongSo08.Size = new System.Drawing.Size(100, 20);
             this.txt_TruongSo08.TabIndex = 3;
+            this.txt_TruongSo08.EditValueChanged += new System.EventHandler(this.txt_TruongSo08_EditValueChanged);
             // 
             // txt_TruongSo09
             // 
@@ -68,6 +70,7 @@
             this.txt_TruongSo09.Name = "txt_TruongSo09";
             this.txt_TruongSo09.Size = new System.Drawing.Size(78, 20);
             this.txt_TruongSo09.TabIndex = 4;
+            this.txt_TruongSo09.EditValueChanged += new System.EventHandler(this.txt_TruongSo09_EditValueChanged);
             // 
             // txt_TruongSo07
             // 
@@ -77,8 +80,10 @@
             this.txt_TruongSo07.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.txt_TruongSo07.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txt_TruongSo07.Properties.DropDownRows = 8;
             this.txt_TruongSo07.Size = new System.Drawing.Size(200, 20);
             this.txt_TruongSo07.TabIndex = 1;
+            this.txt_TruongSo07.TextChanged += new System.EventHandler(this.txt_TruongSo07_TextChanged);
             // 
             // uc_AT_Rows
             // 

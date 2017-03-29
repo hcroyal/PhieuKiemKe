@@ -12,6 +12,7 @@ namespace PhieuKiemKe.MyUserControl
 {
     public partial class UC_AT : UserControl
     {
+        public event AllTextChange Changed;
         public UC_AT()
         {
             InitializeComponent();
@@ -50,6 +51,8 @@ namespace PhieuKiemKe.MyUserControl
 
 
         }
+
+       
 
         private void Txt_TruongSo09_KeyDown2(object sender, KeyEventArgs e)
         {
@@ -207,13 +210,13 @@ namespace PhieuKiemKe.MyUserControl
         }
         private void Properties_SelectedIndexChanged8(object sender, EventArgs e)
         {
-            if (uc_AT_Rows8.txt_TruongSo07.SelectedIndex != 1 &&
-                uc_AT_Rows8.txt_TruongSo07.SelectedIndex != 2 &&
-                uc_AT_Rows8.txt_TruongSo07.SelectedIndex != 3)
+            if (uc_AT_Rows8.txt_TruongSo07.SelectedIndex != 5 &&
+                uc_AT_Rows8.txt_TruongSo07.SelectedIndex != 6 &&
+                uc_AT_Rows8.txt_TruongSo07.SelectedIndex != 7)
             {
-                if (uc_AT_Rows9.txt_TruongSo07.SelectedIndex == 1 ||
-                    uc_AT_Rows9.txt_TruongSo07.SelectedIndex == 2 ||
-                    uc_AT_Rows9.txt_TruongSo07.SelectedIndex == 3 ||
+                if (uc_AT_Rows9.txt_TruongSo07.SelectedIndex == 5 ||
+                    uc_AT_Rows9.txt_TruongSo07.SelectedIndex == 6 ||
+                    uc_AT_Rows9.txt_TruongSo07.SelectedIndex == 7 ||
                     uc_AT_Rows9.txt_TruongSo07.SelectedIndex == -1)
                 {
                     uc_AT_Rows10.txt_TruongSo07.SelectedIndex = uc_AT_Rows9.txt_TruongSo07.SelectedIndex;
@@ -225,13 +228,13 @@ namespace PhieuKiemKe.MyUserControl
         private void Properties_SelectedIndexChanged7(object sender, EventArgs e)
         {
 
-            if (uc_AT_Rows7.txt_TruongSo07.SelectedIndex != 1 &&
-                uc_AT_Rows7.txt_TruongSo07.SelectedIndex != 2 &&
-                uc_AT_Rows7.txt_TruongSo07.SelectedIndex != 3)
+            if (uc_AT_Rows7.txt_TruongSo07.SelectedIndex != 5 &&
+                uc_AT_Rows7.txt_TruongSo07.SelectedIndex != 6 &&
+                uc_AT_Rows7.txt_TruongSo07.SelectedIndex != 7)
             {
-                if (uc_AT_Rows8.txt_TruongSo07.SelectedIndex == 1 ||
-                    uc_AT_Rows8.txt_TruongSo07.SelectedIndex == 2 ||
-                    uc_AT_Rows8.txt_TruongSo07.SelectedIndex == 3 ||
+                if (uc_AT_Rows8.txt_TruongSo07.SelectedIndex == 5 ||
+                    uc_AT_Rows8.txt_TruongSo07.SelectedIndex == 6 ||
+                    uc_AT_Rows8.txt_TruongSo07.SelectedIndex == 7 ||
                     uc_AT_Rows8.txt_TruongSo07.SelectedIndex == -1)
                 {
                     
@@ -244,13 +247,13 @@ namespace PhieuKiemKe.MyUserControl
 
         private void Properties_SelectedIndexChanged6(object sender, EventArgs e)
         {
-            if (uc_AT_Rows6.txt_TruongSo07.SelectedIndex != 1 &&
-                uc_AT_Rows6.txt_TruongSo07.SelectedIndex != 2 &&
-                uc_AT_Rows6.txt_TruongSo07.SelectedIndex != 3)
+            if (uc_AT_Rows6.txt_TruongSo07.SelectedIndex != 5 &&
+                uc_AT_Rows6.txt_TruongSo07.SelectedIndex != 6 &&
+                uc_AT_Rows6.txt_TruongSo07.SelectedIndex != 7)
             {
-                if (uc_AT_Rows7.txt_TruongSo07.SelectedIndex == 1 ||
-                    uc_AT_Rows7.txt_TruongSo07.SelectedIndex == 2 ||
-                    uc_AT_Rows7.txt_TruongSo07.SelectedIndex == 3 ||
+                if (uc_AT_Rows7.txt_TruongSo07.SelectedIndex == 5 ||
+                    uc_AT_Rows7.txt_TruongSo07.SelectedIndex == 6 ||
+                    uc_AT_Rows7.txt_TruongSo07.SelectedIndex == 7 ||
                     uc_AT_Rows7.txt_TruongSo07.SelectedIndex == -1)
                 {
                     
@@ -264,13 +267,13 @@ namespace PhieuKiemKe.MyUserControl
 
         private void Properties_SelectedIndexChanged5(object sender, EventArgs e)
         {
-            if (uc_AT_Rows5.txt_TruongSo07.SelectedIndex != 1 &&
-                uc_AT_Rows5.txt_TruongSo07.SelectedIndex != 2 &&
-                uc_AT_Rows5.txt_TruongSo07.SelectedIndex != 3)
+            if (uc_AT_Rows5.txt_TruongSo07.SelectedIndex != 5 &&
+                uc_AT_Rows5.txt_TruongSo07.SelectedIndex != 6 &&
+                uc_AT_Rows5.txt_TruongSo07.SelectedIndex != 7)
             {
-                if (uc_AT_Rows6.txt_TruongSo07.SelectedIndex == 1 ||
-                    uc_AT_Rows6.txt_TruongSo07.SelectedIndex == 2 ||
-                    uc_AT_Rows6.txt_TruongSo07.SelectedIndex == 3 ||
+                if (uc_AT_Rows6.txt_TruongSo07.SelectedIndex == 5 ||
+                    uc_AT_Rows6.txt_TruongSo07.SelectedIndex == 6 ||
+                    uc_AT_Rows6.txt_TruongSo07.SelectedIndex == 7 ||
                     uc_AT_Rows6.txt_TruongSo07.SelectedIndex == -1)
                 {
                     
@@ -285,13 +288,13 @@ namespace PhieuKiemKe.MyUserControl
 
         private void Properties_SelectedIndexChanged4(object sender, EventArgs e)
         {
-            if (uc_AT_Rows4.txt_TruongSo07.SelectedIndex != 1 && 
-                uc_AT_Rows4.txt_TruongSo07.SelectedIndex != 2 &&
-                uc_AT_Rows4.txt_TruongSo07.SelectedIndex != 3)
+            if (uc_AT_Rows4.txt_TruongSo07.SelectedIndex != 5 && 
+                uc_AT_Rows4.txt_TruongSo07.SelectedIndex != 6 &&
+                uc_AT_Rows4.txt_TruongSo07.SelectedIndex != 7)
             {
-                if (uc_AT_Rows5.txt_TruongSo07.SelectedIndex == 1 ||
-                    uc_AT_Rows5.txt_TruongSo07.SelectedIndex == 2 ||
-                    uc_AT_Rows5.txt_TruongSo07.SelectedIndex == 3 ||
+                if (uc_AT_Rows5.txt_TruongSo07.SelectedIndex == 5 ||
+                    uc_AT_Rows5.txt_TruongSo07.SelectedIndex == 6 ||
+                    uc_AT_Rows5.txt_TruongSo07.SelectedIndex == 7 ||
                     uc_AT_Rows5.txt_TruongSo07.SelectedIndex == -1)
                 {
 
@@ -307,12 +310,13 @@ namespace PhieuKiemKe.MyUserControl
 
         private void Properties_SelectedIndexChanged3(object sender, EventArgs e)
         {
-            if (uc_AT_Rows3.txt_TruongSo07.SelectedIndex != 1 && uc_AT_Rows3.txt_TruongSo07.SelectedIndex != 2 &&
-                uc_AT_Rows3.txt_TruongSo07.SelectedIndex != 3)
+            if (uc_AT_Rows3.txt_TruongSo07.SelectedIndex != 5 && 
+                uc_AT_Rows3.txt_TruongSo07.SelectedIndex != 6 &&
+                uc_AT_Rows3.txt_TruongSo07.SelectedIndex != 7)
             {
-                if (uc_AT_Rows4.txt_TruongSo07.SelectedIndex == 1 ||
-                   uc_AT_Rows4.txt_TruongSo07.SelectedIndex == 2 ||
-                   uc_AT_Rows4.txt_TruongSo07.SelectedIndex == 3 ||
+                if (uc_AT_Rows4.txt_TruongSo07.SelectedIndex == 5 ||
+                   uc_AT_Rows4.txt_TruongSo07.SelectedIndex == 6 ||
+                   uc_AT_Rows4.txt_TruongSo07.SelectedIndex == 7 ||
                    uc_AT_Rows4.txt_TruongSo07.SelectedIndex == -1)
                 {
 
@@ -330,12 +334,13 @@ namespace PhieuKiemKe.MyUserControl
 
         private void Properties_SelectedIndexChanged2(object sender, EventArgs e)
         {
-            if (uc_AT_Rows2.txt_TruongSo07.SelectedIndex != 1 && uc_AT_Rows2.txt_TruongSo07.SelectedIndex != 2 &&
-                uc_AT_Rows2.txt_TruongSo07.SelectedIndex != 3)
+            if (uc_AT_Rows2.txt_TruongSo07.SelectedIndex != 5 && 
+                uc_AT_Rows2.txt_TruongSo07.SelectedIndex != 6 &&
+                uc_AT_Rows2.txt_TruongSo07.SelectedIndex != 7)
             {
-                if (uc_AT_Rows3.txt_TruongSo07.SelectedIndex == 1 ||
-                uc_AT_Rows3.txt_TruongSo07.SelectedIndex == 2 ||
-                uc_AT_Rows3.txt_TruongSo07.SelectedIndex == 3 ||
+                if (uc_AT_Rows3.txt_TruongSo07.SelectedIndex == 5 ||
+                uc_AT_Rows3.txt_TruongSo07.SelectedIndex == 6 ||
+                uc_AT_Rows3.txt_TruongSo07.SelectedIndex == 7 ||
                 uc_AT_Rows3.txt_TruongSo07.SelectedIndex == -1)
                 {
                     uc_AT_Rows4.txt_TruongSo07.SelectedIndex = uc_AT_Rows3.txt_TruongSo07.SelectedIndex;
@@ -353,12 +358,13 @@ namespace PhieuKiemKe.MyUserControl
 
         private void Properties_SelectedIndexChanged1(object sender, EventArgs e)
         {
-            if (uc_AT_Rows1.txt_TruongSo07.SelectedIndex != 1 && uc_AT_Rows1.txt_TruongSo07.SelectedIndex != 2 &&
-                uc_AT_Rows1.txt_TruongSo07.SelectedIndex != 3)
+            if (uc_AT_Rows1.txt_TruongSo07.SelectedIndex != 5 && 
+                uc_AT_Rows1.txt_TruongSo07.SelectedIndex != 6 &&
+                uc_AT_Rows1.txt_TruongSo07.SelectedIndex != 7)
             {
-                if (uc_AT_Rows2.txt_TruongSo07.SelectedIndex == 1 ||
-                   uc_AT_Rows2.txt_TruongSo07.SelectedIndex == 2 ||
-                   uc_AT_Rows2.txt_TruongSo07.SelectedIndex == 3 ||
+                if (uc_AT_Rows2.txt_TruongSo07.SelectedIndex == 5 ||
+                   uc_AT_Rows2.txt_TruongSo07.SelectedIndex == 6 ||
+                   uc_AT_Rows2.txt_TruongSo07.SelectedIndex == 7 ||
                    uc_AT_Rows2.txt_TruongSo07.SelectedIndex == -1)
                 {
 
@@ -378,7 +384,10 @@ namespace PhieuKiemKe.MyUserControl
 
         private void Properties_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (uc_AT_Rows1.txt_TruongSo07.SelectedIndex==1 || uc_AT_Rows1.txt_TruongSo07.SelectedIndex == 2 || uc_AT_Rows1.txt_TruongSo07.SelectedIndex == 3 || uc_AT_Rows1.txt_TruongSo07.SelectedIndex == -1)
+            if (uc_AT_Rows1.txt_TruongSo07.SelectedIndex == 5 ||
+                uc_AT_Rows1.txt_TruongSo07.SelectedIndex == 6 ||
+                uc_AT_Rows1.txt_TruongSo07.SelectedIndex == 7 ||
+                uc_AT_Rows1.txt_TruongSo07.SelectedIndex == -1)
             {
                 uc_AT_Rows2.txt_TruongSo07.SelectedIndex = uc_AT_Rows1.txt_TruongSo07.SelectedIndex;
                 uc_AT_Rows3.txt_TruongSo07.SelectedIndex = uc_AT_Rows1.txt_TruongSo07.SelectedIndex;
@@ -390,11 +399,13 @@ namespace PhieuKiemKe.MyUserControl
                 uc_AT_Rows9.txt_TruongSo07.SelectedIndex = uc_AT_Rows1.txt_TruongSo07.SelectedIndex;
                 uc_AT_Rows10.txt_TruongSo07.SelectedIndex = uc_AT_Rows1.txt_TruongSo07.SelectedIndex;
             }
+
             VoHieuHoaCacTruongConLai(uc_AT_Rows1);
         }
 
         private void UC_AT_Load(object sender, EventArgs e)
         {
+            resetData();
             setSTT();
         }
         private void setSTT()
@@ -425,7 +436,8 @@ namespace PhieuKiemKe.MyUserControl
             uc_AT_Rows7.resetData();    
             uc_AT_Rows8.resetData();    
             uc_AT_Rows9.resetData();    
-            uc_AT_Rows10.resetData();    
+            uc_AT_Rows10.resetData();
+            txt_TruongSo02.Focus();
         }
 
         public bool isEmpty()
@@ -475,5 +487,38 @@ namespace PhieuKiemKe.MyUserControl
             }
           
         }
+
+        public void SaveData(string idimage)
+        {
+            uc_AT_Rows1.SaveData(idimage, txt_TruongSo02.Text, txt_TruongSo03.Text, txt_TruongSo04.Text, txt_TruongSo05.Text, "1");
+            uc_AT_Rows2.SaveData(idimage, txt_TruongSo02.Text, txt_TruongSo03.Text, txt_TruongSo04.Text, txt_TruongSo05.Text, "2");
+            uc_AT_Rows3.SaveData(idimage, txt_TruongSo02.Text, txt_TruongSo03.Text, txt_TruongSo04.Text, txt_TruongSo05.Text, "3");
+            uc_AT_Rows4.SaveData(idimage, txt_TruongSo02.Text, txt_TruongSo03.Text, txt_TruongSo04.Text, txt_TruongSo05.Text, "4");
+            uc_AT_Rows5.SaveData(idimage, txt_TruongSo02.Text, txt_TruongSo03.Text, txt_TruongSo04.Text, txt_TruongSo05.Text, "5");
+            uc_AT_Rows6.SaveData(idimage, txt_TruongSo02.Text, txt_TruongSo03.Text, txt_TruongSo04.Text, txt_TruongSo05.Text, "6");
+            uc_AT_Rows7.SaveData(idimage, txt_TruongSo02.Text, txt_TruongSo03.Text, txt_TruongSo04.Text, txt_TruongSo05.Text, "7");
+            uc_AT_Rows8.SaveData(idimage, txt_TruongSo02.Text, txt_TruongSo03.Text, txt_TruongSo04.Text, txt_TruongSo05.Text, "8");
+            uc_AT_Rows9.SaveData(idimage, txt_TruongSo02.Text, txt_TruongSo03.Text, txt_TruongSo04.Text, txt_TruongSo05.Text, "9");
+            uc_AT_Rows10.SaveData(idimage,txt_TruongSo02.Text, txt_TruongSo03.Text, txt_TruongSo04.Text, txt_TruongSo05.Text, "10");
+        }
+
+        private void txt_TruongSo02_EditValueChanged(object sender, EventArgs e)
+        {
+            Changed?.Invoke(sender, e);
+        }
+
+        private void txt_TruongSo03_EditValueChanged(object sender, EventArgs e)
+        {
+            Changed?.Invoke(sender, e);
+        }
+
+        private void txt_TruongSo04_EditValueChanged(object sender, EventArgs e)
+        {
+            Changed?.Invoke(sender, e);
+        }
+
+        private void txt_TruongSo05_EditValueChanged(object sender, EventArgs e)
+        {
+            Changed?.Invoke(sender, e);}
     }
 }
