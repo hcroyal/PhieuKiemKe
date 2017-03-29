@@ -289,7 +289,6 @@ namespace PhieuKiemKe
         {
             new frm_ChangeZoom().ShowDialog();
         }
-
         private void btn_QuanLyBatch_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             new frm_ManagerBatch().ShowDialog();
@@ -315,8 +314,7 @@ namespace PhieuKiemKe
         }
 
         private void btn_Check_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            new frm_Check_DeSo().ShowDialog();
+        {new frm_Check_DeSo().ShowDialog();
         }
     }
 }

@@ -655,7 +655,7 @@ namespace PhieuKiemKe.MyForm
                 }
                 else if (tabcontrol_DeSo2.SelectedTabPage == tp_AT_DeSo2)
                 {
-                    uC_AT2.SuaVaLuu(lb_username1.Text, lb_username2.Text, lb_Image.Text);
+                    uC_AT2.SuaVaLuu(lb_username2.Text, lb_username1.Text, lb_Image.Text);
                 }
 
                 ResetData();
