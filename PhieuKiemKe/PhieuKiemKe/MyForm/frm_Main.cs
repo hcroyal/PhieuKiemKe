@@ -13,8 +13,6 @@ namespace PhieuKiemKe
 {
     public partial class frm_Main : DevExpress.XtraEditors.XtraForm
     {
-        private bool _Flag = false;
-        private bool _Flag1 = false;
         public frm_Main()
         {
             InitializeComponent();
@@ -108,39 +106,7 @@ namespace PhieuKiemKe
                 if (Global.StrRole == "DESO")
                 {
                     if (Global.LoaiPhieu == "AE")
-                    {
                         tp_AE_Main.PageVisible = true;
-                        uc_AE1.uc_AE_Rows1.txt_TruongSo09.GotFocus += Txt_TruongSo09_GotFocus;
-                        uc_AE1.uc_AE_Rows1.txt_TruongSo09.Leave += Txt_TruongSo09_Leave;
-                        uc_AE1.uc_AE_Rows2.txt_TruongSo09.GotFocus += Txt_TruongSo09_GotFocus;
-                        uc_AE1.uc_AE_Rows2.txt_TruongSo09.Leave += Txt_TruongSo09_Leave;
-                        uc_AE1.uc_AE_Rows3.txt_TruongSo09.GotFocus += Txt_TruongSo09_GotFocus;
-                        uc_AE1.uc_AE_Rows3.txt_TruongSo09.Leave += Txt_TruongSo09_Leave;
-                        uc_AE1.uc_AE_Rows4.txt_TruongSo09.GotFocus += Txt_TruongSo09_GotFocus;
-                        uc_AE1.uc_AE_Rows4.txt_TruongSo09.Leave += Txt_TruongSo09_Leave;
-                        uc_AE1.uc_AE_Rows5.txt_TruongSo09.GotFocus += Txt_TruongSo09_GotFocus;
-                        uc_AE1.uc_AE_Rows5.txt_TruongSo09.Leave += Txt_TruongSo09_Leave;
-                        uc_AE1.uc_AE_Rows6.txt_TruongSo09.GotFocus += Txt_TruongSo09_GotFocus;
-                        uc_AE1.uc_AE_Rows6.txt_TruongSo09.Leave += Txt_TruongSo09_Leave;
-                        uc_AE1.uc_AE_Rows7.txt_TruongSo09.GotFocus += Txt_TruongSo09_GotFocus;
-                        uc_AE1.uc_AE_Rows7.txt_TruongSo09.Leave += Txt_TruongSo09_Leave;
-                        uc_AE1.uc_AE_Rows8.txt_TruongSo09.GotFocus += Txt_TruongSo09_GotFocus;
-                        uc_AE1.uc_AE_Rows8.txt_TruongSo09.Leave += Txt_TruongSo09_Leave;
-                        uc_AE1.uc_AE_Rows9.txt_TruongSo09.GotFocus += Txt_TruongSo09_GotFocus;
-                        uc_AE1.uc_AE_Rows9.txt_TruongSo09.Leave += Txt_TruongSo09_Leave;
-                        uc_AE1.uc_AE_Rows10.txt_TruongSo09.GotFocus += Txt_TruongSo09_GotFocus;
-                        uc_AE1.uc_AE_Rows10.txt_TruongSo09.Leave += Txt_TruongSo09_Leave;
-
-                        uc_AE1.txt_TruongSo02.GotFocus += Txt_TruongSo02_GotFocus;
-                        uc_AE1.txt_TruongSo03.GotFocus += Txt_TruongSo02_GotFocus;
-                        uc_AE1.txt_TruongSo04.GotFocus += Txt_TruongSo02_GotFocus;
-                        uc_AE1.txt_TruongSo05.GotFocus += Txt_TruongSo02_GotFocus;
-
-                        uc_AE1.txt_TruongSo02.Leave += Txt_TruongSo02_Leave;
-                        uc_AE1.txt_TruongSo03.Leave += Txt_TruongSo02_Leave;
-                        uc_AE1.txt_TruongSo04.Leave += Txt_TruongSo02_Leave;
-                        uc_AE1.txt_TruongSo05.Leave += Txt_TruongSo02_Leave;
-                    }
                     else if (Global.LoaiPhieu == "AT")
                         tp_AT_Main.PageVisible = true;
                 }
@@ -156,24 +122,6 @@ namespace PhieuKiemKe
             {
                 MessageBox.Show("Lỗi Load Main: " + i.Message);
             }
-        }
-
-        private void Txt_TruongSo02_GotFocus(object sender, EventArgs e)
-        {
-            _Flag1 = true;
-        }
-        private void Txt_TruongSo02_Leave(object sender, EventArgs e)
-        {
-            _Flag1 = false;
-        }
-        private void Txt_TruongSo09_Leave(object sender, EventArgs e)
-        {
-            _Flag = false;
-        }
-
-        private void Txt_TruongSo09_GotFocus(object sender, EventArgs e)
-        {
-            _Flag = true;
         }
 
         private void btn_Start_Submit_Click(object sender, EventArgs e)
@@ -318,26 +266,6 @@ namespace PhieuKiemKe
             {
                 new frm_FreeTime().ShowDialog();
                 Global.db_BPO.UpdateTimeFree(Global.Strtoken, Global.FreeTime);
-            }
-            if (e.KeyCode == Keys.Down && _Flag)
-            {
-                SendKeys.Send("{Tab}");
-            }
-            if (e.KeyCode == Keys.Down && _Flag1)
-            {
-                uc_AE1.uc_AE_Rows1.txt_TruongSo09.Focus();}
-
-            if (e.KeyCode == Keys.Up && _Flag)
-            {
-                SendKeys.Send("+{Tab}");
-            }
-            if (e.KeyCode == Keys.Right)
-            {
-                SendKeys.Send("{Tab}");
-            }
-            if (e.KeyCode == Keys.Left)
-            {
-                SendKeys.Send("+{Tab}");
             }
         }
 

@@ -17,6 +17,8 @@ namespace PhieuKiemKe.MyUserControl
         {
             InitializeComponent();
         }
+        private bool _Flag = false;
+        private bool _Flag1 = false;
         void UpdateStt()
         {
             uc_AE_Rows1.txt_STT.Text = "01";
@@ -89,6 +91,25 @@ namespace PhieuKiemKe.MyUserControl
                 }
             }
         }
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+            if (keyData == Keys.Down&& _Flag)
+            {
+                SendKeys.Send("{Tab}"); return true;
+            }
+            if (keyData == Keys.Down && _Flag1)
+            {
+                uc_AE_Rows1.txt_TruongSo09.Focus(); return true;
+            }
+            if (keyData == Keys.Up && _Flag)
+            {
+                SendKeys.Send("+{Tab}"); return true;
+            }
+            else
+            {
+                return base.ProcessCmdKey(ref msg, keyData);
+            }
+        }
         private void uc_AE_Load(object sender, EventArgs e)
         {
             UpdateStt();
@@ -96,6 +117,55 @@ namespace PhieuKiemKe.MyUserControl
             txt_TruongSo03.GotFocus += Txt_TruongSo02_GotFocus;
             txt_TruongSo04.GotFocus += Txt_TruongSo02_GotFocus;
             txt_TruongSo05.GotFocus += Txt_TruongSo02_GotFocus;
+
+            uc_AE_Rows1.txt_TruongSo09.GotFocus += Txt_TruongSo09_GotFocus;
+            uc_AE_Rows1.txt_TruongSo09.Leave += Txt_TruongSo09_Leave;
+            uc_AE_Rows2.txt_TruongSo09.GotFocus += Txt_TruongSo09_GotFocus;
+            uc_AE_Rows2.txt_TruongSo09.Leave += Txt_TruongSo09_Leave;
+            uc_AE_Rows3.txt_TruongSo09.GotFocus += Txt_TruongSo09_GotFocus;
+            uc_AE_Rows3.txt_TruongSo09.Leave += Txt_TruongSo09_Leave;
+            uc_AE_Rows4.txt_TruongSo09.GotFocus += Txt_TruongSo09_GotFocus;
+            uc_AE_Rows4.txt_TruongSo09.Leave += Txt_TruongSo09_Leave;
+            uc_AE_Rows5.txt_TruongSo09.GotFocus += Txt_TruongSo09_GotFocus;
+            uc_AE_Rows5.txt_TruongSo09.Leave += Txt_TruongSo09_Leave;
+            uc_AE_Rows6.txt_TruongSo09.GotFocus += Txt_TruongSo09_GotFocus;
+            uc_AE_Rows6.txt_TruongSo09.Leave += Txt_TruongSo09_Leave;
+            uc_AE_Rows7.txt_TruongSo09.GotFocus += Txt_TruongSo09_GotFocus;
+            uc_AE_Rows7.txt_TruongSo09.Leave += Txt_TruongSo09_Leave;
+            uc_AE_Rows8.txt_TruongSo09.GotFocus += Txt_TruongSo09_GotFocus;
+            uc_AE_Rows8.txt_TruongSo09.Leave += Txt_TruongSo09_Leave;
+            uc_AE_Rows9.txt_TruongSo09.GotFocus += Txt_TruongSo09_GotFocus;
+            uc_AE_Rows9.txt_TruongSo09.Leave += Txt_TruongSo09_Leave;
+            uc_AE_Rows10.txt_TruongSo09.GotFocus += Txt_TruongSo09_GotFocus;
+            uc_AE_Rows10.txt_TruongSo09.Leave += Txt_TruongSo09_Leave;
+
+            txt_TruongSo02.GotFocus += Txt_TruongSo03_GotFocus;
+            txt_TruongSo03.GotFocus += Txt_TruongSo03_GotFocus;
+            txt_TruongSo04.GotFocus += Txt_TruongSo03_GotFocus;
+            txt_TruongSo05.GotFocus += Txt_TruongSo03_GotFocus;
+
+            txt_TruongSo02.Leave += Txt_TruongSo02_Leave;
+            txt_TruongSo03.Leave += Txt_TruongSo02_Leave;
+            txt_TruongSo04.Leave += Txt_TruongSo02_Leave;
+            txt_TruongSo05.Leave += Txt_TruongSo02_Leave;
+        }
+
+        private void Txt_TruongSo03_GotFocus(object sender, EventArgs e)
+        {
+            _Flag1 = true;
+        }
+        private void Txt_TruongSo02_Leave(object sender, EventArgs e)
+        {
+            _Flag1 = false;
+        }
+        private void Txt_TruongSo09_Leave(object sender, EventArgs e)
+        {
+            _Flag = false;
+        }
+
+        private void Txt_TruongSo09_GotFocus(object sender, EventArgs e)
+        {
+            _Flag = true;
         }
 
         private void Txt_TruongSo02_GotFocus(object sender, EventArgs e)
