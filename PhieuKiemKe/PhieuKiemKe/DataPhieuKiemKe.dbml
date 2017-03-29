@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="PhieuKiemKe" Class="DataPhieuKiemKeDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=10.10.10.248;Initial Catalog=PhieuKiemKe;Persist Security Info=True;User ID=sa" SettingsObjectName="PhieuKiemKe.Properties.Settings" SettingsPropertyName="PhieuKiemKeConnectionString2" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=10.10.10.248\BPOSERVER;Initial Catalog=PhieuKiemKe;Persist Security Info=True;User ID=sa" SettingsObjectName="PhieuKiemKe.Properties.Settings" SettingsPropertyName="PhieuKiemKeConnectionString" Provider="System.Data.SqlClient" />
   <Table Name="dbo.tbl_Batch" Member="tbl_Batches">
     <Type Name="tbl_Batch">
       <Column Name="IDBatch" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -135,6 +135,87 @@
       <Column Name="idphieu" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
     </ElementType>
   </Function>
+  <Function Name="dbo.ExportExcel_AE" Method="ExportExcel_AE">
+    <Parameter Name="fbatchname" Type="System.String" DbType="NVarChar(250)" />
+    <ElementType Name="ExportExcel_AEResult">
+      <Column Name="idimage" Type="System.String" DbType="NVarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="Truong_01" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Truong_02" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Truong_03" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Truong_04" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Truong_05" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="STT" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Truong_07" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Truong_08" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Truong_09" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Truong_10" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Truong_11" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="Truong_12" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="Trong_1" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="Trong_2" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="Trong_3" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="Trong_4" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="Trong_5" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="Trong_6" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="Batch" Type="System.String" DbType="NVarChar(300)" CanBeNull="true" />
+      <Column Name="Location" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="idphieu" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.ExportExcel_AE_Error" Method="ExportExcel_AE_Error">
+    <Parameter Name="fbatchname" Type="System.String" DbType="NVarChar(250)" />
+    <ElementType Name="ExportExcel_AE_ErrorResult">
+      <Column Name="idimage" Type="System.String" DbType="NVarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="Truong_01" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Truong_02" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Truong_03" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Truong_04" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Truong_05" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="STT" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Truong_07" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Truong_08" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Truong_09" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Truong_10" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Truong_11" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="Truong_12" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="Trong_1" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="Trong_2" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="Trong_3" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="Trong_4" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="Trong_5" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="Trong_6" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="Batch" Type="System.String" DbType="NVarChar(300)" CanBeNull="true" />
+      <Column Name="Location" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="idphieu" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.ExportExcel_AT" Method="ExportExcel_AT">
+    <Parameter Name="fbatchname" Type="System.String" DbType="NVarChar(250)" />
+    <ElementType Name="ExportExcel_ATResult">
+      <Column Name="idimage" Type="System.String" DbType="NVarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="Truong_01" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Truong_02" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Truong_03" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Truong_04" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Truong_05" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="STT" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Truong_07" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Truong_08" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Truong_09" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Truong_10" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Truong_11" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="Truong_12" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="Trong_1" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="Trong_2" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="Trong_3" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="Trong_4" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="Trong_5" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="Trong_6" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="Batch" Type="System.String" DbType="NVarChar(300)" CanBeNull="true" />
+      <Column Name="Location" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="idphieu" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
   <Function Name="dbo.GetBatch" Method="GetBatch">
     <ElementType Name="GetBatchResult">
       <Column Name="fBatchName" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
@@ -169,6 +250,19 @@
     <Parameter Name="username" Type="System.String" DbType="NVarChar(255)" />
     <ElementType Name="GetImageResult">
       <Column Name="" Member="Column1" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GetImageCheck_DeSo" Method="GetImageCheck_DeSo">
+    <Parameter Name="fBatchName" Type="System.String" DbType="NVarChar(250)" />
+    <Parameter Name="UserName" Parameter="userName" Type="System.String" DbType="NVarChar(250)" />
+    <ElementType Name="GetImageCheck_DeSoResult">
+      <Column Name="" Member="Column1" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GetSoLoi_CheckDeSo" Method="GetSoLoi_CheckDeSo">
+    <Parameter Name="fBatchName" Type="System.String" DbType="NVarChar(255)" />
+    <ElementType Name="GetSoLoi_CheckDeSoResult">
+      <Column Name="" Member="Column1" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </ElementType>
   </Function>
   <Function Name="dbo.ImageCheck" Method="ImageCheck">
@@ -220,51 +314,6 @@
       <Column Name="" Member="Column1" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
     </ElementType>
   </Function>
-  <Function Name="dbo.MissImage_DESO" Method="MissImage_DESO">
-    <Parameter Name="fbatchname" Type="System.String" DbType="NVarChar(255)" />
-    <ElementType Name="MissImage_DESOResult">
-      <Column Name="idimage" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
-      <Column Name="username" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
-    </ElementType>
-  </Function>
-  <Function Name="dbo.NangSuatDeSo" Method="NangSuatDeSo">
-    <Parameter Name="TuNgay" Parameter="tuNgay" Type="System.DateTime" DbType="DateTime" />
-    <Parameter Name="DenNgay" Parameter="denNgay" Type="System.DateTime" DbType="DateTime" />
-    <ElementType Name="NangSuatDeSoResult">
-      <Column Name="UserName" Type="System.String" DbType="NVarChar(150) NOT NULL" CanBeNull="false" />
-      <Column Name="FullName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
-      <Column Name="SoPhieuNhap" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="PhieuDung" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="PhieuSai" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="HieuSuat" Type="System.Double" DbType="Float" CanBeNull="true" />
-    </ElementType>
-  </Function>
-  <Function Name="dbo.ThongKeTienDo" Method="ThongKeTienDo">
-    <Parameter Name="fbatchname" Type="System.String" DbType="NVarChar(255)" />
-    <ElementType Name="ThongKeTienDoResult">
-      <Column Name="name" Type="System.String" DbType="NVarChar(15) NOT NULL" CanBeNull="false" />
-      <Column Name="soluong" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-    </ElementType>
-  </Function>
-  <Function Name="dbo.UserMissImagecheck" Method="UserMissImagecheck">
-    <Parameter Name="fbatchname" Type="System.String" DbType="NVarChar(250)" />
-    <ElementType Name="UserMissImagecheckResult">
-      <Column Name="username" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-    </ElementType>
-  </Function>
-  <Function Name="dbo.GetSoLoi_CheckDeSo" Method="GetSoLoi_CheckDeSo">
-    <Parameter Name="fBatchName" Type="System.String" DbType="NVarChar(255)" />
-    <ElementType Name="GetSoLoi_CheckDeSoResult">
-      <Column Name="" Member="Column1" Type="System.Int32" DbType="Int" CanBeNull="true" />
-    </ElementType>
-  </Function>
-  <Function Name="dbo.GetImageCheck_DeSo" Method="GetImageCheck_DeSo">
-    <Parameter Name="fBatchName" Type="System.String" DbType="NVarChar(250)" />
-    <Parameter Name="UserName" Parameter="userName" Type="System.String" DbType="NVarChar(250)" />
-    <ElementType Name="GetImageCheck_DeSoResult">
-      <Column Name="" Member="Column1" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
-    </ElementType>
-  </Function>
   <Function Name="dbo.LuuDESo" Method="LuuDESo">
     <Parameter Name="IdImage" Parameter="idImage" Type="System.String" DbType="NVarChar(255)" />
     <Parameter Name="fBatchName" Type="System.String" DbType="NVarChar(255)" />
@@ -272,6 +321,13 @@
     <Parameter Name="UserNameSai" Parameter="userNameSai" Type="System.String" DbType="NVarChar(255)" />
     <Parameter Name="UserChecker" Parameter="userChecker" Type="System.String" DbType="NVarChar(255)" />
     <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.MissImage_DESO" Method="MissImage_DESO">
+    <Parameter Name="fbatchname" Type="System.String" DbType="NVarChar(255)" />
+    <ElementType Name="MissImage_DESOResult">
+      <Column Name="idimage" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="username" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+    </ElementType>
   </Function>
   <Function Name="dbo.SuaVaLuu_deso" Method="SuaVaLuu_deso">
     <Parameter Name="UserSaiIt" Parameter="userSaiIt" Type="System.String" DbType="NVarChar(255)" />
@@ -289,5 +345,45 @@
     <Parameter Name="Truong_09" Parameter="truong_09" Type="System.String" DbType="NVarChar(255)" />
     <Parameter Name="Truong_10" Parameter="truong_10" Type="System.String" DbType="NVarChar(255)" />
     <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SuaVaLuu_True" Method="SuaVaLuu_True">
+    <Parameter Name="IdImage" Parameter="idImage" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="fBatchName" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="UserCheck" Parameter="userCheck" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="IDPhieu" Parameter="iDPhieu" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="Truong_01" Parameter="truong_01" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="Truong_02" Parameter="truong_02" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="Truong_03" Parameter="truong_03" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="Truong_04" Parameter="truong_04" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="Truong_05" Parameter="truong_05" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="Truong_06" Parameter="truong_06" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="Truong_07" Parameter="truong_07" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="Truong_08" Parameter="truong_08" Type="System.String" DbType="NVarChar(255)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.ThongKeTienDo" Method="ThongKeTienDo">
+    <Parameter Name="fbatchname" Type="System.String" DbType="NVarChar(255)" />
+    <ElementType Name="ThongKeTienDoResult">
+      <Column Name="name" Type="System.String" DbType="NVarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="soluong" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.UserMissImagecheck" Method="UserMissImagecheck">
+    <Parameter Name="fbatchname" Type="System.String" DbType="NVarChar(250)" />
+    <ElementType Name="UserMissImagecheckResult">
+      <Column Name="username" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.NangSuatDeSo" Method="NangSuatDeSo">
+    <Parameter Name="TuNgay" Parameter="tuNgay" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="DenNgay" Parameter="denNgay" Type="System.DateTime" DbType="DateTime" />
+    <ElementType Name="NangSuatDeSoResult">
+      <Column Name="UserName" Type="System.String" DbType="NVarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="FullName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="SoPhieuNhap" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PhieuDung" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PhieuSai" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="HieuSuat" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </ElementType>
   </Function>
 </Database>

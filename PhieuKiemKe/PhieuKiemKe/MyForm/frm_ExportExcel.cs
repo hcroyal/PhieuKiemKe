@@ -16,5 +16,10 @@ namespace PhieuKiemKe.MyForm
         {
             InitializeComponent();
         }
+
+        private void btn_Export_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
