@@ -470,7 +470,11 @@ namespace PhieuKiemKe.MyUserControl
             if (uc.txt_TruongSo07.SelectedIndex == 0 ||
                 uc.txt_TruongSo07.SelectedIndex == 1 ||
                 uc.txt_TruongSo07.SelectedIndex == 2 ||
-                uc.txt_TruongSo07.SelectedIndex == 3 )
+                uc.txt_TruongSo07.SelectedIndex == 3 ||
+                uc.txt_TruongSo07.SelectedIndex == 4 ||
+                uc.txt_TruongSo07.SelectedIndex == 5 ||
+                uc.txt_TruongSo07.SelectedIndex == 6 ||
+                uc.txt_TruongSo07.SelectedIndex == 7 )
             {
                 uc.txt_TruongSo08.Text = "";
                 uc.txt_TruongSo09.Text = "";
@@ -519,6 +523,21 @@ namespace PhieuKiemKe.MyUserControl
 
         private void txt_TruongSo05_EditValueChanged(object sender, EventArgs e)
         {
-            Changed?.Invoke(sender, e);}
+            Changed?.Invoke(sender, e);
+        }
+
+        public void SuaVaLuu(string usersaiit, string usersainhieu, string idimage)
+        {
+            Global.db.SuaVaLuu_deso(usersaiit, usersainhieu, idimage, Global.StrBatch, Global.StrUsername, uc_AT_Rows1.txt_STT.Text, txt_TruongSo02.Text, txt_TruongSo03.Text, txt_TruongSo04.Text, txt_TruongSo05.Text, uc_AT_Rows1.txt_TruongSo07.Text, uc_AT_Rows1.txt_TruongSo08.Text, uc_AT_Rows1.txt_TruongSo09.Text, uc_AT_Rows1.txt_TruongSo10.Text);
+            Global.db.SuaVaLuu_deso(usersaiit, usersainhieu, idimage, Global.StrBatch, Global.StrUsername, uc_AT_Rows2.txt_STT.Text, txt_TruongSo02.Text, txt_TruongSo03.Text, txt_TruongSo04.Text, txt_TruongSo05.Text, uc_AT_Rows2.txt_TruongSo07.Text, uc_AT_Rows2.txt_TruongSo08.Text, uc_AT_Rows2.txt_TruongSo09.Text, uc_AT_Rows2.txt_TruongSo10.Text);
+            Global.db.SuaVaLuu_deso(usersaiit, usersainhieu, idimage, Global.StrBatch, Global.StrUsername, uc_AT_Rows3.txt_STT.Text, txt_TruongSo02.Text, txt_TruongSo03.Text, txt_TruongSo04.Text, txt_TruongSo05.Text, uc_AT_Rows3.txt_TruongSo07.Text, uc_AT_Rows3.txt_TruongSo08.Text, uc_AT_Rows3.txt_TruongSo09.Text, uc_AT_Rows3.txt_TruongSo10.Text);
+            Global.db.SuaVaLuu_deso(usersaiit, usersainhieu, idimage, Global.StrBatch, Global.StrUsername, uc_AT_Rows4.txt_STT.Text, txt_TruongSo02.Text, txt_TruongSo03.Text, txt_TruongSo04.Text, txt_TruongSo05.Text, uc_AT_Rows4.txt_TruongSo07.Text, uc_AT_Rows4.txt_TruongSo08.Text, uc_AT_Rows4.txt_TruongSo09.Text, uc_AT_Rows4.txt_TruongSo10.Text);
+            Global.db.SuaVaLuu_deso(usersaiit, usersainhieu, idimage, Global.StrBatch, Global.StrUsername, uc_AT_Rows5.txt_STT.Text, txt_TruongSo02.Text, txt_TruongSo03.Text, txt_TruongSo04.Text, txt_TruongSo05.Text, uc_AT_Rows5.txt_TruongSo07.Text, uc_AT_Rows5.txt_TruongSo08.Text, uc_AT_Rows5.txt_TruongSo09.Text, uc_AT_Rows5.txt_TruongSo10.Text);
+            Global.db.SuaVaLuu_deso(usersaiit, usersainhieu, idimage, Global.StrBatch, Global.StrUsername, uc_AT_Rows6.txt_STT.Text, txt_TruongSo02.Text, txt_TruongSo03.Text, txt_TruongSo04.Text, txt_TruongSo05.Text, uc_AT_Rows6.txt_TruongSo07.Text, uc_AT_Rows6.txt_TruongSo08.Text, uc_AT_Rows6.txt_TruongSo09.Text, uc_AT_Rows6.txt_TruongSo10.Text);
+            Global.db.SuaVaLuu_deso(usersaiit, usersainhieu, idimage, Global.StrBatch, Global.StrUsername, uc_AT_Rows7.txt_STT.Text, txt_TruongSo02.Text, txt_TruongSo03.Text, txt_TruongSo04.Text, txt_TruongSo05.Text, uc_AT_Rows7.txt_TruongSo07.Text, uc_AT_Rows7.txt_TruongSo08.Text, uc_AT_Rows7.txt_TruongSo09.Text, uc_AT_Rows7.txt_TruongSo10.Text);
+            Global.db.SuaVaLuu_deso(usersaiit, usersainhieu, idimage, Global.StrBatch, Global.StrUsername, uc_AT_Rows8.txt_STT.Text, txt_TruongSo02.Text, txt_TruongSo03.Text, txt_TruongSo04.Text, txt_TruongSo05.Text, uc_AT_Rows8.txt_TruongSo07.Text, uc_AT_Rows8.txt_TruongSo08.Text, uc_AT_Rows8.txt_TruongSo09.Text, uc_AT_Rows8.txt_TruongSo10.Text);
+            Global.db.SuaVaLuu_deso(usersaiit, usersainhieu, idimage, Global.StrBatch, Global.StrUsername, uc_AT_Rows9.txt_STT.Text, txt_TruongSo02.Text, txt_TruongSo03.Text, txt_TruongSo04.Text, txt_TruongSo05.Text, uc_AT_Rows9.txt_TruongSo07.Text, uc_AT_Rows9.txt_TruongSo08.Text, uc_AT_Rows9.txt_TruongSo09.Text, uc_AT_Rows9.txt_TruongSo10.Text);
+            Global.db.SuaVaLuu_deso(usersaiit, usersainhieu, idimage, Global.StrBatch, Global.StrUsername, uc_AT_Rows10.txt_STT.Text, txt_TruongSo02.Text, txt_TruongSo03.Text, txt_TruongSo04.Text, txt_TruongSo05.Text, uc_AT_Rows10.txt_TruongSo07.Text, uc_AT_Rows10.txt_TruongSo08.Text, uc_AT_Rows10.txt_TruongSo09.Text, uc_AT_Rows10.txt_TruongSo10.Text);
+        }
     }
 }

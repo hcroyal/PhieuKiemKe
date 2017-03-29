@@ -44,6 +44,7 @@
             // 
             this.txt_STT.Location = new System.Drawing.Point(1, 1);
             this.txt_STT.Name = "txt_STT";
+            this.txt_STT.Properties.ReadOnly = true;
             this.txt_STT.Size = new System.Drawing.Size(30, 20);
             this.txt_STT.TabIndex = 0;
             this.txt_STT.TabStop = false;
@@ -52,6 +53,9 @@
             // 
             this.txt_TruongSo10.Location = new System.Drawing.Point(229, 1);
             this.txt_TruongSo10.Name = "txt_TruongSo10";
+            this.txt_TruongSo10.Properties.Mask.EditMask = "[123?]";
+            this.txt_TruongSo10.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
+            this.txt_TruongSo10.Properties.MaxLength = 1;
             this.txt_TruongSo10.Size = new System.Drawing.Size(30, 20);
             this.txt_TruongSo10.TabIndex = 2;
             this.txt_TruongSo10.EditValueChanged += new System.EventHandler(this.txt_TruongSo10_EditValueChanged);

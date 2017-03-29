@@ -103,5 +103,6 @@ namespace PhieuKiemKe.MyUserControl
         {
             Changed?.Invoke(sender, e);
         }
+        
     }
 }
