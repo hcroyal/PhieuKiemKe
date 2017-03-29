@@ -508,21 +508,25 @@ namespace PhieuKiemKe.MyUserControl
 
         private void txt_TruongSo02_EditValueChanged(object sender, EventArgs e)
         {
+            DoiMauTextBox((TextEdit)sender, 0, 6);
             Changed?.Invoke(sender, e);
         }
 
         private void txt_TruongSo03_EditValueChanged(object sender, EventArgs e)
         {
+            DoiMauTextBox((TextEdit)sender, 0, 4);
             Changed?.Invoke(sender, e);
         }
 
         private void txt_TruongSo04_EditValueChanged(object sender, EventArgs e)
         {
+            DoiMauTextBox((TextEdit)sender, 0, 10);
             Changed?.Invoke(sender, e);
         }
 
         private void txt_TruongSo05_EditValueChanged(object sender, EventArgs e)
         {
+            DoiMauTextBox((TextEdit)sender, 0, 15);
             Changed?.Invoke(sender, e);
         }
 
@@ -538,6 +542,21 @@ namespace PhieuKiemKe.MyUserControl
             Global.db.SuaVaLuu_deso(usersaiit, usersainhieu, idimage, Global.StrBatch, Global.StrUsername, uc_AT_Rows8.txt_STT.Text, txt_TruongSo02.Text, txt_TruongSo03.Text, txt_TruongSo04.Text, txt_TruongSo05.Text, uc_AT_Rows8.txt_TruongSo07.Text, uc_AT_Rows8.txt_TruongSo08.Text, uc_AT_Rows8.txt_TruongSo09.Text, uc_AT_Rows8.txt_TruongSo10.Text);
             Global.db.SuaVaLuu_deso(usersaiit, usersainhieu, idimage, Global.StrBatch, Global.StrUsername, uc_AT_Rows9.txt_STT.Text, txt_TruongSo02.Text, txt_TruongSo03.Text, txt_TruongSo04.Text, txt_TruongSo05.Text, uc_AT_Rows9.txt_TruongSo07.Text, uc_AT_Rows9.txt_TruongSo08.Text, uc_AT_Rows9.txt_TruongSo09.Text, uc_AT_Rows9.txt_TruongSo10.Text);
             Global.db.SuaVaLuu_deso(usersaiit, usersainhieu, idimage, Global.StrBatch, Global.StrUsername, uc_AT_Rows10.txt_STT.Text, txt_TruongSo02.Text, txt_TruongSo03.Text, txt_TruongSo04.Text, txt_TruongSo05.Text, uc_AT_Rows10.txt_TruongSo07.Text, uc_AT_Rows10.txt_TruongSo08.Text, uc_AT_Rows10.txt_TruongSo09.Text, uc_AT_Rows10.txt_TruongSo10.Text);
+        }
+        public void DoiMauTextBox(TextEdit txt, int sobytenho, int sobytelon)
+        {
+            if (txt.Text.IndexOf('?') >= 0)
+                txt.Text = @"?";
+            if (txt.Text != "" && txt.Text != @"?" && (txt.Text.Length > sobytelon || txt.Text.Length < sobytenho))
+            {
+                txt.BackColor = Color.Red;
+                txt.ForeColor = Color.White;
+            }
+            else
+            {
+                txt.BackColor = Color.White;
+                txt.ForeColor = Color.Black;
+            }
         }
     }
 }

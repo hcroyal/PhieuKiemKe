@@ -87,6 +87,18 @@ namespace PhieuKiemKe.MyUserControl
             {
                 txt_TruongSo07.Text = "MISIYO";
             }
+            if (txt_TruongSo07.Text.IndexOf('?') >= 0)
+                txt_TruongSo07.Text = @"?";
+            if (txt_TruongSo07.Text != "" && txt_TruongSo07.Text != @"?" && txt_TruongSo07.Text.Length > 30)
+            {
+                txt_TruongSo07.BackColor = Color.Red;
+                txt_TruongSo07.ForeColor = Color.White;
+            }
+            else
+            {
+                txt_TruongSo07.BackColor = Color.White;
+                txt_TruongSo07.ForeColor = Color.Black;
+            }
             Changed?.Invoke(sender, e);
         }
 
@@ -97,11 +109,13 @@ namespace PhieuKiemKe.MyUserControl
 
         private void txt_TruongSo08_EditValueChanged(object sender, EventArgs e)
         {
+            DoiMauTextBox((TextEdit)sender,0,25);
             Changed?.Invoke(sender, e);
         }
 
         private void txt_TruongSo09_EditValueChanged(object sender, EventArgs e)
         {
+            DoiMauTextBox((TextEdit)sender, 0, 10);
             Changed?.Invoke(sender, e);
         }
 
@@ -158,6 +172,22 @@ namespace PhieuKiemKe.MyUserControl
                 SendKeys.Send("+{Tab}");
                 SendKeys.Send("+{Tab}");
                 SendKeys.Send("+{Tab}");
+            }
+        }
+
+        public void DoiMauTextBox(TextEdit txt, int sobytenho, int sobytelon)
+        {
+            if (txt.Text.IndexOf('?') >= 0)
+                txt.Text = @"?";
+            if (txt.Text != "" && txt.Text != @"?" && (txt.Text.Length > sobytelon || txt.Text.Length < sobytenho))
+            {
+                txt.BackColor = Color.Red;
+                txt.ForeColor = Color.White;
+            }
+            else
+            {
+                txt.BackColor = Color.White;
+                txt.ForeColor = Color.Black;
             }
         }
     }
