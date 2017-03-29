@@ -63,6 +63,16 @@ namespace PhieuKiemKe.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
+        internal static byte[] ExportExcel {
+            get {
+                object obj = ResourceManager.GetObject("ExportExcel", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
         internal static byte[] Productivity {
             get {
                 object obj = ResourceManager.GetObject("Productivity", resourceCulture);

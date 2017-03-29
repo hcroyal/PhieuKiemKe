@@ -56,7 +56,7 @@
             // 
             // labelControl1
             // 
-            this.labelControl1.Location = new System.Drawing.Point(139, 27);
+            this.labelControl1.Location = new System.Drawing.Point(71, 27);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(31, 13);
             this.labelControl1.TabIndex = 6;
@@ -70,13 +70,14 @@
             this.btn_Export.TabIndex = 3;
             this.btn_Export.Text = "Export";
             this.btn_Export.UseVisualStyleBackColor = true;
+            this.btn_Export.Click += new System.EventHandler(this.btn_Export_Click);
             // 
             // cbb_Batch
             // 
             this.cbb_Batch.FormattingEnabled = true;
-            this.cbb_Batch.Location = new System.Drawing.Point(176, 24);
+            this.cbb_Batch.Location = new System.Drawing.Point(108, 24);
             this.cbb_Batch.Name = "cbb_Batch";
-            this.cbb_Batch.Size = new System.Drawing.Size(167, 21);
+            this.cbb_Batch.Size = new System.Drawing.Size(235, 21);
             this.cbb_Batch.TabIndex = 0;
             // 
             // lb_SoDong
@@ -120,6 +121,7 @@
             this.Controls.Add(this.progressBarControl1);
             this.Name = "frm_ExportExcel";
             this.Text = "frm_ExportExcel";
+            this.Load += new System.EventHandler(this.frm_ExportExcel_Load);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();
