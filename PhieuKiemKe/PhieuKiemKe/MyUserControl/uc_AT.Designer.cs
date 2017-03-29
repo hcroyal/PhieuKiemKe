@@ -71,6 +71,7 @@
             this.txt_TruongSo02.Name = "txt_TruongSo02";
             this.txt_TruongSo02.Size = new System.Drawing.Size(60, 20);
             this.txt_TruongSo02.TabIndex = 0;
+            this.txt_TruongSo02.EditValueChanged += new System.EventHandler(this.txt_TruongSo02_EditValueChanged);
             // 
             // uc_AT_Rows1
             // 
@@ -94,6 +95,7 @@
             this.txt_TruongSo03.Name = "txt_TruongSo03";
             this.txt_TruongSo03.Size = new System.Drawing.Size(40, 20);
             this.txt_TruongSo03.TabIndex = 1;
+            this.txt_TruongSo03.EditValueChanged += new System.EventHandler(this.txt_TruongSo03_EditValueChanged);
             // 
             // labelControl3
             // 
@@ -109,6 +111,7 @@
             this.txt_TruongSo04.Name = "txt_TruongSo04";
             this.txt_TruongSo04.Size = new System.Drawing.Size(100, 20);
             this.txt_TruongSo04.TabIndex = 2;
+            this.txt_TruongSo04.EditValueChanged += new System.EventHandler(this.txt_TruongSo04_EditValueChanged);
             // 
             // labelControl4
             // 
@@ -124,6 +127,7 @@
             this.txt_TruongSo05.Name = "txt_TruongSo05";
             this.txt_TruongSo05.Size = new System.Drawing.Size(162, 20);
             this.txt_TruongSo05.TabIndex = 3;
+            this.txt_TruongSo05.EditValueChanged += new System.EventHandler(this.txt_TruongSo05_EditValueChanged);
             // 
             // labelControl5
             // 

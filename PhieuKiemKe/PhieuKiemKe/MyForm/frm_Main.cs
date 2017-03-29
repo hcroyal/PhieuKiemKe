@@ -74,10 +74,7 @@ namespace PhieuKiemKe
                         return "Error";
                     }
                 }
-                if (tabControl_Main.SelectedTabPage == tp_AE_Main)
-                    uC_AT1.txt_TruongSo02.Focus();
-                //else if (tabControl_Main.SelectedTabPage == tp_EIZEN_Main)
-                //    uc_EZIEN1.txt_Truong02.Focus();
+                
 
             }
             return "OK";
@@ -158,8 +155,14 @@ namespace PhieuKiemKe
                         MessageBox.Show("Không thể load hình!");
                         btn_Logout_ItemClick(null, null);
                     }
-                    uc_AE1.ResetData();
-                    //uc_ASAHI1.ResetData();
+                    if (tabControl_Main.SelectedTabPage == tp_AE_Main)
+                    {
+                        uc_AE1.ResetData();
+                    }
+                    else if (tabControl_Main.SelectedTabPage == tp_AT_Main)
+                    {
+                        uC_AT1.resetData();
+                    }
                     btn_Start_Submit.Text = "Submit";
                     btn_Submit_Logout.Visible = true;
                 }
@@ -175,18 +178,20 @@ namespace PhieuKiemKe
                                     return;
                             }
                             uc_AE1.SaveData_AE(lb_IdImage.Text);
+                            uc_AE1.ResetData();
                         }
-                        //else if (tabControl_Main.SelectedTabPage == tp_EIZEN_Main)
-                        //{
-                        //    if (uc_EZIEN1.IsEmpty())
-                        //    {
-                        //        if (MessageBox.Show("Bạn đang để trống 1 hoặc nhiều trường. Bạn có muốn submit không? \r\nYes = Submit và chuyển qua hình khác<Nhấn Enter>\r\nNo = nhập lại trường trống cho hình này.<nhấn phím N>", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == System.Windows.Forms.DialogResult.No)
-                        //            return;
-                        //    }
-                        //    uc_EZIEN1.SaveData_EIZEN(lb_IdImage.Text);
-                        //}
+                        else if (tabControl_Main.SelectedTabPage == tp_AT_Main)
+                        {
+                            if (uC_AT1.isEmpty())
+                            {
+                                if (MessageBox.Show("Bạn đang để trống 1 hoặc nhiều trường. Bạn có muốn submit không? \r\nYes = Submit và chuyển qua hình khác<Nhấn Enter>\r\nNo = nhập lại trường trống cho hình này.<nhấn phím N>", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == System.Windows.Forms.DialogResult.No)
+                                    return;
+                            }
+                            uC_AT1.SaveData(lb_IdImage.Text);
+                            uC_AT1.resetData();
+                        }
 
-                        uc_AE1.ResetData();
+
                         //    uc_ASAHI1.ResetData();//}
                         string temp = GetImage();
                         if (temp == "NULL")
@@ -235,15 +240,16 @@ namespace PhieuKiemKe
                         }
                         uc_AE1.SaveData_AE(lb_IdImage.Text);
                     }
-                    //else if (tabControl_Main.SelectedTabPage == tp_EIZEN_Main)
-                    //{
-                    //    if (uc_EZIEN1.IsEmpty())
-                    //    {
-                    //        if (MessageBox.Show("Bạn đang để trống 1 hoặc nhiều trường. Bạn có muốn submit không? \r\nYes = Submit và chuyển qua hình khác<Nhấn Enter>\r\nNo = nhập lại trường trống cho hình này.<nhấn phím N>", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == System.Windows.Forms.DialogResult.No)
-                    //            return;
-                    //    }
-                    //    uc_EZIEN1.SaveData_EIZEN(lb_IdImage.Text);
-                    //}
+                    else if (tabControl_Main.SelectedTabPage == tp_AT_Main)
+                    {
+                        if (uC_AT1.isEmpty())
+                        {
+                            if (MessageBox.Show("Bạn đang để trống 1 hoặc nhiều trường. Bạn có muốn submit không? \r\nYes = Submit và chuyển qua hình khác<Nhấn Enter>\r\nNo = nhập lại trường trống cho hình này.<nhấn phím N>", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == System.Windows.Forms.DialogResult.No)
+                                return;
+                        }
+                        uC_AT1.SaveData(lb_IdImage.Text);
+                        uC_AT1.resetData();
+                    }
 
                 }
                 btn_Logout_ItemClick(null, null);
