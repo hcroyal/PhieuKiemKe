@@ -121,6 +121,7 @@
             this.Controls.Add(this.progressBarControl1);
             this.Name = "frm_ExportExcel";
             this.Text = "frm_ExportExcel";
+            this.Load += new System.EventHandler(this.frm_ExportExcel_Load);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();
