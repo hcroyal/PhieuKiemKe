@@ -28,8 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
+            this.barManager1 = new DevExpress.XtraBars.BarManager();
             this.bar2 = new DevExpress.XtraBars.Bar();
             this.barSubItem1 = new DevExpress.XtraBars.BarSubItem();
             this.btn_Logout = new DevExpress.XtraBars.BarButtonItem();
@@ -186,6 +185,7 @@
             this.btn_NangSuat.Caption = "&Năng suất";
             this.btn_NangSuat.Id = 10;
             this.btn_NangSuat.Name = "btn_NangSuat";
+            this.btn_NangSuat.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_NangSuat_ItemClick);
             // 
             // btn_TienDo
             // 

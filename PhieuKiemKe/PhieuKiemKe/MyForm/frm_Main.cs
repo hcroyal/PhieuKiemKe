@@ -316,5 +316,9 @@ namespace PhieuKiemKe
         private void btn_Check_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {new frm_Check_DeSo().ShowDialog();
         }
+
+        private void btn_NangSuat_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            new frm_NangSuat().ShowDialog();}
     }
 }
