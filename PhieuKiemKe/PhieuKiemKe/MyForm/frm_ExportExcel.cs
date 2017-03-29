@@ -239,13 +239,11 @@ namespace PhieuKiemKe.MyForm
             try
             {
                 dataGridView1.DataSource = null;
-                dataGridView1.DataSource = Global.db.ExportExcel_AE(cbb_Batch.Text);
+                dataGridView1.DataSource = Global.db.ExportExcel_AT(cbb_Batch.Text);
                 Microsoft.Office.Interop.Excel.Application App = new Microsoft.Office.Interop.Excel.Application();
-                Microsoft.Office.Interop.Excel.Workbook book = App.Workbooks.Open(strfilename, 0, true, 5, "", "", false,
-                    Microsoft.Office.Interop.Excel.XlPlatform.xlWindows, "", true, false, 0, true, false, false);
+                Microsoft.Office.Interop.Excel.Workbook book = App.Workbooks.Open(strfilename, 0, true, 5, "", "", false,Microsoft.Office.Interop.Excel.XlPlatform.xlWindows, "", true, false, 0, true, false, false);
                 Microsoft.Office.Interop.Excel.Sheets _sheet = (Microsoft.Office.Interop.Excel.Sheets)book.Sheets;
-                Microsoft.Office.Interop.Excel.Worksheet wrksheet =
-                    (Microsoft.Office.Interop.Excel.Worksheet)book.ActiveSheet;
+                Microsoft.Office.Interop.Excel.Worksheet wrksheet =(Microsoft.Office.Interop.Excel.Worksheet)book.ActiveSheet;
                 int h = 2;
                 string idimage = "";
                 int i = 0;
