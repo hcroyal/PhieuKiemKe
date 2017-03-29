@@ -179,6 +179,7 @@
             this.btn_Check.Caption = "&Check";
             this.btn_Check.Id = 9;
             this.btn_Check.Name = "btn_Check";
+            this.btn_Check.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_Check_ItemClick);
             // 
             // btn_NangSuat
             // 

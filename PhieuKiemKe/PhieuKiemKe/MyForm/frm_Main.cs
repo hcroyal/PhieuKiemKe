@@ -313,5 +313,10 @@ namespace PhieuKiemKe
             Global.db_BPO.ResetToken(Global.StrUsername, Global.StrIdProject, Global.Strtoken);
             Settings.Default.Save();
         }
+
+        private void btn_Check_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            new frm_Check_DeSo().ShowDialog();
+        }
     }
 }
