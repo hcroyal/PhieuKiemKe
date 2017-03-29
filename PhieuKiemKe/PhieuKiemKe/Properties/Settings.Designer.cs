@@ -67,5 +67,16 @@ namespace PhieuKiemKe.Properties {
                 return ((string)(this["PhieuKiemKeConnectionString1"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=10.10.10.248;Initial Catalog=PhieuKiemKe;Persist Security Info=True;U" +
+            "ser ID=sa;Password=BPO@DN#2013")]
+        public string PhieuKiemKeConnectionString2 {
+            get {
+                return ((string)(this["PhieuKiemKeConnectionString2"]));
+            }
+        }
     }
 }

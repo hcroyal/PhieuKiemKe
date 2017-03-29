@@ -91,6 +91,20 @@ namespace PhieuKiemKe.MyUserControl
                 }
             }
         }
+
+        public void SuaVaLuu(string usersaiit, string usersainhieu, string idimage)
+        {
+            Global.db.SuaVaLuu_deso(usersaiit, usersainhieu, idimage, Global.StrBatch, Global.StrUsername, uc_AE_Rows1.txt_STT.Text, txt_TruongSo02.Text, txt_TruongSo03.Text, txt_TruongSo04.Text, txt_TruongSo05.Text, "", "", uc_AE_Rows1.txt_TruongSo09.Text, "");
+            Global.db.SuaVaLuu_deso(usersaiit, usersainhieu, idimage, Global.StrBatch, Global.StrUsername, uc_AE_Rows2.txt_STT.Text, txt_TruongSo02.Text, txt_TruongSo03.Text, txt_TruongSo04.Text, txt_TruongSo05.Text, "", "", uc_AE_Rows2.txt_TruongSo09.Text, "");
+            Global.db.SuaVaLuu_deso(usersaiit, usersainhieu, idimage, Global.StrBatch, Global.StrUsername, uc_AE_Rows3.txt_STT.Text, txt_TruongSo02.Text, txt_TruongSo03.Text, txt_TruongSo04.Text, txt_TruongSo05.Text, "", "", uc_AE_Rows3.txt_TruongSo09.Text, "");
+            Global.db.SuaVaLuu_deso(usersaiit, usersainhieu, idimage, Global.StrBatch, Global.StrUsername, uc_AE_Rows4.txt_STT.Text, txt_TruongSo02.Text, txt_TruongSo03.Text, txt_TruongSo04.Text, txt_TruongSo05.Text, "", "", uc_AE_Rows4.txt_TruongSo09.Text, "");
+            Global.db.SuaVaLuu_deso(usersaiit, usersainhieu, idimage, Global.StrBatch, Global.StrUsername, uc_AE_Rows5.txt_STT.Text, txt_TruongSo02.Text, txt_TruongSo03.Text, txt_TruongSo04.Text, txt_TruongSo05.Text, "", "", uc_AE_Rows5.txt_TruongSo09.Text, "");
+            Global.db.SuaVaLuu_deso(usersaiit, usersainhieu, idimage, Global.StrBatch, Global.StrUsername, uc_AE_Rows6.txt_STT.Text, txt_TruongSo02.Text, txt_TruongSo03.Text, txt_TruongSo04.Text, txt_TruongSo05.Text, "", "", uc_AE_Rows6.txt_TruongSo09.Text, "");
+            Global.db.SuaVaLuu_deso(usersaiit, usersainhieu, idimage, Global.StrBatch, Global.StrUsername, uc_AE_Rows7.txt_STT.Text, txt_TruongSo02.Text, txt_TruongSo03.Text, txt_TruongSo04.Text, txt_TruongSo05.Text, "", "", uc_AE_Rows7.txt_TruongSo09.Text, "");
+            Global.db.SuaVaLuu_deso(usersaiit, usersainhieu, idimage, Global.StrBatch, Global.StrUsername, uc_AE_Rows8.txt_STT.Text, txt_TruongSo02.Text, txt_TruongSo03.Text, txt_TruongSo04.Text, txt_TruongSo05.Text, "", "", uc_AE_Rows8.txt_TruongSo09.Text, "");
+            Global.db.SuaVaLuu_deso(usersaiit, usersainhieu, idimage, Global.StrBatch, Global.StrUsername, uc_AE_Rows9.txt_STT.Text, txt_TruongSo02.Text, txt_TruongSo03.Text, txt_TruongSo04.Text, txt_TruongSo05.Text, "", "", uc_AE_Rows9.txt_TruongSo09.Text, "");
+            Global.db.SuaVaLuu_deso(usersaiit, usersainhieu, idimage, Global.StrBatch, Global.StrUsername, uc_AE_Rows10.txt_STT.Text, txt_TruongSo02.Text, txt_TruongSo03.Text, txt_TruongSo04.Text, txt_TruongSo05.Text, "", "", uc_AE_Rows10.txt_TruongSo09.Text, "");
+        }
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
         {
             if (keyData == Keys.Down&& _Flag)
