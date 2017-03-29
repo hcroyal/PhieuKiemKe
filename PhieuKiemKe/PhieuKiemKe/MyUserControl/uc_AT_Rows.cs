@@ -53,5 +53,6 @@ namespace PhieuKiemKe.MyUserControl
                    string.IsNullOrEmpty(txt_TruongSo09.Text) &&
                    string.IsNullOrEmpty(txt_TruongSo10.Text);
         }
+        
     }
 }
