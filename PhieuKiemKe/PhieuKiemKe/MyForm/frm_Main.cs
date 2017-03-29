@@ -319,6 +319,12 @@ namespace PhieuKiemKe
 
         private void btn_NangSuat_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            new frm_NangSuat().ShowDialog();}
+            new frm_NangSuat().ShowDialog();
+        }
+
+        private void btn_XuatExcel_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            new frm_ExportExcel().ShowDialog();
+        }
     }
 }

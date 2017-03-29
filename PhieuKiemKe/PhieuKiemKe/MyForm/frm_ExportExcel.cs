@@ -90,15 +90,12 @@ namespace PhieuKiemKe.MyForm
                 ();
             if (Loai == "AE")
             {
-                TableToExcel_AE(
-                    System.Environment.GetFolderPath(System.Environment.SpecialFolder.MyDocuments) +
-                    "\\ExportExcel.xlsx", "AE");
+                TableToExcel_AE(System.Environment.GetFolderPath(System.Environment.SpecialFolder.MyDocuments) +"\\ExportExcel.xlsx", "AE");
             }
             else if (Loai == "AT")
             {
                 TableToExcel_AT(
-                    System.Environment.GetFolderPath(System.Environment.SpecialFolder.MyDocuments) +
-                    "\\ExportExcel.xlsx", "AT");
+                    System.Environment.GetFolderPath(System.Environment.SpecialFolder.MyDocuments) +"\\ExportExcel.xlsx", "AT");
             }
 
 
@@ -213,7 +210,7 @@ namespace PhieuKiemKe.MyForm
                 }
                 string savePath = "";
                 saveFileDialog1.Title = "Save Excel Files";
-                saveFileDialog1.Filter = "Excel files (*.xls)|*.xls";
+                saveFileDialog1.Filter = "Excel files (*.xlsx)|*.xlsx";
                 saveFileDialog1.FileName = cbb_Batch.Text;
                 saveFileDialog1.RestoreDirectory = true;
                 if (saveFileDialog1.ShowDialog() == DialogResult.OK)
