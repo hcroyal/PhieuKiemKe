@@ -59,6 +59,7 @@
             this.txt_TruongSo10.Size = new System.Drawing.Size(30, 20);
             this.txt_TruongSo10.TabIndex = 2;
             this.txt_TruongSo10.EditValueChanged += new System.EventHandler(this.txt_TruongSo10_EditValueChanged);
+            this.txt_TruongSo10.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_TruongSo10_KeyDown);
             // 
             // txt_TruongSo08
             // 
@@ -67,6 +68,7 @@
             this.txt_TruongSo08.Size = new System.Drawing.Size(100, 20);
             this.txt_TruongSo08.TabIndex = 3;
             this.txt_TruongSo08.EditValueChanged += new System.EventHandler(this.txt_TruongSo08_EditValueChanged);
+            this.txt_TruongSo08.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_TruongSo08_KeyDown);
             // 
             // txt_TruongSo09
             // 
@@ -88,6 +90,7 @@
             this.txt_TruongSo07.Size = new System.Drawing.Size(200, 20);
             this.txt_TruongSo07.TabIndex = 1;
             this.txt_TruongSo07.TextChanged += new System.EventHandler(this.txt_TruongSo07_TextChanged);
+            this.txt_TruongSo07.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_TruongSo07_KeyDown);
             // 
             // uc_AT_Rows
             // 
