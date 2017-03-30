@@ -169,7 +169,7 @@ namespace PhieuKiemKe
                         var listResult = Global.db.GetBatNotFinishDeSo(Global.StrUsername).ToList();
                         if (listResult.Count>0)
                         {
-                            if (MessageBox.Show("Batch tiếp theo là: " + listResult[0].fbatchname + "\nBạn có muốn tiếp tục làm không?", "Thông báo!", MessageBoxButtons.YesNo) ==DialogResult.Yes)
+                            if (MessageBox.Show("Batch tiếp theo là: " + listResult[0].fbatchname + "\nBạn có muốn tiếp tục làm không?", "Thông báo!", MessageBoxButtons.YesNo) == DialogResult.Yes)
                             {
                                 Global.StrBatch = listResult[0].fbatchname;
                                 lb_fBatchName.Text = Global.StrBatch;
@@ -181,7 +181,7 @@ namespace PhieuKiemKe
 
                                 tp_AE_Main.PageVisible = false;
                                 tp_AT_Main.PageVisible = false;
-
+                                
                                 if (Global.LoaiPhieu == "AE")
                                     tp_AE_Main.PageVisible = true;
                                 else if (Global.LoaiPhieu == "AT")
@@ -190,7 +190,7 @@ namespace PhieuKiemKe
                                     uc_AE1.txt_TruongSo02.Focus();
                                 else if (Global.LoaiPhieu == "AT")
                                     uC_AT1.txt_TruongSo02.Focus();
-
+                                SendKeys.Send("+{Tab}");
                                 setValue();
                                 btn_Start_Submit.Text = "Start";
                                 btn_Start_Submit_Click(null, null);
@@ -278,7 +278,7 @@ namespace PhieuKiemKe
                                         tp_AE_Main.PageVisible = true;
                                     else if (Global.LoaiPhieu == "AT")
                                         tp_AT_Main.PageVisible = true;
-                                    
+                                    SendKeys.Send("+{Tab}");
                                     setValue();
                                     btn_Start_Submit.Text = "Start";
                                     btn_Start_Submit_Click(null, null);
