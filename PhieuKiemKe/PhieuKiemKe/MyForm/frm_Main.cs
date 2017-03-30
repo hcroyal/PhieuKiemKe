@@ -175,7 +175,7 @@ namespace PhieuKiemKe
                                 else if (Global.LoaiPhieu == "AT")
                                     tp_AT_Main.PageVisible = true;
 
-
+                                SendKeys.Send("+{Tab}");
                                 setValue();
                                 btn_Start_Submit.Text = "Start";
                                 btn_Start_Submit_Click(null, null);
@@ -264,7 +264,7 @@ namespace PhieuKiemKe
                                     else if (Global.LoaiPhieu == "AT")
                                         tp_AT_Main.PageVisible = true;
 
-
+                                    SendKeys.Send("+{Tab}");
                                     setValue();
                                     btn_Start_Submit.Text = "Start";
                                     btn_Start_Submit_Click(null, null);
@@ -324,6 +324,11 @@ namespace PhieuKiemKe
                     }
                     else if (tabControl_Main.SelectedTabPage == tp_AT_Main)
                     {
+                        if (uC_AT1.TruongSo7Trong())
+                        {
+                            MessageBox.Show("Trường số 7 trống. Vui lòng kiểm tra lại!");
+                            return;
+                        }
                         if (uC_AT1.isEmpty())
                         {
                             if (MessageBox.Show("Bạn đang để trống 1 hoặc nhiều trường. Bạn có muốn submit không? \r\nYes = Submit và chuyển qua hình khác<Nhấn Enter>\r\nNo = nhập lại trường trống cho hình này.<nhấn phím N>", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == System.Windows.Forms.DialogResult.No)
