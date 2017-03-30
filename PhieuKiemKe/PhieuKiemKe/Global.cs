@@ -10,7 +10,7 @@ namespace PhieuKiemKe
         public static DataEntryDataContext db_BPO = new DataEntryDataContext();
         public static DataPhieuKiemKeDataContext db = new DataPhieuKiemKeDataContext();
         public static string StrMachine = "";
-        public static string StrUserWindow = "";
+        public static string StrUserWindow = ""; 
         public static string StrIpAddress = "";
         public static string StrUsername = "";
         public static string StrBatch = "";
