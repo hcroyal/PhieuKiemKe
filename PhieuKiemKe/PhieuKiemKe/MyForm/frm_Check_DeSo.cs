@@ -60,20 +60,63 @@ namespace PhieuKiemKe.MyForm
             }
         }
 
+
+        public void LoadBatchMoi()
+        {
+            if (MessageBox.Show("Bạn muốn làm batch tiếp theo.", "Thông báo", MessageBoxButtons.YesNo) ==DialogResult.No)
+            {
+
+                ResetData();
+                btn_Luu_DeSo1.Visible = false;
+                btn_Luu_DeSo2.Visible = false;
+                btn_SuaVaLuu_User1.Visible = false;
+                btn_SuaVaLuu_User2.Visible = false;
+                return;
+               
+            }
+            else
+            {
+                tp_AE_DeSo1.PageVisible = false;
+                tp_AT_DeSo1.PageVisible = false;
+                tp_AE_DeSo2.PageVisible = false;
+                tp_AT_DeSo2.PageVisible = false;
+
+                btn_Luu_DeSo1.Visible = false;
+                btn_Luu_DeSo2.Visible = false;
+                btn_SuaVaLuu_User1.Visible = false;
+                btn_SuaVaLuu_User2.Visible = false;
+
+                ResetData();
+
+                cbb_Batch_Check.DataSource = (from w in Global.db.GetBatNotFinishCheckerDeSo(Global.StrUsername) select w.fBatchName).ToList();
+                cbb_Batch_Check.DisplayMember = "fBatchName";
+                Global.StrBatch = cbb_Batch_Check.Text;
+                var soloi = (from w in Global.db.GetSoLoi_CheckDeSo(cbb_Batch_Check.Text) select w.Column1).FirstOrDefault();
+                lb_Loi.Text = soloi + " Lỗi";
+                Global.LoaiPhieu = (from w in Global.db.tbl_Batches where w.fBatchName == cbb_Batch_Check.Text select w.LoaiBatch).FirstOrDefault();
+                btn_Start_Click(null, null);
+            }
+        }
+
         private void frm_Check_Load(object sender, EventArgs e)
         {
             try
             {
-                lb_fBatchName.Text = Global.StrBatch;
+                cbb_Batch_Check.DataSource=(from w in Global.db.GetBatNotFinishCheckerDeSo(Global.StrUsername) select w.fBatchName).ToList();
+                cbb_Batch_Check.DisplayMember = "fBatchName";
+                //cbb_Batch_Check.ValueMember= "fBatchName";
+                cbb_Batch_Check.Text = Global.StrBatch;
+                Global.StrBatch = cbb_Batch_Check.Text;
+                var soloi = (from w in Global.db.GetSoLoi_CheckDeSo(cbb_Batch_Check.Text) select w.Column1).FirstOrDefault();
+                lb_Loi.Text = soloi + " Lỗi";
+                Global.LoaiPhieu = (from w in Global.db.tbl_Batches where w.fBatchName == cbb_Batch_Check.Text select w.LoaiBatch).FirstOrDefault();
+
                 tp_AE_DeSo1.PageVisible = false;
                 tp_AT_DeSo1.PageVisible = false;
 
                 tp_AE_DeSo2.PageVisible = false;
                 tp_AT_DeSo2.PageVisible = false;
-
-                var soloi = (from w in Global.db.GetSoLoi_CheckDeSo(Global.StrBatch) select w.Column1).FirstOrDefault();
-                lb_Loi.Text = soloi + " Lỗi";
-
+                
                 if (Global.LoaiPhieu == "AE")
                 {
                     tp_AE_DeSo1.PageVisible = true;
@@ -509,8 +552,6 @@ namespace PhieuKiemKe.MyForm
             }
             return "ok";
         }
-
-
         private void btn_Luu_DeSo1_Click(object sender, EventArgs e)
         {
             try
@@ -526,13 +567,11 @@ namespace PhieuKiemKe.MyForm
 
                 if (temp == "NULL")
                 {
-                    uc_PictureBox1.imageBox1.Dispose();
+                    //uc_PictureBox1.imageBox1.Dispose();
                     MessageBox.Show("Hết Hình!");
-                    btn_Luu_DeSo1.Visible = false;
-                    btn_Luu_DeSo2.Visible = false;
-                    btn_SuaVaLuu_User1.Visible = false;
-                    btn_SuaVaLuu_User2.Visible = false;
+                    LoadBatchMoi();
                     return;
+
                 }
                 if (temp == "Error")
                 {
@@ -570,12 +609,9 @@ namespace PhieuKiemKe.MyForm
 
                 if (temp == "NULL")
                 {
-                    uc_PictureBox1.imageBox1.Dispose();
+                    //uc_PictureBox1.imageBox1.Dispose();
                     MessageBox.Show("Hết Hình!");
-                    btn_Luu_DeSo1.Visible = false;
-                    btn_Luu_DeSo2.Visible = false;
-                    btn_SuaVaLuu_User1.Visible = false;
-                    btn_SuaVaLuu_User2.Visible = false;
+                    LoadBatchMoi();
                     return;
                 }
                 if (temp == "Error")
@@ -620,12 +656,9 @@ namespace PhieuKiemKe.MyForm
                 lb_Loi.Text = soloi + " Lỗi";
                 if (GetImage_DeSo() == "NULL")
                 {
-                    uc_PictureBox1.imageBox1.Dispose();
+                    //uc_PictureBox1.imageBox1.Dispose();
                     MessageBox.Show("Hết Hình!");
-                    btn_Luu_DeSo1.Visible = false;
-                    btn_Luu_DeSo2.Visible = false;
-                    btn_SuaVaLuu_User1.Visible = false;
-                    btn_SuaVaLuu_User2.Visible = false;
+                    LoadBatchMoi();
                     return;
                 }
                 Load_DeSo(Global.StrBatch, lb_Image.Text);
@@ -661,12 +694,9 @@ namespace PhieuKiemKe.MyForm
                 lb_Loi.Text = soloi + " Lỗi";
                 if (GetImage_DeSo() == "NULL")
                 {
-                    uc_PictureBox1.imageBox1.Dispose();
+                    //uc_PictureBox1.imageBox1.Dispose();
                     MessageBox.Show("Hết Hình!");
-                    btn_Luu_DeSo1.Visible = false;
-                    btn_Luu_DeSo2.Visible = false;
-                    btn_SuaVaLuu_User1.Visible = false;
-                    btn_SuaVaLuu_User2.Visible = false;
+                    LoadBatchMoi();
                     return;
                 }
                 Load_DeSo(Global.StrBatch, lb_Image.Text);
@@ -711,6 +741,36 @@ namespace PhieuKiemKe.MyForm
                 uC_AT2.HorizontalScroll.Value = e.NewValue;
             else if (e.ScrollOrientation == System.Windows.Forms.ScrollOrientation.VerticalScroll)
                 this.uC_AT1.VerticalScroll.Value = e.NewValue;
+        }
+
+        private void cbb_Batch_Check_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            tp_AE_DeSo1.PageVisible = false;
+            tp_AT_DeSo1.PageVisible = false;
+            tp_AE_DeSo2.PageVisible = false;
+            tp_AT_DeSo2.PageVisible = false;
+
+            btn_Luu_DeSo1.Visible = false;
+            btn_Luu_DeSo2.Visible = false;
+            btn_SuaVaLuu_User1.Visible = false;
+            btn_SuaVaLuu_User2.Visible = false;
+
+            Global.StrBatch = cbb_Batch_Check.Text;
+            var soloi = (from w in Global.db.GetSoLoi_CheckDeSo(cbb_Batch_Check.Text) select w.Column1).FirstOrDefault();
+            lb_Loi.Text = soloi + " Lỗi";
+            Global.LoaiPhieu = (from w in Global.db.tbl_Batches where w.fBatchName == cbb_Batch_Check.Text select w.LoaiBatch).FirstOrDefault();
+            ResetData();
+            if (Global.LoaiPhieu == "AE")
+            {
+                tp_AE_DeSo1.PageVisible = true;
+                tp_AE_DeSo2.PageVisible = true;
+            }
+            else if (Global.LoaiPhieu == "AT")
+            {
+                tp_AT_DeSo1.PageVisible = true;
+                tp_AT_DeSo2.PageVisible = true;
+            }
+            btn_Start.Visible = true;
         }
     }
 }

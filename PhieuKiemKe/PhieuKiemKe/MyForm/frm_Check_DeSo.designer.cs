@@ -33,7 +33,9 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.tabcontrol_DeSo1 = new DevExpress.XtraTab.XtraTabControl();
             this.tp_AE_DeSo1 = new DevExpress.XtraTab.XtraTabPage();
+            this.uc_AE1 = new PhieuKiemKe.MyUserControl.uc_AE();
             this.tp_AT_DeSo1 = new DevExpress.XtraTab.XtraTabPage();
+            this.uC_AT1 = new PhieuKiemKe.MyUserControl.UC_AT();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lb_username1 = new System.Windows.Forms.Label();
             this.btn_SuaVaLuu_User1 = new DevExpress.XtraEditors.SimpleButton();
@@ -41,16 +43,18 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.tabcontrol_DeSo2 = new DevExpress.XtraTab.XtraTabControl();
             this.tp_AE_DeSo2 = new DevExpress.XtraTab.XtraTabPage();
+            this.uc_AE2 = new PhieuKiemKe.MyUserControl.uc_AE();
             this.tp_AT_DeSo2 = new DevExpress.XtraTab.XtraTabPage();
+            this.uC_AT2 = new PhieuKiemKe.MyUserControl.UC_AT();
             this.panel4 = new System.Windows.Forms.Panel();
             this.lb_username2 = new System.Windows.Forms.Label();
             this.btn_SuaVaLuu_User2 = new DevExpress.XtraEditors.SimpleButton();
             this.btn_Luu_DeSo2 = new DevExpress.XtraEditors.SimpleButton();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
+            this.cbb_Batch_Check = new System.Windows.Forms.ComboBox();
             this.lb_Loi = new DevExpress.XtraEditors.LabelControl();
             this.lb_Image = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
-            this.lb_fBatchName = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.btn_Screen = new DevExpress.XtraEditors.SimpleButton();
             this.uc_PictureBox1 = new PhieuKiemKe.MyUserControl.uc_PictureBox();
@@ -59,10 +63,6 @@
             this.labeld = new DevExpress.XtraEditors.LabelControl();
             this.labela = new DevExpress.XtraEditors.LabelControl();
             this.labelb = new DevExpress.XtraEditors.LabelControl();
-            this.uc_AE1 = new PhieuKiemKe.MyUserControl.uc_AE();
-            this.uc_AE2 = new PhieuKiemKe.MyUserControl.uc_AE();
-            this.uC_AT1 = new PhieuKiemKe.MyUserControl.UC_AT();
-            this.uC_AT2 = new PhieuKiemKe.MyUserControl.UC_AT();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -135,12 +135,34 @@
             this.tp_AE_DeSo1.Size = new System.Drawing.Size(444, 310);
             this.tp_AE_DeSo1.Text = "AE";
             // 
+            // uc_AE1
+            // 
+            this.uc_AE1.AutoScroll = true;
+            this.uc_AE1.AutoSize = true;
+            this.uc_AE1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uc_AE1.Location = new System.Drawing.Point(0, 0);
+            this.uc_AE1.Name = "uc_AE1";
+            this.uc_AE1.Size = new System.Drawing.Size(444, 310);
+            this.uc_AE1.TabIndex = 0;
+            this.uc_AE1.Scroll += new System.Windows.Forms.ScrollEventHandler(this.uc_AE1_Scroll);
+            // 
             // tp_AT_DeSo1
             // 
             this.tp_AT_DeSo1.Controls.Add(this.uC_AT1);
             this.tp_AT_DeSo1.Name = "tp_AT_DeSo1";
             this.tp_AT_DeSo1.Size = new System.Drawing.Size(444, 310);
             this.tp_AT_DeSo1.Text = "AT";
+            // 
+            // uC_AT1
+            // 
+            this.uC_AT1.AutoScroll = true;
+            this.uC_AT1.AutoSize = true;
+            this.uC_AT1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uC_AT1.Location = new System.Drawing.Point(0, 0);
+            this.uC_AT1.Name = "uC_AT1";
+            this.uC_AT1.Size = new System.Drawing.Size(444, 310);
+            this.uC_AT1.TabIndex = 0;
+            this.uC_AT1.Scroll += new System.Windows.Forms.ScrollEventHandler(this.uC_AT1_Scroll);
             // 
             // panel2
             // 
@@ -211,12 +233,34 @@
             this.tp_AE_DeSo2.Size = new System.Drawing.Size(444, 309);
             this.tp_AE_DeSo2.Text = "AE";
             // 
+            // uc_AE2
+            // 
+            this.uc_AE2.AutoScroll = true;
+            this.uc_AE2.AutoSize = true;
+            this.uc_AE2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uc_AE2.Location = new System.Drawing.Point(0, 0);
+            this.uc_AE2.Name = "uc_AE2";
+            this.uc_AE2.Size = new System.Drawing.Size(444, 309);
+            this.uc_AE2.TabIndex = 0;
+            this.uc_AE2.Scroll += new System.Windows.Forms.ScrollEventHandler(this.uc_AE2_Scroll);
+            // 
             // tp_AT_DeSo2
             // 
             this.tp_AT_DeSo2.Controls.Add(this.uC_AT2);
             this.tp_AT_DeSo2.Name = "tp_AT_DeSo2";
             this.tp_AT_DeSo2.Size = new System.Drawing.Size(444, 309);
             this.tp_AT_DeSo2.Text = "AT";
+            // 
+            // uC_AT2
+            // 
+            this.uC_AT2.AutoScroll = true;
+            this.uC_AT2.AutoSize = true;
+            this.uC_AT2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uC_AT2.Location = new System.Drawing.Point(0, 0);
+            this.uC_AT2.Name = "uC_AT2";
+            this.uC_AT2.Size = new System.Drawing.Size(444, 309);
+            this.uC_AT2.TabIndex = 0;
+            this.uC_AT2.Scroll += new System.Windows.Forms.ScrollEventHandler(this.uC_AT2_Scroll);
             // 
             // panel4
             // 
@@ -260,10 +304,10 @@
             // 
             // panelControl2
             // 
+            this.panelControl2.Controls.Add(this.cbb_Batch_Check);
             this.panelControl2.Controls.Add(this.lb_Loi);
             this.panelControl2.Controls.Add(this.lb_Image);
             this.panelControl2.Controls.Add(this.labelControl2);
-            this.panelControl2.Controls.Add(this.lb_fBatchName);
             this.panelControl2.Controls.Add(this.labelControl1);
             this.panelControl2.Controls.Add(this.btn_Screen);
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Top;
@@ -271,6 +315,16 @@
             this.panelControl2.Name = "panelControl2";
             this.panelControl2.Size = new System.Drawing.Size(777, 36);
             this.panelControl2.TabIndex = 1;
+            // 
+            // cbb_Batch_Check
+            // 
+            this.cbb_Batch_Check.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbb_Batch_Check.FormattingEnabled = true;
+            this.cbb_Batch_Check.Location = new System.Drawing.Point(130, 8);
+            this.cbb_Batch_Check.Name = "cbb_Batch_Check";
+            this.cbb_Batch_Check.Size = new System.Drawing.Size(141, 21);
+            this.cbb_Batch_Check.TabIndex = 12;
+            this.cbb_Batch_Check.SelectedIndexChanged += new System.EventHandler(this.cbb_Batch_Check_SelectedIndexChanged);
             // 
             // lb_Loi
             // 
@@ -299,14 +353,6 @@
             this.labelControl2.Size = new System.Drawing.Size(34, 13);
             this.labelControl2.TabIndex = 9;
             this.labelControl2.Text = "Image:";
-            // 
-            // lb_fBatchName
-            // 
-            this.lb_fBatchName.Location = new System.Drawing.Point(134, 12);
-            this.lb_fBatchName.Name = "lb_fBatchName";
-            this.lb_fBatchName.Size = new System.Drawing.Size(6, 13);
-            this.lb_fBatchName.TabIndex = 8;
-            this.lb_fBatchName.Text = "0";
             // 
             // labelControl1
             // 
@@ -374,50 +420,6 @@
             this.labelb.TabIndex = 6;
             this.labelb.Text = "labelControl4";
             // 
-            // uc_AE1
-            // 
-            this.uc_AE1.AutoScroll = true;
-            this.uc_AE1.AutoSize = true;
-            this.uc_AE1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uc_AE1.Location = new System.Drawing.Point(0, 0);
-            this.uc_AE1.Name = "uc_AE1";
-            this.uc_AE1.Size = new System.Drawing.Size(444, 310);
-            this.uc_AE1.TabIndex = 0;
-            this.uc_AE1.Scroll += new System.Windows.Forms.ScrollEventHandler(this.uc_AE1_Scroll);
-            // 
-            // uc_AE2
-            // 
-            this.uc_AE2.AutoScroll = true;
-            this.uc_AE2.AutoSize = true;
-            this.uc_AE2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uc_AE2.Location = new System.Drawing.Point(0, 0);
-            this.uc_AE2.Name = "uc_AE2";
-            this.uc_AE2.Size = new System.Drawing.Size(444, 309);
-            this.uc_AE2.TabIndex = 0;
-            this.uc_AE2.Scroll += new System.Windows.Forms.ScrollEventHandler(this.uc_AE2_Scroll);
-            // 
-            // uC_AT1
-            // 
-            this.uC_AT1.AutoScroll = true;
-            this.uC_AT1.AutoSize = true;
-            this.uC_AT1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uC_AT1.Location = new System.Drawing.Point(0, 0);
-            this.uC_AT1.Name = "uC_AT1";
-            this.uC_AT1.Size = new System.Drawing.Size(444, 310);
-            this.uC_AT1.TabIndex = 0;
-            this.uC_AT1.Scroll += new System.Windows.Forms.ScrollEventHandler(this.uC_AT1_Scroll);
-            // 
-            // uC_AT2
-            // 
-            this.uC_AT2.AutoScroll = true;
-            this.uC_AT2.AutoSize = true;
-            this.uC_AT2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uC_AT2.Location = new System.Drawing.Point(0, 0);
-            this.uC_AT2.Name = "uC_AT2";
-            this.uC_AT2.Size = new System.Drawing.Size(444, 309);
-            this.uC_AT2.TabIndex = 0;
-            this.uC_AT2.Scroll += new System.Windows.Forms.ScrollEventHandler(this.uC_AT2_Scroll);
-            // 
             // frm_Check_DeSo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -482,7 +484,6 @@
         private DevExpress.XtraEditors.LabelControl lb_Loi;
         private DevExpress.XtraEditors.LabelControl lb_Image;
         private DevExpress.XtraEditors.LabelControl labelControl2;
-        private DevExpress.XtraEditors.LabelControl lb_fBatchName;
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.SimpleButton btn_Screen;
         private DevExpress.XtraEditors.SimpleButton btn_Start;
@@ -498,5 +499,6 @@
         private MyUserControl.UC_AT uC_AT1;
         private MyUserControl.uc_AE uc_AE2;
         private MyUserControl.UC_AT uC_AT2;
+        private System.Windows.Forms.ComboBox cbb_Batch_Check;
     }
 }
