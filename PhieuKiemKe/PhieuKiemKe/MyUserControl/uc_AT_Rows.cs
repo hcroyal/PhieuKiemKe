@@ -61,8 +61,21 @@ namespace PhieuKiemKe.MyUserControl
             txt_TruongSo08.Text = "";
             txt_TruongSo09.Text = "";
             txt_TruongSo10.Text = "";
+            txt_TruongSo07.BackColor = Color.White;
+            txt_TruongSo07.ForeColor = Color.Black;
+            txt_TruongSo08.BackColor = Color.White;
+            txt_TruongSo08.ForeColor = Color.Black;
+            txt_TruongSo09.BackColor = Color.White;
+            txt_TruongSo09.ForeColor = Color.Black;
+            txt_TruongSo10.BackColor = Color.White;
+            txt_TruongSo10.ForeColor = Color.Black;
+
         }
 
+        public bool TruongSo7Trong()
+        {
+            return String.IsNullOrEmpty(txt_TruongSo07.Text);
+        }
         public bool isEmpty()
         {
             return String.IsNullOrEmpty(txt_TruongSo07.Text) &&

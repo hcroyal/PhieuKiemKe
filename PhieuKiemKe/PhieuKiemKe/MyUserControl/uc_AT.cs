@@ -512,6 +512,19 @@ namespace PhieuKiemKe.MyUserControl
             txt_TruongSo02.Focus();
         }
 
+        public bool TruongSo7Trong()
+        {
+            return uc_AT_Rows1.TruongSo7Trong() ||
+                   uc_AT_Rows2.TruongSo7Trong() ||
+                   uc_AT_Rows3.TruongSo7Trong() ||
+                   uc_AT_Rows4.TruongSo7Trong() ||
+                   uc_AT_Rows5.TruongSo7Trong() ||
+                   uc_AT_Rows6.TruongSo7Trong() ||
+                   uc_AT_Rows7.TruongSo7Trong() ||
+                   uc_AT_Rows8.TruongSo7Trong() ||
+                   uc_AT_Rows9.TruongSo7Trong() ||
+                   uc_AT_Rows10.TruongSo7Trong();
+        }
         public bool isEmpty()
         {
             return string.IsNullOrEmpty(txt_TruongSo02.Text) &&

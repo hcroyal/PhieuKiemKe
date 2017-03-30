@@ -28,7 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.barManager1 = new DevExpress.XtraBars.BarManager();
+            this.components = new System.ComponentModel.Container();
+            this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar2 = new DevExpress.XtraBars.Bar();
             this.barSubItem1 = new DevExpress.XtraBars.BarSubItem();
             this.btn_Logout = new DevExpress.XtraBars.BarButtonItem();
@@ -264,12 +265,13 @@
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Size = new System.Drawing.Size(1062, 29);
             this.panelControl1.TabIndex = 4;
+            this.panelControl1.Paint += new System.Windows.Forms.PaintEventHandler(this.panelControl1_Paint);
             // 
             // lb_SoHinhLamDuoc
             // 
             this.lb_SoHinhLamDuoc.Appearance.ForeColor = System.Drawing.Color.DarkGreen;
             this.lb_SoHinhLamDuoc.Appearance.Options.UseForeColor = true;
-            this.lb_SoHinhLamDuoc.Location = new System.Drawing.Point(301, 8);
+            this.lb_SoHinhLamDuoc.Location = new System.Drawing.Point(513, 8);
             this.lb_SoHinhLamDuoc.Name = "lb_SoHinhLamDuoc";
             this.lb_SoHinhLamDuoc.Size = new System.Drawing.Size(24, 13);
             this.lb_SoHinhLamDuoc.TabIndex = 13;
@@ -279,7 +281,7 @@
             // 
             this.lb_SoHinhConLai.Appearance.ForeColor = System.Drawing.Color.Crimson;
             this.lb_SoHinhConLai.Appearance.Options.UseForeColor = true;
-            this.lb_SoHinhConLai.Location = new System.Drawing.Point(181, 8);
+            this.lb_SoHinhConLai.Location = new System.Drawing.Point(393, 8);
             this.lb_SoHinhConLai.Name = "lb_SoHinhConLai";
             this.lb_SoHinhConLai.Size = new System.Drawing.Size(24, 13);
             this.lb_SoHinhConLai.TabIndex = 14;
@@ -287,7 +289,7 @@
             // 
             // labelControl6
             // 
-            this.labelControl6.Location = new System.Drawing.Point(241, 8);
+            this.labelControl6.Location = new System.Drawing.Point(453, 8);
             this.labelControl6.Name = "labelControl6";
             this.labelControl6.Size = new System.Drawing.Size(58, 13);
             this.labelControl6.TabIndex = 15;
@@ -297,7 +299,7 @@
             // 
             this.lb_TongSoHinh.Appearance.ForeColor = System.Drawing.Color.Blue;
             this.lb_TongSoHinh.Appearance.Options.UseForeColor = true;
-            this.lb_TongSoHinh.Location = new System.Drawing.Point(61, 8);
+            this.lb_TongSoHinh.Location = new System.Drawing.Point(273, 8);
             this.lb_TongSoHinh.Name = "lb_TongSoHinh";
             this.lb_TongSoHinh.Size = new System.Drawing.Size(24, 13);
             this.lb_TongSoHinh.TabIndex = 16;
@@ -305,7 +307,7 @@
             // 
             // labelControl4
             // 
-            this.labelControl4.Location = new System.Drawing.Point(121, 8);
+            this.labelControl4.Location = new System.Drawing.Point(333, 8);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(59, 13);
             this.labelControl4.TabIndex = 17;
@@ -321,7 +323,7 @@
             // 
             // lb_IdImage
             // 
-            this.lb_IdImage.Location = new System.Drawing.Point(647, 8);
+            this.lb_IdImage.Location = new System.Drawing.Point(658, 8);
             this.lb_IdImage.Name = "lb_IdImage";
             this.lb_IdImage.Size = new System.Drawing.Size(6, 13);
             this.lb_IdImage.TabIndex = 19;
@@ -337,7 +339,7 @@
             // 
             // lb_fBatchName
             // 
-            this.lb_fBatchName.Location = new System.Drawing.Point(-174, 6);
+            this.lb_fBatchName.Location = new System.Drawing.Point(5, 8);
             this.lb_fBatchName.Name = "lb_fBatchName";
             this.lb_fBatchName.Size = new System.Drawing.Size(31, 13);
             this.lb_fBatchName.TabIndex = 21;
@@ -345,7 +347,7 @@
             // 
             // labelControl3
             // 
-            this.labelControl3.Location = new System.Drawing.Point(597, 8);
+            this.labelControl3.Location = new System.Drawing.Point(608, 8);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(44, 13);
             this.labelControl3.TabIndex = 22;
@@ -353,7 +355,7 @@
             // 
             // labelControl2
             // 
-            this.labelControl2.Location = new System.Drawing.Point(9, 8);
+            this.labelControl2.Location = new System.Drawing.Point(221, 8);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(51, 13);
             this.labelControl2.TabIndex = 23;
@@ -361,7 +363,7 @@
             // 
             // labelControl1
             // 
-            this.labelControl1.Location = new System.Drawing.Point(-211, 6);
+            this.labelControl1.Location = new System.Drawing.Point(38, 8);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(31, 13);
             this.labelControl1.TabIndex = 24;

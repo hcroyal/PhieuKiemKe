@@ -60,6 +60,7 @@ namespace PhieuKiemKe
                             return "Error";
 
                         }
+
                     }
                     catch (Exception i)
                     {
@@ -77,7 +78,10 @@ namespace PhieuKiemKe
                         return "Error";
                     }
                 }
-                
+                if (Global.LoaiPhieu == "AE")
+                    uc_AE1.txt_TruongSo02.Focus();
+                else if (Global.LoaiPhieu == "AT")
+                    uC_AT1.txt_TruongSo02.Focus();
 
             }
             return "OK";
@@ -220,6 +224,11 @@ namespace PhieuKiemKe
                         }
                         else if (tabControl_Main.SelectedTabPage == tp_AT_Main)
                         {
+                            if (uC_AT1.TruongSo7Trong())
+                            {
+                                MessageBox.Show("Trường số 7 trống. Vui lòng kiểm tra lại!");
+                                return;
+                            }
                             if (uC_AT1.isEmpty())
                             {
                                 if (MessageBox.Show("Bạn đang để trống 1 hoặc nhiều trường. Bạn có muốn submit không? \r\nYes = Submit và chuyển qua hình khác<Nhấn Enter>\r\nNo = nhập lại trường trống cho hình này.<nhấn phím N>", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == System.Windows.Forms.DialogResult.No)
@@ -398,6 +407,11 @@ namespace PhieuKiemKe
         private void btn_XuatExcel_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             new frm_ExportExcel().ShowDialog();
+        }
+
+        private void panelControl1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

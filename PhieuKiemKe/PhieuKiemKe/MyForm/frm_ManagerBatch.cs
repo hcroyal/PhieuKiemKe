@@ -30,7 +30,7 @@ namespace PhieuKiemKe.MyForm
         }
         private void RefreshBatch()
         {
-            var temp = from var in Global.db.tbl_Batches select var;
+            var temp = from var in Global.db.tbl_Batches orderby var.fdatecreated select var;
             gridControl1.DataSource = temp;
         }
 
