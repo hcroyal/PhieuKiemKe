@@ -339,7 +339,7 @@
             // 
             // lb_fBatchName
             // 
-            this.lb_fBatchName.Location = new System.Drawing.Point(5, 8);
+            this.lb_fBatchName.Location = new System.Drawing.Point(44, 8);
             this.lb_fBatchName.Name = "lb_fBatchName";
             this.lb_fBatchName.Size = new System.Drawing.Size(31, 13);
             this.lb_fBatchName.TabIndex = 21;
@@ -363,7 +363,7 @@
             // 
             // labelControl1
             // 
-            this.labelControl1.Location = new System.Drawing.Point(38, 8);
+            this.labelControl1.Location = new System.Drawing.Point(7, 8);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(31, 13);
             this.labelControl1.TabIndex = 24;

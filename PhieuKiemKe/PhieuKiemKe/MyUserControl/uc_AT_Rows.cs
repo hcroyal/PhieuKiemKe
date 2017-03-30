@@ -71,11 +71,7 @@ namespace PhieuKiemKe.MyUserControl
             txt_TruongSo10.ForeColor = Color.Black;
 
         }
-
-        public bool TruongSo7Trong()
-        {
-            return String.IsNullOrEmpty(txt_TruongSo07.Text);
-        }
+       
         public bool isEmpty()
         {
             return String.IsNullOrEmpty(txt_TruongSo07.Text) &&
@@ -127,7 +123,7 @@ namespace PhieuKiemKe.MyUserControl
 
         private void txt_TruongSo07_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter)
+            if (e.KeyCode == Keys.Enter && !e.Control)
             {
                 if (txt_TruongSo08.Enabled == false || txt_TruongSo09.Enabled == false || txt_TruongSo10.Enabled == false)
                 {
@@ -146,7 +142,7 @@ namespace PhieuKiemKe.MyUserControl
 
         private void txt_TruongSo10_KeyDown(object sender, KeyEventArgs e)
         {
-            if(e.KeyCode == Keys.Enter || e.KeyCode==Keys.Down)
+            if((!e.Control & e.KeyCode == Keys.Enter) || e.KeyCode==Keys.Down)
             {
                 if (txt_TruongSo08.Enabled == false || txt_TruongSo09.Enabled == false || txt_TruongSo10.Enabled == false)
                 {
@@ -181,7 +177,7 @@ namespace PhieuKiemKe.MyUserControl
 
         private void txt_TruongSo08_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter || e.KeyCode == Keys.Down)
+            if ((!e.Control & e.KeyCode == Keys.Enter) || e.KeyCode == Keys.Down)
             {
                 if (txt_TruongSo08.Enabled == false || txt_TruongSo09.Enabled == false || txt_TruongSo10.Enabled == false)
                 {
@@ -231,7 +227,7 @@ namespace PhieuKiemKe.MyUserControl
 
         private void txt_TruongSo09_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter || e.KeyCode == Keys.Down)
+            if ((e.KeyCode == Keys.Enter && !e.Control) || e.KeyCode == Keys.Down)
             {
                 if (txt_TruongSo08.Enabled == false || txt_TruongSo09.Enabled == false || txt_TruongSo10.Enabled == false)
                 {

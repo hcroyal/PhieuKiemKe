@@ -59,7 +59,7 @@ namespace PhieuKiemKe.MyUserControl
 
         private void txt_TruongSo09_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter || e.KeyCode == Keys.Down)
+            if ((!e.Control && e.KeyCode == Keys.Enter) || e.KeyCode == Keys.Down)
             {
                 SendKeys.Send("{Tab}");
             }

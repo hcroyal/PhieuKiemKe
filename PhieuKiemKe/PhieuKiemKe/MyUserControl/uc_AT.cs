@@ -514,16 +514,16 @@ namespace PhieuKiemKe.MyUserControl
 
         public bool TruongSo7Trong()
         {
-            return uc_AT_Rows1.TruongSo7Trong() ||
-                   uc_AT_Rows2.TruongSo7Trong() ||
-                   uc_AT_Rows3.TruongSo7Trong() ||
-                   uc_AT_Rows4.TruongSo7Trong() ||
-                   uc_AT_Rows5.TruongSo7Trong() ||
-                   uc_AT_Rows6.TruongSo7Trong() ||
-                   uc_AT_Rows7.TruongSo7Trong() ||
-                   uc_AT_Rows8.TruongSo7Trong() ||
-                   uc_AT_Rows9.TruongSo7Trong() ||
-                   uc_AT_Rows10.TruongSo7Trong();
+            return uc_AT_Rows1.isEmpty() ||
+                   uc_AT_Rows2.isEmpty() ||
+                   uc_AT_Rows3.isEmpty() ||
+                   uc_AT_Rows4.isEmpty() ||
+                   uc_AT_Rows5.isEmpty() ||
+                   uc_AT_Rows6.isEmpty() ||
+                   uc_AT_Rows7.isEmpty() ||
+                   uc_AT_Rows8.isEmpty() ||
+                   uc_AT_Rows9.isEmpty() ||
+                   uc_AT_Rows10.isEmpty();
         }
         public bool isEmpty()
         {

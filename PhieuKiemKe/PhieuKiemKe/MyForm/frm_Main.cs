@@ -30,6 +30,10 @@ namespace PhieuKiemKe
                 lb_SoHinhLamDuoc.Text = (from w in Global.db.tbl_MissImage_DESOs
                                          where w.UserName == Global.StrUsername && w.fBatchName == Global.StrBatch
                                          select w.IdImage).Count().ToString();
+                if (Global.LoaiPhieu == "AE")
+                    uc_AE1.txt_TruongSo02.Focus();
+                else if (Global.LoaiPhieu == "AT")
+                    uC_AT1.txt_TruongSo02.Focus();
             }
         }
 
@@ -132,6 +136,10 @@ namespace PhieuKiemKe
         {
             try
             {
+                if (Global.LoaiPhieu == "AE")
+                    uc_AE1.txt_TruongSo02.Focus();
+                else if (Global.LoaiPhieu == "AT")
+                    uC_AT1.txt_TruongSo02.Focus();
                 Global.db_BPO.UpdateTimeLastRequest(Global.Strtoken);
                 //Kiểm tra token
                 var token = (from w in Global.db_BPO.tbl_TokenLogins
@@ -145,6 +153,10 @@ namespace PhieuKiemKe
                 }
                 if (btn_Start_Submit.Text == "Start")
                 {
+                    if (Global.LoaiPhieu == "AE")
+                        uc_AE1.txt_TruongSo02.Focus();
+                    else if (Global.LoaiPhieu == "AT")
+                        uC_AT1.txt_TruongSo02.Focus();
                     if (string.IsNullOrEmpty(Global.StrBatch))
                     {
                         MessageBox.Show("Vui lòng đăng nhập lại và chọn Batch!");
@@ -174,8 +186,11 @@ namespace PhieuKiemKe
                                     tp_AE_Main.PageVisible = true;
                                 else if (Global.LoaiPhieu == "AT")
                                     tp_AT_Main.PageVisible = true;
+                                if (Global.LoaiPhieu == "AE")
+                                    uc_AE1.txt_TruongSo02.Focus();
+                                else if (Global.LoaiPhieu == "AT")
+                                    uC_AT1.txt_TruongSo02.Focus();
 
-                                SendKeys.Send("+{Tab}");
                                 setValue();
                                 btn_Start_Submit.Text = "Start";
                                 btn_Start_Submit_Click(null, null);
@@ -263,8 +278,7 @@ namespace PhieuKiemKe
                                         tp_AE_Main.PageVisible = true;
                                     else if (Global.LoaiPhieu == "AT")
                                         tp_AT_Main.PageVisible = true;
-
-                                    SendKeys.Send("+{Tab}");
+                                    
                                     setValue();
                                     btn_Start_Submit.Text = "Start";
                                     btn_Start_Submit_Click(null, null);
@@ -289,6 +303,10 @@ namespace PhieuKiemKe
                     }
                     setValue();
                 }
+                if (Global.LoaiPhieu == "AE")
+                    uc_AE1.txt_TruongSo02.Focus();
+                else if (Global.LoaiPhieu == "AT")
+                    uC_AT1.txt_TruongSo02.Focus();
             }
             catch (Exception i)
             {
