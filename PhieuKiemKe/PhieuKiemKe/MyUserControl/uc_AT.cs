@@ -37,6 +37,16 @@ namespace PhieuKiemKe.MyUserControl
             uc_AT_Rows9.txt_TruongSo08.KeyUp += Txt_TruongSo08_KeyUp7;
             uc_AT_Rows10.txt_TruongSo08.KeyUp += Txt_TruongSo08_KeyUp8;
 
+            uc_AT_Rows2.txt_TruongSo07.KeyUp += Txt_TruongSo07_KeyUp;
+            uc_AT_Rows3.txt_TruongSo07.KeyUp += Txt_TruongSo07_KeyUp1;
+            uc_AT_Rows4.txt_TruongSo07.KeyUp += Txt_TruongSo07_KeyUp2;
+            uc_AT_Rows5.txt_TruongSo07.KeyUp += Txt_TruongSo07_KeyUp3;
+            uc_AT_Rows6.txt_TruongSo07.KeyUp += Txt_TruongSo07_KeyUp4;
+            uc_AT_Rows7.txt_TruongSo07.KeyUp += Txt_TruongSo07_KeyUp5;
+            uc_AT_Rows8.txt_TruongSo07.KeyUp += Txt_TruongSo07_KeyUp6;
+            uc_AT_Rows9.txt_TruongSo07.KeyUp += Txt_TruongSo07_KeyUp7;
+            uc_AT_Rows10.txt_TruongSo07.KeyUp += Txt_TruongSo07_KeyUp8;
+
             uc_AT_Rows1.txt_TruongSo09.KeyDown += Txt_TruongSo09_KeyDown;
             uc_AT_Rows2.txt_TruongSo09.KeyDown += Txt_TruongSo09_KeyDown1;
             uc_AT_Rows3.txt_TruongSo09.KeyDown += Txt_TruongSo09_KeyDown1;
@@ -48,10 +58,114 @@ namespace PhieuKiemKe.MyUserControl
             uc_AT_Rows9.txt_TruongSo09.KeyDown += Txt_TruongSo09_KeyDown1;
             uc_AT_Rows10.txt_TruongSo09.KeyDown += Txt_TruongSo09_KeyDown2;
         }
-        
-       
-       
 
+        private void Txt_TruongSo07_KeyUp8(object sender, KeyEventArgs e)
+        {
+            if (!string.IsNullOrEmpty(uc_AT_Rows9.txt_TruongSo07.Text))
+            {
+                if (e.KeyCode == Keys.Divide)
+                {
+                    CopyDuLieuVaDuaConTroVeCuoi(uc_AT_Rows9.txt_TruongSo07, uc_AT_Rows10.txt_TruongSo07);
+                }
+
+            }
+        }
+
+        private void Txt_TruongSo07_KeyUp7(object sender, KeyEventArgs e)
+        {
+            if (!string.IsNullOrEmpty(uc_AT_Rows8.txt_TruongSo07.Text))
+            {
+                if (e.KeyCode == Keys.Divide)
+                {
+                    CopyDuLieuVaDuaConTroVeCuoi(uc_AT_Rows8.txt_TruongSo07, uc_AT_Rows9.txt_TruongSo07);
+                }
+
+            }
+        }
+
+        private void Txt_TruongSo07_KeyUp6(object sender, KeyEventArgs e)
+        {
+            if (!string.IsNullOrEmpty(uc_AT_Rows7.txt_TruongSo07.Text))
+            {
+                if (e.KeyCode == Keys.Divide)
+                {
+                    CopyDuLieuVaDuaConTroVeCuoi(uc_AT_Rows7.txt_TruongSo07, uc_AT_Rows8.txt_TruongSo07);
+                }
+
+            }
+        }
+
+        private void Txt_TruongSo07_KeyUp5(object sender, KeyEventArgs e)
+        {
+            if (!string.IsNullOrEmpty(uc_AT_Rows6.txt_TruongSo07.Text))
+            {
+                if (e.KeyCode == Keys.Divide)
+                {
+                    CopyDuLieuVaDuaConTroVeCuoi(uc_AT_Rows6.txt_TruongSo07, uc_AT_Rows7.txt_TruongSo07);
+                }
+
+            }
+        }
+
+        private void Txt_TruongSo07_KeyUp4(object sender, KeyEventArgs e)
+        {
+            if (!string.IsNullOrEmpty(uc_AT_Rows5.txt_TruongSo07.Text))
+            {
+                if (e.KeyCode == Keys.Divide)
+                {
+                    CopyDuLieuVaDuaConTroVeCuoi(uc_AT_Rows5.txt_TruongSo07, uc_AT_Rows6.txt_TruongSo07);
+                }
+
+            }
+        }
+
+        private void Txt_TruongSo07_KeyUp3(object sender, KeyEventArgs e)
+        {
+            if (!string.IsNullOrEmpty(uc_AT_Rows4.txt_TruongSo07.Text))
+            {
+                if (e.KeyCode == Keys.Divide)
+                {
+                    CopyDuLieuVaDuaConTroVeCuoi(uc_AT_Rows4.txt_TruongSo07, uc_AT_Rows5.txt_TruongSo07);
+                }
+
+            }
+        }
+
+        private void Txt_TruongSo07_KeyUp2(object sender, KeyEventArgs e)
+        {
+            if (!string.IsNullOrEmpty(uc_AT_Rows3.txt_TruongSo07.Text))
+            {
+                if (e.KeyCode == Keys.Divide)
+                {
+                    CopyDuLieuVaDuaConTroVeCuoi(uc_AT_Rows3.txt_TruongSo07, uc_AT_Rows4.txt_TruongSo07);
+                }
+
+            }
+        }
+
+        private void Txt_TruongSo07_KeyUp1(object sender, KeyEventArgs e)
+        {
+            if (!string.IsNullOrEmpty(uc_AT_Rows2.txt_TruongSo07.Text))
+            {
+                if (e.KeyCode == Keys.Divide)
+                {
+                    CopyDuLieuVaDuaConTroVeCuoi(uc_AT_Rows2.txt_TruongSo07, uc_AT_Rows3.txt_TruongSo07);
+                }
+
+            }
+        }
+
+        private void Txt_TruongSo07_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (!string.IsNullOrEmpty(uc_AT_Rows1.txt_TruongSo07.Text))
+            {
+                if (e.KeyCode == Keys.Divide)
+                {
+                    CopyDuLieuVaDuaConTroVeCuoi(uc_AT_Rows1.txt_TruongSo07, uc_AT_Rows2.txt_TruongSo07);
+                }
+
+            }
+        }
 
         private void Txt_TruongSo09_KeyDown2(object sender, KeyEventArgs e)
         {

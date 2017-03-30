@@ -35,10 +35,7 @@ namespace PhieuKiemKe.MyForm
                 if (t1.Text != t2.Text)
                 {
                     t1.BackColor = Color.PaleVioletRed;
-                    t1.ForeColor = Color.White;
-                    t2.BackColor = Color.PaleVioletRed;
-                    t2.ForeColor = Color.White;
-                }
+                    t2.BackColor = Color.PaleVioletRed;}
             }
             else
             {

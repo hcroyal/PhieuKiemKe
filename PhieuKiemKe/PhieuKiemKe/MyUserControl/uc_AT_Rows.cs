@@ -135,17 +135,33 @@ namespace PhieuKiemKe.MyUserControl
         {
             if(e.KeyCode == Keys.Enter || e.KeyCode==Keys.Down)
             {
-                SendKeys.Send("{Tab}");
-                SendKeys.Send("{Tab}");
-                SendKeys.Send("{Tab}");
-                SendKeys.Send("{Tab}");
+                if (txt_TruongSo08.Enabled == false || txt_TruongSo09.Enabled == false || txt_TruongSo10.Enabled == false)
+                {
+                    SendKeys.Send("{Tab}");
+                }
+                else
+                {
+                    SendKeys.Send("{Tab}");
+                    SendKeys.Send("{Tab}");
+                    SendKeys.Send("{Tab}");
+                    SendKeys.Send("{Tab}");
+                }
+               
             }
             else if (e.KeyCode == Keys.Up)
             {
-                SendKeys.Send("+{Tab}");
-                SendKeys.Send("+{Tab}");
-                SendKeys.Send("+{Tab}");
-                SendKeys.Send("+{Tab}");
+                if (txt_TruongSo08.Enabled == false || txt_TruongSo09.Enabled == false || txt_TruongSo10.Enabled == false)
+                {
+                    SendKeys.Send("+{Tab}");
+                }
+                else
+                {
+                    SendKeys.Send("+{Tab}");
+                    SendKeys.Send("+{Tab}");
+                    SendKeys.Send("+{Tab}");
+                    SendKeys.Send("+{Tab}");
+                }
+               
             }
 
         }
@@ -154,17 +170,33 @@ namespace PhieuKiemKe.MyUserControl
         {
             if (e.KeyCode == Keys.Enter || e.KeyCode == Keys.Down)
             {
-                SendKeys.Send("{Tab}");
-                SendKeys.Send("{Tab}");
-                SendKeys.Send("{Tab}");
-                SendKeys.Send("{Tab}");
+                if (txt_TruongSo08.Enabled == false || txt_TruongSo09.Enabled == false || txt_TruongSo10.Enabled == false)
+                {
+                    SendKeys.Send("{Tab}");
+                }
+                else
+                {
+                    SendKeys.Send("{Tab}");
+                    SendKeys.Send("{Tab}");
+                    SendKeys.Send("{Tab}");
+                    SendKeys.Send("{Tab}");
+                }
+
             }
             else if (e.KeyCode == Keys.Up)
             {
-                SendKeys.Send("+{Tab}");
-                SendKeys.Send("+{Tab}");
-                SendKeys.Send("+{Tab}");
-                SendKeys.Send("+{Tab}");
+                if (txt_TruongSo08.Enabled == false || txt_TruongSo09.Enabled == false || txt_TruongSo10.Enabled == false)
+                {
+                    SendKeys.Send("+{Tab}");
+                }
+                else
+                {
+                    SendKeys.Send("+{Tab}");
+                    SendKeys.Send("+{Tab}");
+                    SendKeys.Send("+{Tab}");
+                    SendKeys.Send("+{Tab}");
+                }
+
             }
         }
 
@@ -184,6 +216,38 @@ namespace PhieuKiemKe.MyUserControl
             }
         }
 
-        
+        private void txt_TruongSo09_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter || e.KeyCode == Keys.Down)
+            {
+                if (txt_TruongSo08.Enabled == false || txt_TruongSo09.Enabled == false || txt_TruongSo10.Enabled == false)
+                {
+                    SendKeys.Send("{Tab}");
+                }
+                else
+                {
+                    SendKeys.Send("{Tab}");
+                    SendKeys.Send("{Tab}");
+                    SendKeys.Send("{Tab}");
+                    SendKeys.Send("{Tab}");
+                }
+
+            }
+            else if (e.KeyCode == Keys.Up)
+            {
+                if (txt_TruongSo08.Enabled == false || txt_TruongSo09.Enabled == false || txt_TruongSo10.Enabled == false)
+                {
+                    SendKeys.Send("+{Tab}");
+                }
+                else
+                {
+                    SendKeys.Send("+{Tab}");
+                    SendKeys.Send("+{Tab}");
+                    SendKeys.Send("+{Tab}");
+                    SendKeys.Send("+{Tab}");
+                }
+
+            }
+        }
     }
 }

@@ -86,6 +86,7 @@ namespace PhieuKiemKe.MyUserControl
             this.txt_TruongSo09.Size = new System.Drawing.Size(78, 20);
             this.txt_TruongSo09.TabIndex = 4;
             this.txt_TruongSo09.EditValueChanged += new System.EventHandler(this.txt_TruongSo09_EditValueChanged);
+            this.txt_TruongSo09.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_TruongSo09_KeyDown);
             // 
             // txt_TruongSo07
             // 
