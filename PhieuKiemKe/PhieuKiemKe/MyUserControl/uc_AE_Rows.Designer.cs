@@ -43,6 +43,7 @@
             this.txt_TruongSo09.Size = new System.Drawing.Size(173, 20);
             this.txt_TruongSo09.TabIndex = 0;
             this.txt_TruongSo09.EditValueChanged += new System.EventHandler(this.txt_TruongSo09_EditValueChanged);
+            this.txt_TruongSo09.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_TruongSo09_KeyDown);
             // 
             // txt_STT
             // 

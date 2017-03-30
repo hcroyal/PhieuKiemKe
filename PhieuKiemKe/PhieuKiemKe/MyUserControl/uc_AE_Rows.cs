@@ -56,5 +56,17 @@ namespace PhieuKiemKe.MyUserControl
         {
             ((TextEdit)sender).SelectAll();
         }
+
+        private void txt_TruongSo09_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter || e.KeyCode == Keys.Down)
+            {
+                SendKeys.Send("{Tab}");
+            }
+            else if (e.KeyCode == Keys.Up)
+            {
+                SendKeys.Send("+{Tab}");
+            }
+        }
     }
 }
