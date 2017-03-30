@@ -27,7 +27,9 @@ namespace PhieuKiemKe.MyForm
         }
         private void LoadDataGrid(DateTime TuNgay, DateTime DenNgay)
         {
-            gridControl_Loai1.DataSource = Global.db.NangSuatDeSo(TuNgay, DenNgay);
+            gridControl_LoaiAE.DataSource = Global.db.NangSuatDeSo_AE(TuNgay, DenNgay);
+            dgv_Loai1.RowCellStyle += GridView1_RowCellStyle;
+            gridControl_LoaiAT.DataSource = Global.db.NangSuatDeSo_AT(TuNgay, DenNgay);
             dgv_Loai1.RowCellStyle += GridView1_RowCellStyle;
         }
 
@@ -53,7 +55,7 @@ namespace PhieuKiemKe.MyForm
 
             firstDateTime = DateTime.Parse(firstdate);
             lastDateTime = DateTime.Parse(lastdate);
-            gridControl_Loai1.DataSource = null;
+            gridControl_LoaiAE.DataSource = null;
             if (firstDateTime >= lastDateTime)
             {
                 MessageBox.Show("Ngày bắt đầu phải nhỏ hơn hoặc bằng ngày kết thúc");
@@ -71,7 +73,7 @@ namespace PhieuKiemKe.MyForm
 
             firstDateTime = DateTime.Parse(firstdate);
             lastDateTime = DateTime.Parse(lastdate);
-            gridControl_Loai1.DataSource = null;
+            gridControl_LoaiAE.DataSource = null;
             if (firstDateTime > lastDateTime)
             {
                 MessageBox.Show("Ngày kết thúc phải lớn hơn hoặc bằng ngày bắt đầu");
@@ -82,7 +84,7 @@ namespace PhieuKiemKe.MyForm
             }
 
         }
-        public bool TableToExcel(String strfilename, DataGridView dgv)
+        public bool TableToExcel_AE(String strfilename, DataGridView dgv)
         {
             try
             {
@@ -112,8 +114,62 @@ namespace PhieuKiemKe.MyForm
                 SaveFileDialog saveFileDialog1 = new SaveFileDialog();
                 saveFileDialog1.Title = "Save Excel Files";
                 saveFileDialog1.Filter = "Excel files (*.xls)|*.xls";
-                saveFileDialog1.FileName = "NangSuat_DeSo_" + dtp_FirstDay.Value.Day + "-" + dtp_EndDay.Value.Day;
+                saveFileDialog1.FileName = "NangSuat_AE_" + dtp_FirstDay.Value.Day + "-" + dtp_EndDay.Value.Day;
                 
+                saveFileDialog1.RestoreDirectory = true;
+                if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+                {
+                    book.SaveCopyAs(saveFileDialog1.FileName);
+                    book.Saved = true;
+                    savePath = Path.GetDirectoryName(saveFileDialog1.FileName);
+                    App.Quit();
+                }
+                else
+                {
+                    MessageBox.Show("Lỗi khi xuất excel!");
+                    return false;
+                }
+                Process.Start(savePath);
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
+            }
+        }
+        public bool TableToExcel_AT(String strfilename, DataGridView dgv)
+        {
+            try
+            {
+                Microsoft.Office.Interop.Excel.Application App = new Microsoft.Office.Interop.Excel.Application();
+                Microsoft.Office.Interop.Excel.Workbook book = App.Workbooks.Open(strfilename, 0, true, 5, "", "", false,
+                    Microsoft.Office.Interop.Excel.XlPlatform.xlWindows, "", true, false, 0, true, false, false);
+                Microsoft.Office.Interop.Excel.Sheets _sheet = (Microsoft.Office.Interop.Excel.Sheets)book.Sheets;
+                Microsoft.Office.Interop.Excel.Worksheet wrksheet =
+                    (Microsoft.Office.Interop.Excel.Worksheet)book.ActiveSheet;
+                int h = 1;
+                foreach (DataGridViewRow dr in dgv.Rows)
+                {
+                    wrksheet.Cells[h + 2, 1] = h;
+
+                    wrksheet.Cells[h + 2, 2] = dr.Cells[0].Value != null ? dr.Cells[0].Value.ToString() : "";
+                    wrksheet.Cells[h + 2, 3] = dr.Cells[1].Value != null ? dr.Cells[1].Value.ToString() : "";
+                    wrksheet.Cells[h + 2, 4] = dr.Cells[2].Value != null ? dr.Cells[2].Value.ToString() : "";
+                    wrksheet.Cells[h + 2, 5] = dr.Cells[3].Value != null ? dr.Cells[3].Value.ToString() : "";
+                    wrksheet.Cells[h + 2, 6] = dr.Cells[4].Value != null ? dr.Cells[4].Value.ToString() : "";
+                    wrksheet.Cells[h + 2, 7] = dr.Cells[5].Value != null ? dr.Cells[5].Value.ToString() : "";
+                    wrksheet.Cells[h + 2, 8] = dr.Cells[6].Value != null ? dr.Cells[6].Value.ToString() : "";
+
+                    h++;
+                }
+
+                string savePath = "";
+                SaveFileDialog saveFileDialog1 = new SaveFileDialog();
+                saveFileDialog1.Title = "Save Excel Files";
+                saveFileDialog1.Filter = "Excel files (*.xls)|*.xls";
+                saveFileDialog1.FileName = "NangSuat_AT_" + dtp_FirstDay.Value.Day + "-" + dtp_EndDay.Value.Day;
+
                 saveFileDialog1.RestoreDirectory = true;
                 if (saveFileDialog1.ShowDialog() == DialogResult.OK)
                 {
@@ -155,7 +211,12 @@ namespace PhieuKiemKe.MyForm
             {
                 File.WriteAllBytes((Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "/Productivity.xls"), Properties.Resources.Productivity);
             }
-            TableToExcel((Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\Productivity.xls"), dataGridView1);
+            dataGridView1.DataSource = null;
+            dataGridView1.DataSource = Global.db.NangSuatDeSo_AE(firstDateTime, lastDateTime);
+            TableToExcel_AE((Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\Productivity.xls"), dataGridView1);
+            dataGridView1.DataSource = null;
+            dataGridView1.DataSource = Global.db.NangSuatDeSo_AT(firstDateTime, lastDateTime);
+            TableToExcel_AT((Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\Productivity.xls"), dataGridView1);
         }
     }
 }

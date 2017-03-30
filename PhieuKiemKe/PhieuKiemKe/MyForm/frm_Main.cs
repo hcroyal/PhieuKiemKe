@@ -1,7 +1,9 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Linq;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -13,6 +15,7 @@ namespace PhieuKiemKe
 {
     public partial class frm_Main : DevExpress.XtraEditors.XtraForm
     {
+        
         public frm_Main()
         {
             InitializeComponent();
@@ -147,8 +150,43 @@ namespace PhieuKiemKe
                     string temp = GetImage();
                     if (temp == "NULL")
                     {
-                        MessageBox.Show("Hết Hình!");
-                        btn_Logout_ItemClick(null, null);
+                        var listResult = Global.db.GetBatNotFinishDeSo(Global.StrUsername).ToList();
+                        if (listResult.Count>0)
+                        {
+                            if (MessageBox.Show("Batch tiếp theo là: " + listResult[0].fbatchname + "\nBạn có muốn tiếp tục làm không?", "Thông báo!", MessageBoxButtons.YesNo) ==DialogResult.Yes)
+                            {
+                                Global.StrBatch = listResult[0].fbatchname;
+                                lb_fBatchName.Text = Global.StrBatch;
+                                Global.LoaiPhieu = (from w in Global.db.tbl_Batches where w.fBatchName == Global.StrBatch select w.LoaiBatch).FirstOrDefault();
+                                lb_IdImage.Text = "";
+                                lb_TongSoHinh.Text = (from w in Global.db.tbl_Images where w.fbatchname == Global.StrBatch select w.idimage).Count().ToString();
+                                lb_SoHinhConLai.Text = (from w in Global.db.tbl_Images where w.ReadImageDESo < 2 && w.fbatchname == Global.StrBatch && (w.UserNameDESo != Global.StrUsername || w.UserNameDESo == null || w.UserNameDESo == "") select w.idimage).Count().ToString();
+                                lb_SoHinhLamDuoc.Text = (from w in Global.db.tbl_MissImage_DESOs where w.UserName == Global.StrUsername && w.fBatchName == Global.StrBatch select w.IdImage).Count().ToString();
+
+                                tp_AE_Main.PageVisible = false;
+                                tp_AT_Main.PageVisible = false;
+
+                                if (Global.LoaiPhieu == "AE")
+                                    tp_AE_Main.PageVisible = true;
+                                else if (Global.LoaiPhieu == "AT")
+                                    tp_AT_Main.PageVisible = true;
+
+
+                                setValue();
+                                btn_Start_Submit.Text = "Start";
+                                btn_Start_Submit_Click(null, null);
+                            }
+                            else
+                            {
+                                btn_Logout_ItemClick(null, null);
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("Hết Hình!");
+                            btn_Logout_ItemClick(null, null);
+                        }
+                       
                     }
                     else if (temp == "Error")
                     {
@@ -196,8 +234,43 @@ namespace PhieuKiemKe
                         string temp = GetImage();
                         if (temp == "NULL")
                         {
-                            MessageBox.Show("Hết Hình!");
-                            btn_Logout_ItemClick(null, null);
+                            var listResult = Global.db.GetBatNotFinishDeSo(Global.StrUsername).ToList();
+                            if (listResult.Count > 0)
+                            {
+                                if (MessageBox.Show("Batch tiếp theo là: " + listResult[0].fbatchname + "\nBạn có muốn tiếp tục làm không?", "Thông báo!", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                                {
+                                    Global.StrBatch = listResult[0].fbatchname;
+                                    lb_fBatchName.Text = Global.StrBatch;
+                                    Global.LoaiPhieu = (from w in Global.db.tbl_Batches where w.fBatchName == Global.StrBatch select w.LoaiBatch).FirstOrDefault();
+                                    lb_IdImage.Text = "";
+                                    lb_TongSoHinh.Text = (from w in Global.db.tbl_Images where w.fbatchname == Global.StrBatch select w.idimage).Count().ToString();
+                                    lb_SoHinhConLai.Text = (from w in Global.db.tbl_Images where w.ReadImageDESo < 2 && w.fbatchname == Global.StrBatch && (w.UserNameDESo != Global.StrUsername || w.UserNameDESo == null || w.UserNameDESo == "") select w.idimage).Count().ToString();
+                                    lb_SoHinhLamDuoc.Text = (from w in Global.db.tbl_MissImage_DESOs where w.UserName == Global.StrUsername && w.fBatchName == Global.StrBatch select w.IdImage).Count().ToString();
+
+                                    tp_AE_Main.PageVisible = false;
+                                    tp_AT_Main.PageVisible = false;
+
+                                    if (Global.LoaiPhieu == "AE")
+                                        tp_AE_Main.PageVisible = true;
+                                    else if (Global.LoaiPhieu == "AT")
+                                        tp_AT_Main.PageVisible = true;
+
+
+                                    setValue();
+                                    btn_Start_Submit.Text = "Start";
+                                    btn_Start_Submit_Click(null, null);
+                                }
+                                else
+                                {
+                                    btn_Logout_ItemClick(null, null);
+                                }
+
+                            }
+                            else
+                            {
+                                MessageBox.Show("Hết Hình!");
+                                btn_Logout_ItemClick(null, null);
+                            }
                         }
                         else if (temp == "Error")
                         {
