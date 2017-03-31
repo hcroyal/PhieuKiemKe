@@ -70,8 +70,8 @@ namespace PhieuKiemKe.MyForm
                 btn_Luu_DeSo2.Visible = false;
                 btn_SuaVaLuu_User1.Visible = false;
                 btn_SuaVaLuu_User2.Visible = false;
-               
-            }
+                cbb_Batch_Check.DataSource = (from w in Global.db.GetBatNotFinishCheckerDeSo(Global.StrUsername) select w.fBatchName).ToList();
+                cbb_Batch_Check.DisplayMember = "fBatchName";}
             else
             {
                 tp_AE_DeSo1.PageVisible = false;
