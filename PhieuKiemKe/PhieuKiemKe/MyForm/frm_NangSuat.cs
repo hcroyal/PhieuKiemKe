@@ -84,10 +84,12 @@ namespace PhieuKiemKe.MyForm
             }
 
         }
-        public bool TableToExcel_AE(String strfilename, DataGridView dgv)
+        public bool TableToExcel_AE(String strfilename)
         {
             try
             {
+                dataGridView1.DataSource = null;
+                dataGridView1.DataSource = Global.db.NangSuatDeSo_AE(firstDateTime, lastDateTime);
                 Microsoft.Office.Interop.Excel.Application App = new Microsoft.Office.Interop.Excel.Application();
                 Microsoft.Office.Interop.Excel.Workbook book = App.Workbooks.Open(strfilename, 0, true, 5, "", "", false,
                     Microsoft.Office.Interop.Excel.XlPlatform.xlWindows, "", true, false, 0, true, false, false);
@@ -95,7 +97,7 @@ namespace PhieuKiemKe.MyForm
                 Microsoft.Office.Interop.Excel.Worksheet wrksheet =
                     (Microsoft.Office.Interop.Excel.Worksheet) book.ActiveSheet;
                 int h = 1;
-                foreach (DataGridViewRow dr in dgv.Rows)
+                foreach (DataGridViewRow dr in dataGridView1.Rows)
                 {
                     wrksheet.Cells[h + 2, 1] = h;
 
@@ -138,10 +140,12 @@ namespace PhieuKiemKe.MyForm
                 return false;
             }
         }
-        public bool TableToExcel_AT(String strfilename, DataGridView dgv)
+        public bool TableToExcel_AT(String strfilename)
         {
             try
             {
+                dataGridView1.DataSource = null;
+                dataGridView1.DataSource = Global.db.NangSuatDeSo_AT(firstDateTime, lastDateTime);
                 Microsoft.Office.Interop.Excel.Application App = new Microsoft.Office.Interop.Excel.Application();
                 Microsoft.Office.Interop.Excel.Workbook book = App.Workbooks.Open(strfilename, 0, true, 5, "", "", false,
                     Microsoft.Office.Interop.Excel.XlPlatform.xlWindows, "", true, false, 0, true, false, false);
@@ -149,7 +153,7 @@ namespace PhieuKiemKe.MyForm
                 Microsoft.Office.Interop.Excel.Worksheet wrksheet =
                     (Microsoft.Office.Interop.Excel.Worksheet)book.ActiveSheet;
                 int h = 1;
-                foreach (DataGridViewRow dr in dgv.Rows)
+                foreach (DataGridViewRow dr in dataGridView1.Rows)
                 {
                     wrksheet.Cells[h + 2, 1] = h;
 
@@ -211,12 +215,8 @@ namespace PhieuKiemKe.MyForm
             {
                 File.WriteAllBytes((Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "/Productivity.xls"), Properties.Resources.Productivity);
             }
-            dataGridView1.DataSource = null;
-            dataGridView1.DataSource = Global.db.NangSuatDeSo_AE(firstDateTime, lastDateTime);
-            TableToExcel_AE((Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\Productivity.xls"), dataGridView1);
-            dataGridView1.DataSource = null;
-            dataGridView1.DataSource = Global.db.NangSuatDeSo_AT(firstDateTime, lastDateTime);
-            TableToExcel_AT((Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\Productivity.xls"), dataGridView1);
+            TableToExcel_AE(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\Productivity.xls");
+            TableToExcel_AT(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\Productivity.xls");
         }
     }
 }
