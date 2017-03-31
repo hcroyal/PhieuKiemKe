@@ -236,7 +236,7 @@ namespace PhieuKiemKe.MyForm
                 string temp = GetImage_DeSo();
                 if (temp == "NULL")
                 {
-                    uc_PictureBox1.imageBox1.Dispose();
+                    uc_PictureBox1.imageBox1.Image=null;
                     MessageBox.Show("Hết Hình!");
                     return;
                 }
@@ -565,7 +565,7 @@ namespace PhieuKiemKe.MyForm
 
                 if (temp == "NULL")
                 {
-                    //uc_PictureBox1.imageBox1.Dispose();
+                    uc_PictureBox1.imageBox1.Image=null;
                     MessageBox.Show("Hết Hình!");
                     LoadBatchMoi();
                     return;
@@ -607,7 +607,7 @@ namespace PhieuKiemKe.MyForm
 
                 if (temp == "NULL")
                 {
-                    //uc_PictureBox1.imageBox1.Dispose();
+                    uc_PictureBox1.imageBox1.Image = null;
                     MessageBox.Show("Hết Hình!");
                     LoadBatchMoi();
                     return;
@@ -654,7 +654,7 @@ namespace PhieuKiemKe.MyForm
                 lb_Loi.Text = soloi + " Lỗi";
                 if (GetImage_DeSo() == "NULL")
                 {
-                    //uc_PictureBox1.imageBox1.Dispose();
+                    uc_PictureBox1.imageBox1.Image = null;
                     MessageBox.Show("Hết Hình!");
                     LoadBatchMoi();
                     return;
@@ -692,7 +692,7 @@ namespace PhieuKiemKe.MyForm
                 lb_Loi.Text = soloi + " Lỗi";
                 if (GetImage_DeSo() == "NULL")
                 {
-                    //uc_PictureBox1.imageBox1.Dispose();
+                    uc_PictureBox1.imageBox1.Image = null;
                     MessageBox.Show("Hết Hình!");
                     LoadBatchMoi();
                     return;
