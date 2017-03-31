@@ -118,9 +118,7 @@ namespace PhieuKiemKe.MyUserControl
        
 
         private void Txt_TruongSo02_GotFocus(object sender, EventArgs e)
-        {
-            Global.KeyEven = true;
-            ((TextEdit)sender).SelectAll();
+        {((TextEdit)sender).SelectAll();
         }
 
         private void txt_TruongSo02_EditValueChanged(object sender, EventArgs e)
