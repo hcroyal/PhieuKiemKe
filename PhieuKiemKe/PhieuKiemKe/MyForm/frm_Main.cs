@@ -30,10 +30,6 @@ namespace PhieuKiemKe
                 lb_SoHinhLamDuoc.Text = (from w in Global.db.tbl_MissImage_DESOs
                                          where w.UserName == Global.StrUsername && w.fBatchName == Global.StrBatch
                                          select w.IdImage).Count().ToString();
-                if (Global.LoaiPhieu == "AE")
-                    uc_AE1.txt_TruongSo02.Focus();
-                else if (Global.LoaiPhieu == "AT")
-                    uC_AT1.txt_TruongSo02.Focus();
             }
         }
 
@@ -64,7 +60,10 @@ namespace PhieuKiemKe
                             return "Error";
 
                         }
-
+                        if (Global.LoaiPhieu == "AE")
+                            uc_AE1.txt_TruongSo02.Focus();
+                        else if (Global.LoaiPhieu == "AT")
+                            uC_AT1.txt_TruongSo02.Focus();
                     }
                     catch (Exception i)
                     {
@@ -81,12 +80,10 @@ namespace PhieuKiemKe
                         uc_PictureBox1.imageBox1.Image = Resources.svn_deleted;
                         return "Error";
                     }
-                }
-                if (Global.LoaiPhieu == "AE")
-                    uc_AE1.txt_TruongSo02.Focus();
-                else if (Global.LoaiPhieu == "AT")
-                    uC_AT1.txt_TruongSo02.Focus();
-
+                    if (Global.LoaiPhieu == "AE")
+                        uc_AE1.txt_TruongSo02.Focus();
+                    else if (Global.LoaiPhieu == "AT")
+                        uC_AT1.txt_TruongSo02.Focus();}
             }
             return "OK";
         }
@@ -136,10 +133,6 @@ namespace PhieuKiemKe
         {
             try
             {
-                if (Global.LoaiPhieu == "AE")
-                    uc_AE1.txt_TruongSo02.Focus();
-                else if (Global.LoaiPhieu == "AT")
-                    uC_AT1.txt_TruongSo02.Focus();
                 Global.db_BPO.UpdateTimeLastRequest(Global.Strtoken);
                 //Kiểm tra token
                 var token = (from w in Global.db_BPO.tbl_TokenLogins
@@ -153,10 +146,6 @@ namespace PhieuKiemKe
                 }
                 if (btn_Start_Submit.Text == "Start")
                 {
-                    if (Global.LoaiPhieu == "AE")
-                        uc_AE1.txt_TruongSo02.Focus();
-                    else if (Global.LoaiPhieu == "AT")
-                        uC_AT1.txt_TruongSo02.Focus();
                     if (string.IsNullOrEmpty(Global.StrBatch))
                     {
                         MessageBox.Show("Vui lòng đăng nhập lại và chọn Batch!");
@@ -166,31 +155,42 @@ namespace PhieuKiemKe
                     string temp = GetImage();
                     if (temp == "NULL")
                     {
+                        Global.KeyEven = false;
                         var listResult = Global.db.GetBatNotFinishDeSo(Global.StrUsername).ToList();
-                        if (listResult.Count>0)
+                        if (listResult.Count > 0)
                         {
-                            if (MessageBox.Show("Batch tiếp theo là: " + listResult[0].fbatchname + "\nBạn có muốn tiếp tục làm không?", "Thông báo!", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                            if (MessageBox.Show("Batch tiếp theo là: " + listResult[0].fbatchname +
+                                    "\nBạn có muốn tiếp tục làm không?", "Thông báo!", MessageBoxButtons.YesNo) ==
+                                DialogResult.Yes)
                             {
                                 Global.StrBatch = listResult[0].fbatchname;
                                 lb_fBatchName.Text = Global.StrBatch;
-                                Global.LoaiPhieu = (from w in Global.db.tbl_Batches where w.fBatchName == Global.StrBatch select w.LoaiBatch).FirstOrDefault();
+                                Global.LoaiPhieu =
+                                (from w in Global.db.tbl_Batches
+                                    where w.fBatchName == Global.StrBatch
+                                    select w.LoaiBatch).FirstOrDefault();
                                 lb_IdImage.Text = "";
-                                lb_TongSoHinh.Text = (from w in Global.db.tbl_Images where w.fbatchname == Global.StrBatch select w.idimage).Count().ToString();
-                                lb_SoHinhConLai.Text = (from w in Global.db.tbl_Images where w.ReadImageDESo < 2 && w.fbatchname == Global.StrBatch && (w.UserNameDESo != Global.StrUsername || w.UserNameDESo == null || w.UserNameDESo == "") select w.idimage).Count().ToString();
-                                lb_SoHinhLamDuoc.Text = (from w in Global.db.tbl_MissImage_DESOs where w.UserName == Global.StrUsername && w.fBatchName == Global.StrBatch select w.IdImage).Count().ToString();
+                                lb_TongSoHinh.Text =
+                                (from w in Global.db.tbl_Images
+                                    where w.fbatchname == Global.StrBatch
+                                    select w.idimage).Count().ToString();
+                                lb_SoHinhConLai.Text = (from w in Global.db.tbl_Images
+                                    where
+                                    w.ReadImageDESo < 2 && w.fbatchname == Global.StrBatch &&
+                                    (w.UserNameDESo != Global.StrUsername || w.UserNameDESo == null ||
+                                     w.UserNameDESo == "")
+                                    select w.idimage).Count().ToString();
+                                lb_SoHinhLamDuoc.Text = (from w in Global.db.tbl_MissImage_DESOs
+                                    where w.UserName == Global.StrUsername && w.fBatchName == Global.StrBatch
+                                    select w.IdImage).Count().ToString();
 
                                 tp_AE_Main.PageVisible = false;
                                 tp_AT_Main.PageVisible = false;
-                                
+
                                 if (Global.LoaiPhieu == "AE")
                                     tp_AE_Main.PageVisible = true;
                                 else if (Global.LoaiPhieu == "AT")
                                     tp_AT_Main.PageVisible = true;
-                                if (Global.LoaiPhieu == "AE")
-                                    uc_AE1.txt_TruongSo02.Focus();
-                                else if (Global.LoaiPhieu == "AT")
-                                    uC_AT1.txt_TruongSo02.Focus();
-                                SendKeys.Send("+{Tab}");
                                 setValue();
                                 btn_Start_Submit.Text = "Start";
                                 btn_Start_Submit_Click(null, null);
@@ -205,7 +205,6 @@ namespace PhieuKiemKe
                             MessageBox.Show("Hết Hình!");
                             btn_Logout_ItemClick(null, null);
                         }
-                       
                     }
                     else if (temp == "Error")
                     {
@@ -231,7 +230,10 @@ namespace PhieuKiemKe
                         {
                             if (uc_AE1.IsEmpty())
                             {
-                                if (MessageBox.Show("Bạn đang để trống nhiều trường. Bạn có muốn submit không? \r\nYes = Submit và chuyển qua hình khác<Nhấn Enter>\r\nNo = nhập lại trường trống cho hình này.<nhấn phím N>","Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) ==DialogResult.No)
+                                if (
+                                    MessageBox.Show(
+                                        "Bạn đang để trống nhiều trường. Bạn có muốn submit không? \r\nYes = Submit và chuyển qua hình khác<Nhấn Enter>\r\nNo = nhập lại trường trống cho hình này.<nhấn phím N>",
+                                        "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.No)
                                     return;
                             }
                             uc_AE1.SaveData_AE(lb_IdImage.Text);
@@ -246,30 +248,50 @@ namespace PhieuKiemKe
                             }
                             if (uC_AT1.isEmpty())
                             {
-                                if (MessageBox.Show("Bạn đang để trống 1 hoặc nhiều trường. Bạn có muốn submit không? \r\nYes = Submit và chuyển qua hình khác<Nhấn Enter>\r\nNo = nhập lại trường trống cho hình này.<nhấn phím N>", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == System.Windows.Forms.DialogResult.No)
+                                if (
+                                    MessageBox.Show(
+                                        "Bạn đang để trống 1 hoặc nhiều trường. Bạn có muốn submit không? \r\nYes = Submit và chuyển qua hình khác<Nhấn Enter>\r\nNo = nhập lại trường trống cho hình này.<nhấn phím N>",
+                                        "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) ==
+                                    System.Windows.Forms.DialogResult.No)
                                     return;
                             }
                             uC_AT1.SaveData(lb_IdImage.Text);
                             uC_AT1.resetData();
                         }
 
-
                         //    uc_ASAHI1.ResetData();//}
                         string temp = GetImage();
                         if (temp == "NULL")
                         {
+                            Global.KeyEven = false;
                             var listResult = Global.db.GetBatNotFinishDeSo(Global.StrUsername).ToList();
                             if (listResult.Count > 0)
                             {
-                                if (MessageBox.Show("Batch tiếp theo là: " + listResult[0].fbatchname + "\nBạn có muốn tiếp tục làm không?", "Thông báo!", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                                if (MessageBox.Show(
+                                        "Batch tiếp theo là: " + listResult[0].fbatchname +
+                                        "\nBạn có muốn tiếp tục làm không?", "Thông báo!", MessageBoxButtons.YesNo) ==
+                                    DialogResult.Yes)
                                 {
                                     Global.StrBatch = listResult[0].fbatchname;
                                     lb_fBatchName.Text = Global.StrBatch;
-                                    Global.LoaiPhieu = (from w in Global.db.tbl_Batches where w.fBatchName == Global.StrBatch select w.LoaiBatch).FirstOrDefault();
+                                    Global.LoaiPhieu =
+                                    (from w in Global.db.tbl_Batches
+                                        where w.fBatchName == Global.StrBatch
+                                        select w.LoaiBatch).FirstOrDefault();
                                     lb_IdImage.Text = "";
-                                    lb_TongSoHinh.Text = (from w in Global.db.tbl_Images where w.fbatchname == Global.StrBatch select w.idimage).Count().ToString();
-                                    lb_SoHinhConLai.Text = (from w in Global.db.tbl_Images where w.ReadImageDESo < 2 && w.fbatchname == Global.StrBatch && (w.UserNameDESo != Global.StrUsername || w.UserNameDESo == null || w.UserNameDESo == "") select w.idimage).Count().ToString();
-                                    lb_SoHinhLamDuoc.Text = (from w in Global.db.tbl_MissImage_DESOs where w.UserName == Global.StrUsername && w.fBatchName == Global.StrBatch select w.IdImage).Count().ToString();
+                                    lb_TongSoHinh.Text =
+                                    (from w in Global.db.tbl_Images
+                                        where w.fbatchname == Global.StrBatch
+                                        select w.idimage).Count().ToString();
+                                    lb_SoHinhConLai.Text = (from w in Global.db.tbl_Images
+                                        where
+                                        w.ReadImageDESo < 2 && w.fbatchname == Global.StrBatch &&
+                                        (w.UserNameDESo != Global.StrUsername || w.UserNameDESo == null ||
+                                         w.UserNameDESo == "")
+                                        select w.idimage).Count().ToString();
+                                    lb_SoHinhLamDuoc.Text = (from w in Global.db.tbl_MissImage_DESOs
+                                        where w.UserName == Global.StrUsername && w.fBatchName == Global.StrBatch
+                                        select w.IdImage).Count().ToString();
 
                                     tp_AE_Main.PageVisible = false;
                                     tp_AT_Main.PageVisible = false;
@@ -278,7 +300,6 @@ namespace PhieuKiemKe
                                         tp_AE_Main.PageVisible = true;
                                     else if (Global.LoaiPhieu == "AT")
                                         tp_AT_Main.PageVisible = true;
-                                    SendKeys.Send("+{Tab}");
                                     setValue();
                                     btn_Start_Submit.Text = "Start";
                                     btn_Start_Submit_Click(null, null);
@@ -287,7 +308,6 @@ namespace PhieuKiemKe
                                 {
                                     btn_Logout_ItemClick(null, null);
                                 }
-
                             }
                             else
                             {
@@ -303,17 +323,12 @@ namespace PhieuKiemKe
                     }
                     setValue();
                 }
-                if (Global.LoaiPhieu == "AE")
-                    uc_AE1.txt_TruongSo02.Focus();
-                else if (Global.LoaiPhieu == "AT")
-                    uC_AT1.txt_TruongSo02.Focus();
             }
             catch (Exception i)
             {
                 MessageBox.Show("Lỗi khi Submit" + i.Message);
             }
         }
-
         private void btn_Submit_Logout_Click(object sender, EventArgs e)
         {
             try

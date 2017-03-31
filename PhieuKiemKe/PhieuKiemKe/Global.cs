@@ -23,5 +23,6 @@ namespace PhieuKiemKe
         public static string LoaiPhieu = "";
         public static string StrIdProject = "PhieuKiemKe";
         public static int FreeTime = 0;
+        public static bool KeyEven = true;
     }
 }

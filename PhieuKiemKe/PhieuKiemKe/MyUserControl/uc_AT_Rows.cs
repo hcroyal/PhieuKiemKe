@@ -47,11 +47,13 @@ namespace PhieuKiemKe.MyUserControl
 
         private void Txt_TruongSo08_GotFocus(object sender, EventArgs e)
         {
+            Global.KeyEven = true;
             ((TextEdit)sender).SelectAll();
         }
 
         private void Txt_TruongSo07_GotFocus(object sender, EventArgs e)
         {
+            Global.KeyEven = true;
             txt_TruongSo07.SelectAll();//txt_TruongSo07.ShowPopup();
         }
 
@@ -123,7 +125,7 @@ namespace PhieuKiemKe.MyUserControl
 
         private void txt_TruongSo07_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter && !e.Control)
+            if (e.KeyCode == Keys.Enter && !e.Control && Global.KeyEven)
             {
                 if (txt_TruongSo08.Enabled == false || txt_TruongSo09.Enabled == false || txt_TruongSo10.Enabled == false)
                 {
@@ -142,7 +144,7 @@ namespace PhieuKiemKe.MyUserControl
 
         private void txt_TruongSo10_KeyDown(object sender, KeyEventArgs e)
         {
-            if((!e.Control & e.KeyCode == Keys.Enter) || e.KeyCode==Keys.Down)
+            if((!e.Control & e.KeyCode == Keys.Enter && Global.KeyEven) || e.KeyCode==Keys.Down)
             {
                 if (txt_TruongSo08.Enabled == false || txt_TruongSo09.Enabled == false || txt_TruongSo10.Enabled == false)
                 {
@@ -177,7 +179,7 @@ namespace PhieuKiemKe.MyUserControl
 
         private void txt_TruongSo08_KeyDown(object sender, KeyEventArgs e)
         {
-            if ((!e.Control & e.KeyCode == Keys.Enter) || e.KeyCode == Keys.Down)
+            if ((!e.Control & e.KeyCode == Keys.Enter && Global.KeyEven) || e.KeyCode == Keys.Down)
             {
                 if (txt_TruongSo08.Enabled == false || txt_TruongSo09.Enabled == false || txt_TruongSo10.Enabled == false)
                 {
@@ -227,7 +229,7 @@ namespace PhieuKiemKe.MyUserControl
 
         private void txt_TruongSo09_KeyDown(object sender, KeyEventArgs e)
         {
-            if ((e.KeyCode == Keys.Enter && !e.Control) || e.KeyCode == Keys.Down)
+            if ((e.KeyCode == Keys.Enter && !e.Control && Global.KeyEven) || e.KeyCode == Keys.Down)
             {
                 if (txt_TruongSo08.Enabled == false || txt_TruongSo09.Enabled == false || txt_TruongSo10.Enabled == false)
                 {

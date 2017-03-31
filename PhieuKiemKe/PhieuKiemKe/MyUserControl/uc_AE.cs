@@ -17,8 +17,8 @@ namespace PhieuKiemKe.MyUserControl
         {
             InitializeComponent();
         }
-        private bool _Flag = false;
-        private bool _Flag1 = false;
+        //private bool _Flag = false;
+        //private bool _Flag1 = false;
         void UpdateStt()
         {
             uc_AE_Rows1.txt_STT.Text = "01";
@@ -59,7 +59,8 @@ namespace PhieuKiemKe.MyUserControl
             uc_AE_Rows8.ResetData();
             uc_AE_Rows9.ResetData();
             uc_AE_Rows10.ResetData();
-            txt_TruongSo02.Focus();}
+            txt_TruongSo02.Focus();
+        }
 
         public bool IsEmpty()
         {
@@ -118,6 +119,7 @@ namespace PhieuKiemKe.MyUserControl
 
         private void Txt_TruongSo02_GotFocus(object sender, EventArgs e)
         {
+            Global.KeyEven = true;
             ((TextEdit)sender).SelectAll();
         }
 

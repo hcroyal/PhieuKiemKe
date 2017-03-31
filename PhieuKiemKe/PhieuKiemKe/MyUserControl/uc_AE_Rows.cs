@@ -54,12 +54,13 @@ namespace PhieuKiemKe.MyUserControl
         }
         private void Txt_TruongSo09_GotFocus(object sender, EventArgs e)
         {
+            Global.KeyEven = true;
             ((TextEdit)sender).SelectAll();
         }
 
         private void txt_TruongSo09_KeyDown(object sender, KeyEventArgs e)
         {
-            if ((!e.Control && e.KeyCode == Keys.Enter) || e.KeyCode == Keys.Down)
+            if ((!e.Control && e.KeyCode == Keys.Enter&& Global.KeyEven) || e.KeyCode == Keys.Down)
             {
                 SendKeys.Send("{Tab}");
             }

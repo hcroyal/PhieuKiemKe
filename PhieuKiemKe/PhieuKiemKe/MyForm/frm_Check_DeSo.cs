@@ -65,13 +65,11 @@ namespace PhieuKiemKe.MyForm
         {
             if (MessageBox.Show("Bạn muốn làm batch tiếp theo.", "Thông báo", MessageBoxButtons.YesNo) ==DialogResult.No)
             {
-
                 ResetData();
                 btn_Luu_DeSo1.Visible = false;
                 btn_Luu_DeSo2.Visible = false;
                 btn_SuaVaLuu_User1.Visible = false;
                 btn_SuaVaLuu_User2.Visible = false;
-                return;
                
             }
             else
