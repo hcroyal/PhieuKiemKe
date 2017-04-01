@@ -45,7 +45,7 @@ namespace PhieuKiemKe
                 a.btn_thoat.Text = "Thoát";
                 a.chb_hienthi.Text = "Hiển Thị";
                 a.chb_luu.Text = "Lưu";
-                a.lb_version.Text = @"1.0.5";
+                a.lb_version.Text = @"1.0.6";
                 a.UrlUpdateVersion = @"\\10.10.10.254\DE_Viet\2017\PHIEU_KIEM_KE\TOOL\";
                 a.LoginEvent += a_LoginEvent;
                 a.ButtonLoginEven += a_ButtonLoginEven;

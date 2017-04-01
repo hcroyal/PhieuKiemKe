@@ -174,6 +174,14 @@ namespace PhieuKiemKe.MyUserControl
                 }
                
             }
+            else if (e.KeyCode == Keys.Right)
+            {
+                SendKeys.Send("{Tab}");
+            }
+            else if (e.KeyCode == Keys.Left)
+            {
+                SendKeys.Send("+{Tab}");
+            }
 
         }
 
@@ -193,6 +201,7 @@ namespace PhieuKiemKe.MyUserControl
                     SendKeys.Send("{Tab}");
                 }
 
+
             }
             else if (e.KeyCode == Keys.Up)
             {
@@ -208,6 +217,14 @@ namespace PhieuKiemKe.MyUserControl
                     SendKeys.Send("+{Tab}");
                 }
 
+            }
+            else if (e.KeyCode == Keys.Right)
+            {
+                SendKeys.Send("{Tab}");
+            }
+            else if (e.KeyCode == Keys.Left)
+            {
+                SendKeys.Send("+{Tab}");
             }
         }
 
@@ -258,6 +275,14 @@ namespace PhieuKiemKe.MyUserControl
                     SendKeys.Send("+{Tab}");
                 }
 
+            }
+            else if (e.KeyCode == Keys.Right)
+            {
+                SendKeys.Send("{Tab}");
+            }
+            else if (e.KeyCode == Keys.Left)
+            {
+                SendKeys.Send("+{Tab}");
             }
         }
     }
