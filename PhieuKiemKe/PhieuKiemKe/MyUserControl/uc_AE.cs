@@ -188,5 +188,13 @@ namespace PhieuKiemKe.MyUserControl
             }
             Changed?.Invoke(sender, e);
         }
+
+        private void txt_TruongSo02_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode==Keys.Down)
+            {
+                uc_AE_Rows1.txt_TruongSo09.Focus();
+            }
+        }
     }
 }

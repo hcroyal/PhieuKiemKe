@@ -45,7 +45,7 @@
             this.fPathPicture = new DevExpress.XtraGrid.Columns.GridColumn();
             this.fLocation = new DevExpress.XtraGrid.Columns.GridColumn();
             this.fSoLuongAnh = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.ChiaUser = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.LoaiBatch = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemButtonEdit3 = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit1)).BeginInit();
@@ -111,6 +111,17 @@
             // 
             // gridView1
             // 
+            this.gridView1.Appearance.FocusedRow.BackColor = System.Drawing.Color.SeaShell;
+            this.gridView1.Appearance.FocusedRow.BackColor2 = System.Drawing.Color.SeaShell;
+            this.gridView1.Appearance.FocusedRow.FontStyleDelta = System.Drawing.FontStyle.Bold;
+            this.gridView1.Appearance.FocusedRow.Options.UseBackColor = true;
+            this.gridView1.Appearance.FocusedRow.Options.UseFont = true;
+            this.gridView1.Appearance.OddRow.BackColor = System.Drawing.Color.PeachPuff;
+            this.gridView1.Appearance.OddRow.BackColor2 = System.Drawing.Color.PeachPuff;
+            this.gridView1.Appearance.OddRow.Options.UseBackColor = true;
+            this.gridView1.Appearance.Row.BackColor = System.Drawing.Color.Linen;
+            this.gridView1.Appearance.Row.BackColor2 = System.Drawing.Color.Linen;
+            this.gridView1.Appearance.Row.Options.UseBackColor = true;
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.IDBatch,
             this.fBatchName,
@@ -119,10 +130,11 @@
             this.fPathPicture,
             this.fLocation,
             this.fSoLuongAnh,
-            this.ChiaUser,
+            this.LoaiBatch,
             this.gridColumn8});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsView.EnableAppearanceOddRow = true;
             this.gridView1.OptionsView.ShowGroupPanel = false;
             // 
             // IDBatch
@@ -132,6 +144,7 @@
             this.IDBatch.Name = "IDBatch";
             this.IDBatch.Visible = true;
             this.IDBatch.VisibleIndex = 0;
+            this.IDBatch.Width = 50;
             // 
             // fBatchName
             // 
@@ -140,6 +153,7 @@
             this.fBatchName.Name = "fBatchName";
             this.fBatchName.Visible = true;
             this.fBatchName.VisibleIndex = 1;
+            this.fBatchName.Width = 129;
             // 
             // fdatecreated
             // 
@@ -147,7 +161,8 @@
             this.fdatecreated.FieldName = "fdatecreated";
             this.fdatecreated.Name = "fdatecreated";
             this.fdatecreated.Visible = true;
-            this.fdatecreated.VisibleIndex = 2;
+            this.fdatecreated.VisibleIndex = 3;
+            this.fdatecreated.Width = 91;
             // 
             // fusercreate
             // 
@@ -155,7 +170,8 @@
             this.fusercreate.FieldName = "fusercreate";
             this.fusercreate.Name = "fusercreate";
             this.fusercreate.Visible = true;
-            this.fusercreate.VisibleIndex = 3;
+            this.fusercreate.VisibleIndex = 4;
+            this.fusercreate.Width = 91;
             // 
             // fPathPicture
             // 
@@ -163,7 +179,8 @@
             this.fPathPicture.FieldName = "fPathPicture";
             this.fPathPicture.Name = "fPathPicture";
             this.fPathPicture.Visible = true;
-            this.fPathPicture.VisibleIndex = 4;
+            this.fPathPicture.VisibleIndex = 5;
+            this.fPathPicture.Width = 91;
             // 
             // fLocation
             // 
@@ -171,7 +188,8 @@
             this.fLocation.FieldName = "fLocation";
             this.fLocation.Name = "fLocation";
             this.fLocation.Visible = true;
-            this.fLocation.VisibleIndex = 5;
+            this.fLocation.VisibleIndex = 6;
+            this.fLocation.Width = 91;
             // 
             // fSoLuongAnh
             // 
@@ -179,15 +197,17 @@
             this.fSoLuongAnh.FieldName = "fSoLuongAnh";
             this.fSoLuongAnh.Name = "fSoLuongAnh";
             this.fSoLuongAnh.Visible = true;
-            this.fSoLuongAnh.VisibleIndex = 6;
+            this.fSoLuongAnh.VisibleIndex = 7;
+            this.fSoLuongAnh.Width = 91;
             // 
-            // ChiaUser
+            // LoaiBatch
             // 
-            this.ChiaUser.Caption = "ChiaUser";
-            this.ChiaUser.FieldName = "ChiaUser";
-            this.ChiaUser.Name = "ChiaUser";
-            this.ChiaUser.Visible = true;
-            this.ChiaUser.VisibleIndex = 7;
+            this.LoaiBatch.Caption = "Loại Batch";
+            this.LoaiBatch.FieldName = "LoaiBatch";
+            this.LoaiBatch.Name = "LoaiBatch";
+            this.LoaiBatch.Visible = true;
+            this.LoaiBatch.VisibleIndex = 2;
+            this.LoaiBatch.Width = 91;
             // 
             // gridColumn8
             // 
@@ -197,6 +217,7 @@
             this.gridColumn8.Name = "gridColumn8";
             this.gridColumn8.Visible = true;
             this.gridColumn8.VisibleIndex = 8;
+            this.gridColumn8.Width = 97;
             // 
             // repositoryItemButtonEdit3
             // 
@@ -246,6 +267,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn fSoLuongAnh;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn8;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit repositoryItemButtonEdit3;
-        private DevExpress.XtraGrid.Columns.GridColumn ChiaUser;
+        private DevExpress.XtraGrid.Columns.GridColumn LoaiBatch;
     }
 }

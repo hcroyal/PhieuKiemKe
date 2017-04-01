@@ -59,8 +59,6 @@
             this.txt_TruongSo05.Location = new System.Drawing.Point(280, 5);
             this.txt_TruongSo05.Name = "txt_TruongSo05";
             this.txt_TruongSo05.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txt_TruongSo05.Properties.Mask.EditMask = "[0-9?]+";
-            this.txt_TruongSo05.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
             this.txt_TruongSo05.Size = new System.Drawing.Size(162, 20);
             this.txt_TruongSo05.TabIndex = 3;
             this.txt_TruongSo05.EditValueChanged += new System.EventHandler(this.txt_TruongSo05_EditValueChanged);
@@ -70,8 +68,6 @@
             this.txt_TruongSo04.Location = new System.Drawing.Point(158, 5);
             this.txt_TruongSo04.Name = "txt_TruongSo04";
             this.txt_TruongSo04.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txt_TruongSo04.Properties.Mask.EditMask = "[0-9?]+";
-            this.txt_TruongSo04.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
             this.txt_TruongSo04.Size = new System.Drawing.Size(100, 20);
             this.txt_TruongSo04.TabIndex = 2;
             this.txt_TruongSo04.EditValueChanged += new System.EventHandler(this.txt_TruongSo04_EditValueChanged);
@@ -81,8 +77,6 @@
             this.txt_TruongSo03.Location = new System.Drawing.Point(96, 5);
             this.txt_TruongSo03.Name = "txt_TruongSo03";
             this.txt_TruongSo03.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txt_TruongSo03.Properties.Mask.EditMask = "[0-9?]+";
-            this.txt_TruongSo03.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
             this.txt_TruongSo03.Size = new System.Drawing.Size(40, 20);
             this.txt_TruongSo03.TabIndex = 1;
             this.txt_TruongSo03.EditValueChanged += new System.EventHandler(this.txt_TruongSo03_EditValueChanged);
@@ -92,11 +86,10 @@
             this.txt_TruongSo02.Location = new System.Drawing.Point(17, 5);
             this.txt_TruongSo02.Name = "txt_TruongSo02";
             this.txt_TruongSo02.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txt_TruongSo02.Properties.Mask.EditMask = "[0-9?]+";
-            this.txt_TruongSo02.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
             this.txt_TruongSo02.Size = new System.Drawing.Size(60, 20);
             this.txt_TruongSo02.TabIndex = 0;
             this.txt_TruongSo02.EditValueChanged += new System.EventHandler(this.txt_TruongSo02_EditValueChanged);
+            this.txt_TruongSo02.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_TruongSo02_KeyDown);
             // 
             // labelControl4
             // 

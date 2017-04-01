@@ -160,8 +160,8 @@ namespace PhieuKiemKe.MyForm
                     wrksheet.Cells[h, 12] = dr.Cells[11].Value != null ? dr.Cells[11].Value.ToString() : ""; //11
                     if (!string.IsNullOrEmpty(dr.Cells[20].Value.ToString()))
                     {
-                        string[] temp = dr.Cells[20].Value.ToString().Split('\\');
-                        switch (temp[2])
+                        string[] temp = dr.Cells[20].Value.ToString().Split('-');
+                        switch (temp[1])
                         {
                             case "SOKA":
                                 wrksheet.Cells[h, 13] = "EA1";
@@ -278,8 +278,8 @@ namespace PhieuKiemKe.MyForm
                     wrksheet.Cells[h, 12] = dr.Cells[11].Value != null ? dr.Cells[11].Value.ToString() : ""; //11
                     if (!string.IsNullOrEmpty(dr.Cells[20].Value.ToString()))
                     {
-                        string[] temp = dr.Cells[20].Value.ToString().Split('\\');
-                        switch (temp[2])
+                        string[] temp = dr.Cells[20].Value.ToString().Split('-');
+                        switch (temp[1])
                         {
                             case "SOKA":
                                 wrksheet.Cells[h, 13] = "EA1";
@@ -435,8 +435,8 @@ namespace PhieuKiemKe.MyForm
 
                     if (!string.IsNullOrEmpty(dr.Cells[20].Value.ToString()))
                     {
-                        string[] temp = dr.Cells[20].Value.ToString().Split('\\');
-                        switch (temp[2])
+                        string[] temp = dr.Cells[20].Value.ToString().Split('-');
+                        switch (temp[1])
                         {
                             case "SOKA":
                                 wrksheet.Cells[h, 13] = "TA1";

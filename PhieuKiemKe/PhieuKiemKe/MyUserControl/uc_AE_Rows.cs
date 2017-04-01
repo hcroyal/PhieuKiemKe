@@ -66,7 +66,18 @@ namespace PhieuKiemKe.MyUserControl
             }
             else if (e.KeyCode == Keys.Up)
             {
-                SendKeys.Send("+{Tab}");
+                if (txt_STT.Text=="01")
+                {
+                    SendKeys.Send("+{Tab}");
+                    SendKeys.Send("+{Tab}");
+                    SendKeys.Send("+{Tab}");
+                    SendKeys.Send("+{Tab}");
+                }
+                else
+                {
+                    SendKeys.Send("+{Tab}");
+                }
+                
             }
         }
     }

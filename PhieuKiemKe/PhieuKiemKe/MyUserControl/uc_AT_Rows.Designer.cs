@@ -74,6 +74,7 @@ namespace PhieuKiemKe.MyUserControl
             // 
             this.txt_TruongSo08.Location = new System.Drawing.Point(258, 1);
             this.txt_TruongSo08.Name = "txt_TruongSo08";
+            this.txt_TruongSo08.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txt_TruongSo08.Size = new System.Drawing.Size(100, 20);
             this.txt_TruongSo08.TabIndex = 3;
             this.txt_TruongSo08.EditValueChanged += new System.EventHandler(this.txt_TruongSo08_EditValueChanged);
