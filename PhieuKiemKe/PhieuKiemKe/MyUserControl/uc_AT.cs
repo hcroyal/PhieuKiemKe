@@ -598,5 +598,13 @@ namespace PhieuKiemKe.MyUserControl
                 txt.ForeColor = Color.Black;
             }
         }
+
+        private void txt_TruongSo02_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode==Keys.Down)
+            {
+                uc_AT_Rows1.txt_TruongSo07.Focus();
+            }
+        }
     }
 }

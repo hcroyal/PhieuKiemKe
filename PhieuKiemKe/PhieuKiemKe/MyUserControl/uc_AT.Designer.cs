@@ -73,6 +73,7 @@
             this.txt_TruongSo02.Size = new System.Drawing.Size(60, 20);
             this.txt_TruongSo02.TabIndex = 0;
             this.txt_TruongSo02.EditValueChanged += new System.EventHandler(this.txt_TruongSo02_EditValueChanged);
+            this.txt_TruongSo02.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_TruongSo02_KeyDown);
             // 
             // uc_AT_Rows1
             // 
