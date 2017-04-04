@@ -42,8 +42,7 @@ namespace PhieuKiemKe
                 a.lb_date.Text = "Ngày: ";
                 a.lb_time.Text = "Giờ: ";
                 a.lb_batchno.Text = "BatchName: ";
-                a.btn_thoat.Text = "Thoát";
-                a.chb_hienthi.Text = "Hiển Thị";
+                a.btn_thoat.Text = "Thoát";a.chb_hienthi.Text = "Hiển Thị";
                 a.chb_luu.Text = "Lưu";
                 a.lb_version.Text = @"1.0.7";
                 a.UrlUpdateVersion = @"\\10.10.10.254\DE_Viet\2017\PHIEU_KIEM_KE\TOOL\";
